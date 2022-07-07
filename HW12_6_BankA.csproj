@@ -73,11 +73,18 @@
     <Compile Include="FakeUser.cs" />
     <Compile Include="FakeUserDataset.cs" />
     <Compile Include="Interfases.cs" />
+    <Compile Include="PageClient.xaml.cs">
+      <DependentUpon>PageClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Permission.cs" />

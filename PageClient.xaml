@@ -1,0 +1,65 @@
+﻿<Page x:Class="HW12_6_BankA.PageClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HW12_6_BankA"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      Title="PageClient" HorizontalAlignment="Stretch"
+    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <Page.Resources>
+        <System:Double x:Key="TBWidth">110</System:Double>
+    </Page.Resources>
+    
+    
+
+    <StackPanel Margin="5,5,5,5" HorizontalAlignment="Left" >
+        <TextBlock x:Name="TNameOfClient" TextWrapping="Wrap"
+                   Text="ФИО клиента"/>
+        <WrapPanel HorizontalAlignment="Stretch" >
+            <TextBox x:Name="TBLNameOfClient" TextWrapping="Wrap"
+                     Text="Фамилия клиента"
+                     Width="{DynamicResource TBWidth}"
+                     TextAlignment="Left" ToolTip="Фамилия"
+                     IsEnabled="{Binding Path=employer.Permission.LNameEnable}"/>
+            <TextBox x:Name="TBFNameOfClient" TextWrapping="Wrap"
+                     Text="Имя клиента"
+                     Width="{DynamicResource TBWidth}"
+                     TextAlignment="Left" ToolTip="Имя"
+                     IsEnabled="{Binding Path=employer.Permission.FNameEnable}"/>
+            <TextBox x:Name="TBMNameOfClient" TextWrapping="Wrap"
+                     Text="Отчество клиента"
+                     Width="{DynamicResource TBWidth}"
+                     TextAlignment="Left" ToolTip="Отчество"
+                     IsEnabled="{Binding Path=employer.Permission.MNameEnable}"/>
+        </WrapPanel>
+
+
+        <TextBlock x:Name="TPhoneOfClient" TextWrapping="Wrap"
+                   Text="Телефон"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="TBPhoneOfClient" TextWrapping="Wrap"
+                     Text="8-88888888888"
+                     Width="{DynamicResource TBWidth}"
+                     TextAlignment="Left" ToolTip="Телефон"
+                     IsEnabled="{Binding Path=employer.Permission.PhoneNumberEnable}"/>
+        </StackPanel>
+        <TextBlock x:Name="TPasportOfClient" TextWrapping="Wrap"
+                   Text="Серия и номер паспорта"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="TBPasportOfClient" TextWrapping="Wrap"
+                     Text="123123-132123"
+                     Width="{DynamicResource TBWidth}"
+                     TextAlignment="Left" ToolTip="Серия и номер паспорта"
+                     IsEnabled="{Binding Path=employer.Permission.PasportNumberEnable}"/>
+        </StackPanel>
+    </StackPanel>
+
+
+
+
+
+
+
+</Page>

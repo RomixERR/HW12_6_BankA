@@ -12,7 +12,7 @@ namespace HW12_6_BankA
     {
         private DataBase db;
         private string pathFileName;
-        private Employer employer;
+        public Employer employer { get; private set; }
         public int GetClientsCount()
         {
             return db.clients.Count;
@@ -101,7 +101,6 @@ namespace HW12_6_BankA
             {
                 throw new Exception("Нет привелегий");
             }
-            
             return L;
         }
  
