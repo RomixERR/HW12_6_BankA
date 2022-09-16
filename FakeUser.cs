@@ -16,7 +16,7 @@ namespace FakeUsersLite
         }
         Random r = new Random();
         public Egender Gender { get; set; }
-        public FakeUser(Egender gender) { Gender = gender; }
+        public FakeUser(Egender gender) { Gender = gender;}
         public FakeUser() : this(Egender.Male)  {}
         private string Cutter(string S, int minLen, int maxLen)
         {

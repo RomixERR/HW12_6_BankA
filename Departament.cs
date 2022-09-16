@@ -24,5 +24,9 @@ namespace HW12_6_BankA
             this.nameOfDepartament = NameOfDepartament;
             ID = ++IDs.DepartamentsIDCount;
         }
+        public override string ToString()
+        {
+            return nameOfDepartament;
+        }
     }
 }

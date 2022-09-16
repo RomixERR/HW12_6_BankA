@@ -18,8 +18,8 @@
         <ScrollViewer  Grid.Column="0" Grid.Row="0">
             <Frame x:Name="LeftFrame"/>
         </ScrollViewer>
-        <DataGrid x:Name="dataGrid" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}">
-            
+        <DataGrid x:Name="dataGrid" Grid.Column="1">
+               
         </DataGrid>
 
 

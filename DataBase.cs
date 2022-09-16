@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,14 @@ namespace HW12_6_BankA
     {
         public List<Client> clients;
         public List<Departament> departaments;
+        private FakeUser fu;
         /// <summary>
         /// Конструктор по умолчанию. Применяется, если база данных пустая и надо создать БД по умолчанию
         /// </summary>
         /// <param name="AddFakeUsersForTest">Добавить фейковых пользователей и департаменты для теста? Укажите количество или 0</param>
         public DataBase(int AddFakeUsersForTest=0, int AddFakeDepartForTest=0)
         {
+            fu = new FakeUser();
             clients = new List<Client>();
             departaments = new List<Departament>();
             if (AddFakeUsersForTest>0)
@@ -26,6 +29,11 @@ namespace HW12_6_BankA
             if (AddFakeDepartForTest > 0)
             {
                 AddFakeDeps(AddFakeDepartForTest);
+                Random r = new Random();
+                for (int i = 0; i < clients.Count; i++)
+                {
+                    clients[i].Departament = departaments[r.Next(3)];
+                }
             }
         }
 
@@ -35,7 +43,7 @@ namespace HW12_6_BankA
             Employer fakeEmployer = new Employer("fakeEmployer", "My Gode", permission);
             for (int i = 0; i < amount; i++)
             {
-                clients.Add(DataBase.GetFakeClient(fakeEmployer));
+                clients.Add(GetFakeClient(fakeEmployer));
             }
         }
         private void AddFakeDeps(int amount)
@@ -44,17 +52,15 @@ namespace HW12_6_BankA
             Employer fakeEmployer = new Employer("fakeEmployer", "My Gode", permission);
             for (int i = 0; i < amount; i++)
             {
-                departaments.Add(DataBase.GetFakeDepartament(fakeEmployer));
+                departaments.Add(GetFakeDepartament(fakeEmployer));
             }
         }
-        public static Client GetFakeClient(Employer employer)
+        public Client GetFakeClient(Employer employer)
         {
-            FakeUser fu;
-            fu = new FakeUser();
             return new Client(new Client.FIO(fu.GetFName(), fu.GetLName(), fu.GetMName()), fu.GetPhone(), fu.GetPasport(), employer);
         }
 
-        public static Departament GetFakeDepartament(Employer employer)
+        public Departament GetFakeDepartament(Employer employer)
         {
             int ID = ++IDs.DepartamentsIDCount;
             return new Departament($"Департамент {ID}", employer);

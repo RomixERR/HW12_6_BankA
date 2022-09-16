@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace HW12_6_BankA
 {
     internal class Repository
     {
+        public Client currentClient;
         private DataBase db;
         private string pathFileName;
         public Employer employer { get; private set; }
@@ -101,6 +103,10 @@ namespace HW12_6_BankA
             {
                 throw new Exception("Нет привелегий");
             }
+
+
+
+
             return L;
         }
  

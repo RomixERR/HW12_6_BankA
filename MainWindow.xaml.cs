@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,8 +32,11 @@ namespace HW12_6_BankA
             Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
             Employer employer = new Employer("Вася", "Менеджер", permission);
             rep = new Repository("baza.json", employer);
+            dataGrid.ItemsSource = rep.GetClientsData();
+
             pageClient.DataContext = rep;
             this.DataContext = rep;
+            
 
         }
     }
