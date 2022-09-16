@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HW12_6_BankA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900" MinWidth="350" MinHeight="350">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="172*"/>
@@ -18,8 +18,18 @@
         <ScrollViewer  Grid.Column="0" Grid.Row="0">
             <Frame x:Name="LeftFrame"/>
         </ScrollViewer>
-        <DataGrid x:Name="dataGrid" Grid.Column="1">
-               
+        <DataGrid x:Name="dataGrid" Grid.Column="1"
+                  DataContext="{Binding}"
+                  VerticalScrollBarVisibility="Visible"
+                  AutoGenerateColumns="False"
+                  SelectionUnit="FullRow"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="Auto" Header="Имя клиента" Binding="{Binding Mode=OneWay, Path=Fio}"/>
+                <DataGridTextColumn Width="Auto" Header="Телефонный номер" Binding="{Binding Mode=OneWay, Path=PhoneNum}"/>
+                <DataGridTextColumn Width="Auto" Header="Номер паспорта" Binding="{Binding Mode=OneWay, Path=PasportNum}"/>
+                <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
 

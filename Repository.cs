@@ -103,10 +103,6 @@ namespace HW12_6_BankA
             {
                 throw new Exception("Нет привелегий");
             }
-
-
-
-
             return L;
         }
  
