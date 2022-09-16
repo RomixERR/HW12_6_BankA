@@ -23,7 +23,7 @@
                   VerticalScrollBarVisibility="Visible"
                   AutoGenerateColumns="False"
                   SelectionUnit="FullRow"
-                  >
+                  SelectionChanged="dataGrid_Selected">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="Auto" Header="Имя клиента" Binding="{Binding Mode=OneWay, Path=Fio}"/>
                 <DataGridTextColumn Width="Auto" Header="Телефонный номер" Binding="{Binding Mode=OneWay, Path=PhoneNum}"/>
@@ -31,6 +31,7 @@
                 <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="button" Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="44" Width="140" Click="button_Click"/>
 
 
     </Grid>

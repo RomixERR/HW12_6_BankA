@@ -28,16 +28,34 @@ namespace HW12_6_BankA
             InitializeComponent();
             pageClient = new PageClient();
             LeftFrame.Content = pageClient;
-            //Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
-            Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
+            Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
+            //Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
             Employer employer = new Employer("Вася", "Менеджер", permission);
             rep = new Repository("baza.json", employer);
-            dataGrid.ItemsSource = rep.GetClientsData();
 
+            dataGrid.ItemsSource = rep.GetClientsData();
+            
             pageClient.DataContext = rep;
             this.DataContext = rep;
-            
+            pageClient.SaveClientButton.Click += SaveClientButton_Click;
 
+
+        }
+
+        private void SaveClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            rep.SaveCurrentClient(dataGrid);
+        }
+
+        private void dataGrid_Selected(object sender, RoutedEventArgs e)
+        {
+            Client client = (Client)((DataGrid)sender).SelectedItems[0];
+            rep.ClientSelect(client);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine(rep.CurrentClient);
         }
     }
 }

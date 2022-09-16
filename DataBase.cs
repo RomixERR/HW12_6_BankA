@@ -37,6 +37,9 @@ namespace HW12_6_BankA
             }
         }
 
+
+
+
         private void AddFakeClients(int amount)
         {
             Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
@@ -57,7 +60,7 @@ namespace HW12_6_BankA
         }
         public Client GetFakeClient(Employer employer)
         {
-            return new Client(new Client.FIO(fu.GetFName(), fu.GetLName(), fu.GetMName()), fu.GetPhone(), fu.GetPasport(), employer);
+            return new Client(new FIO(fu.GetFName(), fu.GetLName(), fu.GetMName()), fu.GetPhone(), fu.GetPasport(), employer);
         }
 
         public Departament GetFakeDepartament(Employer employer)

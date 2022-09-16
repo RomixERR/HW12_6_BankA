@@ -24,5 +24,7 @@ namespace HW12_6_BankA
         {
             InitializeComponent();
         }
+
+
     }
 }

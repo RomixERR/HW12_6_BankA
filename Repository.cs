@@ -7,13 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Controls;
+
 namespace HW12_6_BankA
 {
-    internal class Repository
+    public static class Extensions
     {
-        public Client currentClient;
+        public static int find<T>(this List<T> list, T target)
+        {
+            return list.IndexOf(target);
+        }
+    }
+
+    internal class Repository: INotifyPropertyChanged
+    {
+        /// <summary>
+        /// текущая КОПИЯ выбранного клиента
+        /// </summary>
+        public Client CurrentClient { get; set; }
         private DataBase db;
         private string pathFileName;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+        /// <summary>
+        /// Текущий рабочий сотрудник банка - пользователь базы данных (не клиент!)
+        /// </summary>
         public Employer employer { get; private set; }
         public int GetClientsCount()
         {
@@ -39,6 +64,7 @@ namespace HW12_6_BankA
             }
             this.employer = employer;
             IDs.SetCounts(db);
+            ClientSelect(db.clients.First());
         }
         /// <summary>
         /// Выполняет загрузку базы из файла
@@ -105,6 +131,37 @@ namespace HW12_6_BankA
             }
             return L;
         }
- 
+
+        public void ClientSelect(Client client)
+        {
+            CurrentClient = new Client(client);
+            OnPropertyChanged("CurrentClient");
+        }
+        /// <summary>
+        /// Запись в базу (не в файл!) текущего клиента (изменение)
+        /// </summary>
+        public void SaveCurrentClient(DataGrid dataGrid)
+        {
+            Client client = db.clients[db.clients.find(CurrentClient)];
+            if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
+            if (employer.Permission.SetClientsData == Permission.EDataMode.OnlyPhoneNumber)
+            {
+                if (CurrentClient.PhoneNum.Length < 4 || CurrentClient.PhoneNum.Length > 30)
+                {
+                    //ВЫДАТь СООБЩЕНИЕ
+                    Debug.WriteLine("PhoneNum.Length is INCORRECT!");
+                    return;
+                }
+                client.PhoneNum = CurrentClient.PhoneNum;
+            }
+
+            if (employer.Permission.SetClientsData == Permission.EDataMode.All)
+            {
+                client.Fio = CurrentClient.Fio;
+                client.PasportNum = CurrentClient.PasportNum;
+            }
+
+            dataGrid.Items.Refresh();
+        }
     }
 }

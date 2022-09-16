@@ -11,25 +11,26 @@
     <Page.Resources>
         <System:Double x:Key="TBWidth">110</System:Double>
     </Page.Resources>
-    
-    
+
+
 
     <StackPanel Margin="5,5,5,5" HorizontalAlignment="Left" >
         <TextBlock x:Name="TNameOfClient" TextWrapping="Wrap"
                    Text="ФИО клиента"/>
         <WrapPanel HorizontalAlignment="Stretch" >
             <TextBox x:Name="TBLNameOfClient" TextWrapping="Wrap"
-                     Text="Фамилия клиента"
+                     Text="{Binding Path=CurrentClient.Fio.LastName}"
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Фамилия"
-                     IsEnabled="{Binding Path=employer.Permission.LNameEnable}"/>
+                     IsEnabled="{Binding Path=employer.Permission.LNameEnable}"
+                     />
             <TextBox x:Name="TBFNameOfClient" TextWrapping="Wrap"
-                     Text="Имя клиента"
+                     Text="{Binding Path=CurrentClient.Fio.FirstName}"
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Имя"
                      IsEnabled="{Binding Path=employer.Permission.FNameEnable}"/>
             <TextBox x:Name="TBMNameOfClient" TextWrapping="Wrap"
-                     Text="Отчество клиента"
+                     Text="{Binding Path=CurrentClient.Fio.MiddleName}"
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Отчество"
                      IsEnabled="{Binding Path=employer.Permission.MNameEnable}"/>
@@ -40,7 +41,7 @@
                    Text="Телефон"/>
         <StackPanel Orientation="Horizontal">
             <TextBox x:Name="TBPhoneOfClient" TextWrapping="Wrap"
-                     Text="8-88888888888"
+                     Text="{Binding Path=CurrentClient.PhoneNum}"
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Телефон"
                      IsEnabled="{Binding Path=employer.Permission.PhoneNumberEnable}"/>
@@ -49,10 +50,15 @@
                    Text="Серия и номер паспорта"/>
         <StackPanel Orientation="Horizontal">
             <TextBox x:Name="TBPasportOfClient" TextWrapping="Wrap"
-                     Text="123123-132123"
+                     Text="{Binding Path=CurrentClient.PasportNum}"
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Серия и номер паспорта"
                      IsEnabled="{Binding Path=employer.Permission.PasportNumberEnable}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50">
+            <Button x:Name="SaveClientButton"
+                    Content="Сохранить внесённые изменения" Width="227" Height="29"/>
+
         </StackPanel>
     </StackPanel>
 
