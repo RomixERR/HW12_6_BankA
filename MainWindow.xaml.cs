@@ -28,16 +28,18 @@ namespace HW12_6_BankA
             InitializeComponent();
             pageClient = new PageClient();
             LeftFrame.Content = pageClient;
-            Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
-            //Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
+            //Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
+            Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
             Employer employer = new Employer("Вася", "Менеджер", permission);
             rep = new Repository("baza.json", employer);
 
             dataGrid.ItemsSource = rep.GetClientsData();
+            dataGrid.SelectedIndex = 0;
             
             pageClient.DataContext = rep;
             this.DataContext = rep;
             pageClient.SaveClientButton.Click += SaveClientButton_Click;
+
 
 
         }
@@ -49,7 +51,24 @@ namespace HW12_6_BankA
 
         private void dataGrid_Selected(object sender, RoutedEventArgs e)
         {
-            Client client = (Client)((DataGrid)sender).SelectedItems[0];
+            DataGrid dataGrid = (DataGrid)sender;
+            Client client;
+            if (dataGrid.SelectedItems.Count > 1)
+            {   // Выбрано несколько ячеек
+                client = new Client();
+            }
+            else
+            {
+                if (dataGrid.SelectedItem.GetType() == typeof(Client))
+                {   // Выбрана одна ячейка (нормальный режим)
+                    client = (Client)dataGrid.SelectedItem;
+                }
+                else
+                {   // Выбрана одна последняя пустая ячейка
+                    client = new Client(); ////////
+                }
+                
+            }
             rep.ClientSelect(client);
         }
 

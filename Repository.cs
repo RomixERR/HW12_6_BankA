@@ -64,7 +64,7 @@ namespace HW12_6_BankA
             }
             this.employer = employer;
             IDs.SetCounts(db);
-            ClientSelect(db.clients.First());
+            //ClientSelect(db.clients.First());
         }
         /// <summary>
         /// Выполняет загрузку базы из файла
@@ -131,7 +131,10 @@ namespace HW12_6_BankA
             }
             return L;
         }
-
+        /// <summary>
+        /// обновление ТЕКУЩЕГО редактируемого клиента
+        /// </summary>
+        /// <param name="client"></param>
         public void ClientSelect(Client client)
         {
             CurrentClient = new Client(client);
@@ -142,7 +145,16 @@ namespace HW12_6_BankA
         /// </summary>
         public void SaveCurrentClient(DataGrid dataGrid)
         {
-            Client client = db.clients[db.clients.find(CurrentClient)];
+            Client client;
+            try
+            {
+                client = db.clients[db.clients.find(CurrentClient)];
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                return;
+            }
             if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
             if (employer.Permission.SetClientsData == Permission.EDataMode.OnlyPhoneNumber)
             {

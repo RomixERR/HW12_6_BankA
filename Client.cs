@@ -37,6 +37,17 @@ namespace HW12_6_BankA
             dataChangeAtributes = DataChangeAtributes.NewChangeAtributes(employer);
             ID = ++IDs.ClientsIDCount;
         }
+        /// <summary>
+        /// Пустой клиент !!!
+        /// </summary>
+        public Client() 
+        {
+            this.fio = new FIO("", "", "");
+            this.phoneNum = "";
+            this.pasportNum = "";
+            this.ID = -1;
+            this.Departament = new Departament(-1,"");
+        }
 
         public Client(FIO name, string phoneNum, string pasportNum)
         {
@@ -45,7 +56,10 @@ namespace HW12_6_BankA
             this.pasportNum = pasportNum;
             ID = ++IDs.ClientsIDCount;
         }
-
+        /// <summary>
+        /// Дубликат клиента (клон)
+        /// </summary>
+        /// <param name="ForCopy"></param>
         public Client(Client ForCopy)
         {
             this.fio = new FIO(ForCopy.Fio.FirstName, ForCopy.Fio.LastName, ForCopy.Fio.MiddleName);
