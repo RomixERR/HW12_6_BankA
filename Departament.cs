@@ -9,7 +9,7 @@ namespace HW12_6_BankA
     internal class Departament
     {
         public int ID { get; private set; }
-        private string nameOfDepartament;
+        public string nameOfDepartament { get; private set; }
         public DataChangeAtributes dataChangeAtributes;
 
         public string NameOfDepartament { get { return nameOfDepartament; } set { nameOfDepartament = value; } }

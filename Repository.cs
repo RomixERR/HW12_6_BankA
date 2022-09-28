@@ -112,7 +112,13 @@ namespace HW12_6_BankA
 
             return L;
         }
-        public List<Client> GetClientsData()
+        /// <summary>
+        /// Создаёт лист клиентов для ОТОБРАЖЕНИЯ (работаем только по ID)
+        /// Лист без фильтра или с фильтром по департаменту
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public List<Client> GetClientsData(Departament departament = null)
         {
             List<Client> L = new List<Client>();
             if (employer.Permission.GetClientsData == Permission.EDataMode.All)
@@ -129,8 +135,32 @@ namespace HW12_6_BankA
             {
                 throw new Exception("Нет привелегий");
             }
+
+            if (departament != null) L = FilterDepartaments(L, departament); //Применяем фильтр по департаментам если нужно
+
             return L;
         }
+        /// <summary>
+        /// Фильтр по департаментам
+        /// На выходе получаем новый список только с нужными департаментами
+        /// </summary>
+        /// <param name="L">Изначальный список</param>
+        /// <param name="departament">Какой департамент показывать</param>
+        /// <returns></returns>
+        private List<Client> FilterDepartaments(List<Client> L, Departament departament)
+        {
+            List<Client> resL = new List<Client>();
+            foreach (Client item in L)
+            {
+                if (item.Departament.ID == departament.ID)
+                {
+                    resL.Add(item);
+                }
+            }
+            return resL;
+        }
+
+
         /// <summary>
         /// обновление ТЕКУЩЕГО редактируемого клиента
         /// </summary>
@@ -175,5 +205,9 @@ namespace HW12_6_BankA
 
             dataGrid.Items.Refresh();
         }
+
+
+
+        
     }
 }

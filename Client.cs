@@ -11,7 +11,6 @@ namespace HW12_6_BankA
 {
     internal class Client : IEquatable<Client>
     {
-      
         public int ID { get; private set; }
         private FIO fio;
         private string phoneNum;
@@ -78,6 +77,7 @@ namespace HW12_6_BankA
         {
             if (other.ID == this.ID) return true; else return false;
         }
+
     }
 
     internal class FIO

@@ -58,14 +58,14 @@ namespace HW12_6_BankA
                 departaments.Add(GetFakeDepartament(fakeEmployer));
             }
         }
-        public Client GetFakeClient(Employer employer)
+        private Client GetFakeClient(Employer employer)
         {
             return new Client(new FIO(fu.GetFName(), fu.GetLName(), fu.GetMName()), fu.GetPhone(), fu.GetPasport(), employer);
         }
 
-        public Departament GetFakeDepartament(Employer employer)
+        private Departament GetFakeDepartament(Employer employer)
         {
-            int ID = ++IDs.DepartamentsIDCount;
+            int ID = IDs.DepartamentsIDCount;
             return new Departament($"Департамент {ID}", employer);
         }
     }

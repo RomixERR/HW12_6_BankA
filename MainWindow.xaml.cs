@@ -40,6 +40,8 @@ namespace HW12_6_BankA
             this.DataContext = rep;
             pageClient.SaveClientButton.Click += SaveClientButton_Click;
 
+            
+            comboBox.ItemsSource = rep.GetDepartamentsData();
 
 
         }
@@ -57,7 +59,7 @@ namespace HW12_6_BankA
             {   // Выбрано несколько ячеек
                 client = new Client();
             }
-            else
+            else if(dataGrid.SelectedItems.Count != 0) //при переключении департаментов возникает такая ситуация
             {
                 if (dataGrid.SelectedItem.GetType() == typeof(Client))
                 {   // Выбрана одна ячейка (нормальный режим)
@@ -68,7 +70,7 @@ namespace HW12_6_BankA
                     client = new Client(); ////////
                 }
                 
-            }
+            } else { return; }
             rep.ClientSelect(client);
         }
 
@@ -76,5 +78,14 @@ namespace HW12_6_BankA
         {
             Debug.WriteLine(rep.CurrentClient);
         }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+   
+                dataGrid.ItemsSource = rep.GetClientsData((Departament)((ComboBox)sender).SelectedItem); //применить фильтр
+                dataGrid.SelectedIndex = 0;
+        }
+
+  
     }
 }
