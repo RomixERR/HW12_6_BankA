@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    internal class Departament
+    internal class Departament: IComparable
     {
         public int ID { get; private set; }
         public string nameOfDepartament { get; private set; }
@@ -33,6 +33,10 @@ namespace HW12_6_BankA
         {
             return nameOfDepartament;
         }
-        
+
+        public int CompareTo(object obj)
+        {
+            return nameOfDepartament.CompareTo(((Departament)obj).nameOfDepartament);
+        }
     }
 }

@@ -80,7 +80,7 @@ namespace HW12_6_BankA
 
     }
 
-    internal class FIO
+    internal class FIO : IComparable
     {
         
         private string firstName;
@@ -108,7 +108,13 @@ namespace HW12_6_BankA
         public override string ToString()
         {
             //return $"Имя: {FirstName}, Фамилия: {LastName}, Отчество: {MiddleName}";
-            return $"{FirstName} {LastName} {MiddleName}";
+            return $"{LastName} {FirstName} {MiddleName}";
+        }
+
+        public int CompareTo(object obj)
+        {
+            FIO fio = (FIO)obj;
+            return lastName.CompareTo(fio.lastName);
         }
     }
 }

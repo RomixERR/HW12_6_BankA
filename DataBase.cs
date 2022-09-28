@@ -22,6 +22,7 @@ namespace HW12_6_BankA
             fu = new FakeUser();
             clients = new List<Client>();
             departaments = new List<Departament>();
+
             if (AddFakeUsersForTest>0)
             {
                 AddFakeClients(AddFakeUsersForTest);
@@ -35,6 +36,9 @@ namespace HW12_6_BankA
                     clients[i].Departament = departaments[r.Next(3)];
                 }
             }
+
+
+
         }
 
 

@@ -64,6 +64,7 @@ namespace HW12_6_BankA
             }
             this.employer = employer;
             IDs.SetCounts(db);
+
             //ClientSelect(db.clients.First());
         }
         /// <summary>
