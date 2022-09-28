@@ -34,10 +34,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="button" Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Height="44" Width="140" Click="button_Click"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="comboBox_SelectionChanged">
-            
-        </ComboBox>
-
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="comboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

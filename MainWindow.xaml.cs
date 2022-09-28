@@ -40,8 +40,9 @@ namespace HW12_6_BankA
             this.DataContext = rep;
             pageClient.SaveClientButton.Click += SaveClientButton_Click;
 
-            
+
             comboBox.ItemsSource = rep.GetDepartamentsData();
+            //comboBox.DataContext = rep;
 
 
         }

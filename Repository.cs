@@ -27,6 +27,13 @@ namespace HW12_6_BankA
         /// текущая КОПИЯ выбранного клиента
         /// </summary>
         public Client CurrentClient { get; set; }
+        //public List<Departament> departaments
+        //{
+        //    get
+        //    {
+        //        return GetDepartamentsData();
+        //    }
+        //}
         private DataBase db;
         private string pathFileName;
 
