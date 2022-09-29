@@ -57,8 +57,8 @@
         </StackPanel>
         <StackPanel Orientation="Vertical"  Height="93">
             <Button x:Name="SaveClientButton" Content="Сохранить внесённые изменения" Width="227" Height="29"/>
-            <Button x:Name="DeleteButton" Content="Удалить" Width="227" Height="29"/>
-            <Button x:Name="AddButton" Content="Добавить" Width="227" Height="29"/>
+            <Button x:Name="DeleteButton" Content="Удалить" Width="227" Height="29" IsEnabled="{Binding Path=employer.Permission.DeleteClientEnable}"/>
+            <Button x:Name="AddButton" Content="Добавить" Width="227" Height="29"  IsEnabled="{Binding Path=employer.Permission.AddNewClientEnable}"/>
 
         </StackPanel>
     </StackPanel>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,26 @@ namespace HW12_6_BankA
 {
     internal class Departament: IComparable
     {
-        public int ID { get; private set; }
-        public string nameOfDepartament { get; private set; }
+        public int ID { get; set; }
+        public string nameOfDepartament { get; set; }
         public DataChangeAtributes dataChangeAtributes;
 
         public string NameOfDepartament { get { return nameOfDepartament; } set { nameOfDepartament = value; } }
+
+
+        public Departament()
+        {
+ 
+        }
+
+        //[JsonConstructor] ////////////////
+        //public Departament(int Id, string nameOfDepartament, DataChangeAtributes dataChangeAtributes)
+        //{
+        //    ID = Id;
+        //    NameOfDepartament = nameOfDepartament;
+        //    this.dataChangeAtributes = dataChangeAtributes;
+        //}
+
 
         public Departament(string NameOfDepartament, Employer employer)
         {
@@ -24,6 +40,7 @@ namespace HW12_6_BankA
             this.nameOfDepartament = NameOfDepartament;
             ID = ++IDs.DepartamentsIDCount;
         }
+        
         public Departament(int Id, string nameOfDepartament)
         {
             ID = Id;

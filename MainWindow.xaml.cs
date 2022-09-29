@@ -118,6 +118,10 @@ namespace HW12_6_BankA
             dataGrid.Items.Refresh();
         }
 
-  
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            var K= rep.SaveToFile();
+            if(!K.result) { Debug.WriteLine(K.error); }
+        }
     }
 }

@@ -107,8 +107,8 @@ namespace HW12_6_BankA
                 streamWriter.Write(JsonConvert.SerializeObject(db, Formatting.Indented));
                 streamWriter.Close();
             }
-            catch (Exception e) { return (false, e.Message); }
-            return (true, "OK");
+            catch (Exception e) { return (false, "При сохранении возникла проблема "+e.Message); }
+            return (true, "Успешно сохранён");
         }
         public List<Departament> GetDepartamentsData()
         {
@@ -141,7 +141,7 @@ namespace HW12_6_BankA
                 }
             }else
             {
-                throw new Exception("Нет привелегий");
+                throw new Exception("Нет привелегий GetClientsData");
             }
 
             if (departament != null) L = FilterDepartaments(L, departament); //Применяем фильтр по департаментам если нужно
@@ -188,7 +188,12 @@ namespace HW12_6_BankA
             if (db.clients.find(CurrentClient) >= 0) //выбрана ли пустая последняя ячейка в таблице или существующая
             {  //существующая ячейка - ищем клиента и изменяем данные
                 client = db.clients[db.clients.find(CurrentClient)];
-                if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий в редактировании");
+                if (employer.Permission.SetClientsData == Permission.EDataMode.No)
+                {
+                    //throw new Exception("Нет привелегий в редактировании");
+                    Debug.WriteLine("Нет привелегий в редактировании");
+                    return;
+                }
                 client.PhoneNum = CurrentClient.PhoneNum;
                 if (employer.Permission.SetClientsData == Permission.EDataMode.All)
                 {
@@ -198,7 +203,12 @@ namespace HW12_6_BankA
             }
             else{
                 //добавляем нового клиента
-                if (employer.Permission.SetClientsData != Permission.EDataMode.All) throw new Exception("Нет привелегий в добавлении");
+                if (employer.Permission.SetClientsData != Permission.EDataMode.All)
+                {
+                    //throw new Exception("Нет привелегий в добавлении");
+                    Debug.WriteLine("Нет привелегий в добавлении");
+                    return;
+                }
                 if (departament == null) departament = db.departaments[0]; //Если департамент не был указан то берём первый
                 client = new Client(CurrentClient.Fio, CurrentClient.PhoneNum, CurrentClient.PasportNum, employer, departament);
                 db.clients.Add(client);
@@ -211,7 +221,7 @@ namespace HW12_6_BankA
         {
             Client client = Client.FindClientByID(db.clients, ID);
             if (client == null) return;
-            if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
+            if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий в удалении!!!");
             if (employer.Permission.SetClientsData == Permission.EDataMode.All)
             {
                 db.clients.Remove(client);

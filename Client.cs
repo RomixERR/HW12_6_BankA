@@ -11,7 +11,7 @@ namespace HW12_6_BankA
 {
     internal class Client : IEquatable<Client>
     {
-        public int ID { get; private set; }
+        public int ID { get; set; }
         private FIO fio;
         private string phoneNum;
         private string pasportNum;
