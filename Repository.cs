@@ -15,7 +15,7 @@ namespace HW12_6_BankA
 {
     public static class Extensions
     {
-        public static int find<T>(this List<T> list, T target)
+        public static int find<Client>(this List<Client> list, Client target)
         {
             return list.IndexOf(target);
         }
@@ -184,6 +184,7 @@ namespace HW12_6_BankA
         public void SaveCurrentClient(DataGrid dataGrid)
         {
             Client client;
+
             try
             {
                 client = db.clients[db.clients.find(CurrentClient)];
@@ -194,16 +195,14 @@ namespace HW12_6_BankA
                 return;
             }
             if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
-            if (employer.Permission.SetClientsData == Permission.EDataMode.OnlyPhoneNumber)
+
+            if (CurrentClient.PhoneNum.Length < 4 || CurrentClient.PhoneNum.Length > 30)
             {
-                if (CurrentClient.PhoneNum.Length < 4 || CurrentClient.PhoneNum.Length > 30)
-                {
-                    //ВЫДАТь СООБЩЕНИЕ
-                    Debug.WriteLine("PhoneNum.Length is INCORRECT!");
-                    return;
-                }
-                client.PhoneNum = CurrentClient.PhoneNum;
+                //ВЫДАТь СООБЩЕНИЕ
+                Debug.WriteLine("PhoneNum.Length is INCORRECT!");
+                return;
             }
+            client.PhoneNum = CurrentClient.PhoneNum;
 
             if (employer.Permission.SetClientsData == Permission.EDataMode.All)
             {
@@ -213,9 +212,24 @@ namespace HW12_6_BankA
 
             dataGrid.Items.Refresh();
         }
+        /// <summary>
+        /// Удаление из базы (не в файл!) по ID
+        /// </summary>
+        public void DeleteClient(int ID)
+        {
+            Client client = Client.FindClientByID(db.clients, ID);
+            if (client == null) return;
+            if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
+            if (employer.Permission.SetClientsData == Permission.EDataMode.All)
+            {
+                db.clients.Remove(client);
+            }
+        }
 
 
 
         
+
+
     }
 }

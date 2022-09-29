@@ -28,23 +28,40 @@ namespace HW12_6_BankA
             InitializeComponent();
             pageClient = new PageClient();
             LeftFrame.Content = pageClient;
-            //Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
-            Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
+            Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
+            //Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
             Employer employer = new Employer("Вася", "Менеджер", permission);
             rep = new Repository("baza.json", employer);
 
-            dataGrid.ItemsSource = rep.GetClientsData();
-            dataGrid.SelectedIndex = 0;
+            RefreshDataGrid();
             
             pageClient.DataContext = rep;
             this.DataContext = rep;
             pageClient.SaveClientButton.Click += SaveClientButton_Click;
-
+            pageClient.DeleteButton.Click += DeleteButton_Click;
+            pageClient.AddButton.Click += AddButton_Click;
 
             comboBox.ItemsSource = rep.GetDepartamentsData();
-            //comboBox.DataContext = rep;
 
+        }
 
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.SelectedIndex = dataGrid.Items.Count - 1;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItems.Count == 0) return;
+            for (int i = 0; i < dataGrid.SelectedItems.Count; i++)
+            {
+                if (dataGrid.SelectedItems[i] != null && dataGrid.SelectedItems[i].GetType() == typeof(Client))
+                {
+                    int id = ((Client)dataGrid.SelectedItems[i]).ID;
+                    rep.DeleteClient(id);
+                }
+            }
+            RefreshDataGrid();
         }
 
         private void SaveClientButton_Click(object sender, RoutedEventArgs e)
@@ -82,9 +99,15 @@ namespace HW12_6_BankA
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-   
-                dataGrid.ItemsSource = rep.GetClientsData((Departament)((ComboBox)sender).SelectedItem); //применить фильтр
-                dataGrid.SelectedIndex = 0;
+            RefreshDataGrid();
+        }
+
+        private void RefreshDataGrid()
+        {
+            if (comboBox.SelectedIndex == -1) dataGrid.ItemsSource = rep.GetClientsData();
+            else dataGrid.ItemsSource = rep.GetClientsData((Departament)(comboBox.SelectedItem)); //применить фильтр
+            dataGrid.SelectedIndex = 0;
+            dataGrid.Items.Refresh();
         }
 
   

@@ -77,6 +77,14 @@ namespace HW12_6_BankA
         {
             if (other.ID == this.ID) return true; else return false;
         }
+        public static Client FindClientByID(List<Client> list, int ID)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].ID == ID) return list[i];
+            }
+            return null;
+        }
 
     }
 
@@ -116,5 +124,7 @@ namespace HW12_6_BankA
             FIO fio = (FIO)obj;
             return lastName.CompareTo(fio.lastName);
         }
+
+
     }
 }

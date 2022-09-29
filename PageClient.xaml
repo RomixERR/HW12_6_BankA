@@ -55,9 +55,10 @@
                      TextAlignment="Left" ToolTip="Серия и номер паспорта"
                      IsEnabled="{Binding Path=employer.Permission.PasportNumberEnable}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="50">
-            <Button x:Name="SaveClientButton"
-                    Content="Сохранить внесённые изменения" Width="227" Height="29"/>
+        <StackPanel Orientation="Vertical"  Height="93">
+            <Button x:Name="SaveClientButton" Content="Сохранить внесённые изменения" Width="227" Height="29"/>
+            <Button x:Name="DeleteButton" Content="Удалить" Width="227" Height="29"/>
+            <Button x:Name="AddButton" Content="Добавить" Width="227" Height="29"/>
 
         </StackPanel>
     </StackPanel>
