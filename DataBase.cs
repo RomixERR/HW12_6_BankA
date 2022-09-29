@@ -28,6 +28,9 @@ namespace HW12_6_BankA
             {
                 AddFakeDeps(AddFakeDepartForTest);
                 AddFakeClients(AddFakeUsersForTest);
+            }else if (AddFakeDepartForTest > 0)
+            {
+                AddFakeDeps(AddFakeDepartForTest);
             }
 
 

@@ -184,38 +184,25 @@ namespace HW12_6_BankA
         public void SaveCurrentClient(DataGrid dataGrid, Departament departament = null)
         {
             Client client;
-            try
-            {
+
+            if (db.clients.find(CurrentClient) >= 0) //выбрана ли пустая последняя ячейка в таблице или существующая
+            {  //существующая ячейка - ищем клиента и изменяем данные
                 client = db.clients[db.clients.find(CurrentClient)];
+                if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий в редактировании");
+                client.PhoneNum = CurrentClient.PhoneNum;
+                if (employer.Permission.SetClientsData == Permission.EDataMode.All)
+                {
+                    client.Fio = CurrentClient.Fio;
+                    client.PasportNum = CurrentClient.PasportNum;
+                }
             }
-            catch (Exception e)
-            {
-                //Debug.WriteLine(e.Message);
+            else{
+                //добавляем нового клиента
+                if (employer.Permission.SetClientsData != Permission.EDataMode.All) throw new Exception("Нет привелегий в добавлении");
                 if (departament == null) departament = db.departaments[0]; //Если департамент не был указан то берём первый
-                client = new Client(CurrentClient.Fio,CurrentClient.PhoneNum,CurrentClient.PasportNum,employer, departament);
+                client = new Client(CurrentClient.Fio, CurrentClient.PhoneNum, CurrentClient.PasportNum, employer, departament);
                 db.clients.Add(client);
-                OnPropertyChanged("CurrentClient");
-                dataGrid.Items.Refresh();
-                return;
             }
-
-            if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
-
-            if (CurrentClient.PhoneNum.Length < 4 || CurrentClient.PhoneNum.Length > 30)
-            {
-                //ВЫДАТь СООБЩЕНИЕ
-                Debug.WriteLine("PhoneNum.Length is INCORRECT!");
-                return;
-            }
-            client.PhoneNum = CurrentClient.PhoneNum;
-
-            if (employer.Permission.SetClientsData == Permission.EDataMode.All)
-            {
-                client.Fio = CurrentClient.Fio;
-                client.PasportNum = CurrentClient.PasportNum;
-            }
-            
-            dataGrid.Items.Refresh();
         }
         /// <summary>
         /// Удаление из базы (не в файл!) по ID
