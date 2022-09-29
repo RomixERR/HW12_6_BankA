@@ -66,7 +66,15 @@ namespace HW12_6_BankA
 
         private void SaveClientButton_Click(object sender, RoutedEventArgs e)
         {
-            rep.SaveCurrentClient(dataGrid);
+            if (comboBox.SelectedItem != null)
+            {
+                rep.SaveCurrentClient(dataGrid, (Departament)comboBox.SelectedItem);
+            }
+            else
+            {
+                rep.SaveCurrentClient(dataGrid);
+            }
+            RefreshDataGrid();
         }
 
         private void dataGrid_Selected(object sender, RoutedEventArgs e)

@@ -24,7 +24,7 @@ namespace HW12_6_BankA
         public string PasportNum { get { return pasportNum; } set { pasportNum = value; } }
         public Departament Departament { get { return departament; } set { departament = value;} }
 
-        public Client(FIO name, string phoneNum, string pasportNum, Employer employer)
+        public Client(FIO name, string phoneNum, string pasportNum, Employer employer, Departament departament)
         {
             if (employer.Permission.SetClientsData != Permission.EDataMode.All)
             {
@@ -33,6 +33,7 @@ namespace HW12_6_BankA
             this.fio = name;
             this.phoneNum = phoneNum;
             this.pasportNum = pasportNum;
+            this.Departament = departament;
             dataChangeAtributes = DataChangeAtributes.NewChangeAtributes(employer);
             ID = ++IDs.ClientsIDCount;
         }

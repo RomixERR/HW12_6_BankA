@@ -13,6 +13,7 @@ namespace HW12_6_BankA
         public List<Client> clients;
         public List<Departament> departaments;
         private FakeUser fu;
+        private Random r = new Random();
         /// <summary>
         /// Конструктор по умолчанию. Применяется, если база данных пустая и надо создать БД по умолчанию
         /// </summary>
@@ -23,20 +24,11 @@ namespace HW12_6_BankA
             clients = new List<Client>();
             departaments = new List<Departament>();
 
-            if (AddFakeUsersForTest>0)
-            {
-                AddFakeClients(AddFakeUsersForTest);
-            }
-            if (AddFakeDepartForTest > 0)
+            if (AddFakeUsersForTest > 0)
             {
                 AddFakeDeps(AddFakeDepartForTest);
-                Random r = new Random();
-                for (int i = 0; i < clients.Count; i++)
-                {
-                    clients[i].Departament = departaments[r.Next(3)];
-                }
+                AddFakeClients(AddFakeUsersForTest);
             }
-
 
 
         }
@@ -64,7 +56,7 @@ namespace HW12_6_BankA
         }
         private Client GetFakeClient(Employer employer)
         {
-            return new Client(new FIO(fu.GetFName(), fu.GetLName(), fu.GetMName()), fu.GetPhone(), fu.GetPasport(), employer);
+            return new Client(new FIO(fu.GetFName(), fu.GetLName(), fu.GetMName()), fu.GetPhone(), fu.GetPasport(), employer, departaments[r.Next(3)]);
         }
 
         private Departament GetFakeDepartament(Employer employer)

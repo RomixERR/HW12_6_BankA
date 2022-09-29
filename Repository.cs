@@ -181,19 +181,24 @@ namespace HW12_6_BankA
         /// <summary>
         /// Запись в базу (не в файл!) текущего клиента (изменение)
         /// </summary>
-        public void SaveCurrentClient(DataGrid dataGrid)
+        public void SaveCurrentClient(DataGrid dataGrid, Departament departament = null)
         {
             Client client;
-
             try
             {
                 client = db.clients[db.clients.find(CurrentClient)];
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e.Message);
+                //Debug.WriteLine(e.Message);
+                if (departament == null) departament = db.departaments[0]; //Если департамент не был указан то берём первый
+                client = new Client(CurrentClient.Fio,CurrentClient.PhoneNum,CurrentClient.PasportNum,employer, departament);
+                db.clients.Add(client);
+                OnPropertyChanged("CurrentClient");
+                dataGrid.Items.Refresh();
                 return;
             }
+
             if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий");
 
             if (CurrentClient.PhoneNum.Length < 4 || CurrentClient.PhoneNum.Length > 30)
@@ -209,7 +214,7 @@ namespace HW12_6_BankA
                 client.Fio = CurrentClient.Fio;
                 client.PasportNum = CurrentClient.PasportNum;
             }
-
+            
             dataGrid.Items.Refresh();
         }
         /// <summary>
