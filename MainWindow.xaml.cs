@@ -128,20 +128,20 @@ namespace HW12_6_BankA
             switch (((Button)sender).Name)
             {
                 case "FIO_Btn":
-                    pageClient.TBLNameOfClient.Text = fu.GetLName();
-                    pageClient.TBMNameOfClient.Text = fu.GetMName();
-                    pageClient.TBFNameOfClient.Text = fu.GetFName();
+                    rep.CurrentClient.Fio.LastName = fu.GetLName();
+                    rep.CurrentClient.Fio.FirstName = fu.GetFName();
+                    rep.CurrentClient.Fio.MiddleName = fu.GetMName();
                     break;
                 case "TLP_Btn":
-                    pageClient.TBPhoneOfClient.Text = fu.GetPhone();
+                    rep.CurrentClient.PhoneNum = fu.GetPhone();
                     break;
                 case "PSP_Btn":
-                    pageClient.TBPasportOfClient.Text = fu.GetPasport();
+                    rep.CurrentClient.PasportNum = fu.GetPasport();
                     break;
                 default:
                     break;
             }
-            
+            rep.OnPropertyChanged("CurrentClient");
         }
 
 
