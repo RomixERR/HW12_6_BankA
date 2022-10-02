@@ -13,7 +13,7 @@
         "LastName": "Ласкоов",
         "MiddleName": "Еласквич"
       },
-      "PhoneNum": "+7-(904)-991-477",
+      "PhoneNum": "+7-(617)-115-089",
       "PasportNum": "9839 2614309",
       "Departament": {
         "dataChangeAtributes": {
@@ -474,6 +474,60 @@
       },
       "PhoneNum": "+7-(222)-305-842",
       "PasportNum": "1233 3286683",
+      "Departament": {
+        "dataChangeAtributes": {
+          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "WhatDataIsChange": "All",
+          "TypeDataChange": "New Data",
+          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
+        },
+        "ID": 5,
+        "nameOfDepartament": "Департамент 4",
+        "NameOfDepartament": "Департамент 4"
+      }
+    },
+    {
+      "dataChangeAtributes": {
+        "dateTime": "2022-10-02T16:00:41.1909988+03:00",
+        "WhatDataIsChange": "All",
+        "TypeDataChange": "New Data",
+        "WhoIsChange": "Role: Manager, Name: Вася"
+      },
+      "ID": 19,
+      "Fio": {
+        "FirstName": "Горего",
+        "LastName": "Жока",
+        "MiddleName": "Етривич"
+      },
+      "PhoneNum": "+7-(428)-536-081",
+      "PasportNum": "3889 2708673",
+      "Departament": {
+        "dataChangeAtributes": {
+          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "WhatDataIsChange": "All",
+          "TypeDataChange": "New Data",
+          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
+        },
+        "ID": 5,
+        "nameOfDepartament": "Департамент 4",
+        "NameOfDepartament": "Департамент 4"
+      }
+    },
+    {
+      "dataChangeAtributes": {
+        "dateTime": "2022-10-02T16:00:54.2029367+03:00",
+        "WhatDataIsChange": "All",
+        "TypeDataChange": "New Data",
+        "WhoIsChange": "Role: Manager, Name: Вася"
+      },
+      "ID": 20,
+      "Fio": {
+        "FirstName": "Олегр",
+        "LastName": "Бока",
+        "MiddleName": "Косдувич"
+      },
+      "PhoneNum": "+7-(464)-853-968",
+      "PasportNum": "7976 0217709",
       "Departament": {
         "dataChangeAtributes": {
           "dateTime": "2022-10-02T15:08:26.0981427+03:00",
