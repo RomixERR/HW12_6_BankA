@@ -10,6 +10,7 @@
     xmlns:System="clr-namespace:System;assembly=mscorlib">
     <Page.Resources>
         <System:Double x:Key="TBWidth">110</System:Double>
+        <Visibility x:Key="ButtonVisibility1">Visible</Visibility>
     </Page.Resources>
 
 
@@ -34,6 +35,9 @@
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Отчество"
                      IsEnabled="{Binding Path=employer.Permission.MNameEnable}"/>
+            <Button Visibility="{DynamicResource ButtonVisibility1}" x:Name="FIO_Btn"
+                    Width="18" Content="R"                    
+                    />
         </WrapPanel>
 
 
@@ -45,6 +49,10 @@
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Телефон"
                      IsEnabled="{Binding Path=employer.Permission.PhoneNumberEnable}"/>
+            <Button Visibility="{DynamicResource ButtonVisibility1}" x:Name="TLP_Btn"
+                    Width="18" Content="R"                    
+                    />
+
         </StackPanel>
         <TextBlock x:Name="TPasportOfClient" TextWrapping="Wrap"
                    Text="Серия и номер паспорта"/>
@@ -54,6 +62,9 @@
                      Width="{DynamicResource TBWidth}"
                      TextAlignment="Left" ToolTip="Серия и номер паспорта"
                      IsEnabled="{Binding Path=employer.Permission.PasportNumberEnable}"/>
+            <Button Visibility="{DynamicResource ButtonVisibility1}" x:Name="PSP_Btn"
+                    Width="18" Content="R"                    
+                    />
         </StackPanel>
         <StackPanel Orientation="Vertical"  Height="93">
             <Button x:Name="SaveClientButton" Content="Сохранить внесённые изменения" Width="227" Height="29"/>

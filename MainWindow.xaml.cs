@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FakeUsersLite;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -36,6 +37,9 @@ namespace HW12_6_BankA
             pageClient.SaveClientButton.Click += SaveClientButton_Click;
             pageClient.DeleteButton.Click += DeleteButton_Click;
             pageClient.AddButton.Click += AddButton_Click;
+            pageClient.FIO_Btn.Click += BtnRandom_Click;
+            pageClient.TLP_Btn.Click += BtnRandom_Click;
+            pageClient.PSP_Btn.Click += BtnRandom_Click;
 
             comboBox.ItemsSource = rep.GetDepartamentsData();
         }
@@ -61,6 +65,7 @@ namespace HW12_6_BankA
 
         private void SaveClientButton_Click(object sender, RoutedEventArgs e)
         {
+            //rep.OnPropertyChanged("CurrentClient");
             if (comboBox.SelectedItem != null)
             {
                 rep.SaveCurrentClient(dataGrid, (Departament)comboBox.SelectedItem);
@@ -95,10 +100,7 @@ namespace HW12_6_BankA
             rep.ClientSelect(client);
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine(rep.CurrentClient);
-        }
+
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -118,5 +120,30 @@ namespace HW12_6_BankA
             var K= rep.SaveToFile();
             if(!K.result) { Debug.WriteLine(K.error); }
         }
+
+
+        private void BtnRandom_Click(object sender, RoutedEventArgs e)
+        {
+            FakeUser fu = new FakeUser();
+            switch (((Button)sender).Name)
+            {
+                case "FIO_Btn":
+                    pageClient.TBLNameOfClient.Text = fu.GetLName();
+                    pageClient.TBMNameOfClient.Text = fu.GetMName();
+                    pageClient.TBFNameOfClient.Text = fu.GetFName();
+                    break;
+                case "TLP_Btn":
+                    pageClient.TBPhoneOfClient.Text = fu.GetPhone();
+                    break;
+                case "PSP_Btn":
+                    pageClient.TBPasportOfClient.Text = fu.GetPasport();
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
+
     }
 }
