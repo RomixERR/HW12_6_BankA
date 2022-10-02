@@ -134,11 +134,19 @@ namespace HW12_6_BankA
                 L = new List<Client>(db.clients);
             }else if (employer.Permission.GetClientsData == Permission.EDataMode.AllExclusivePasportNum)
             {
-                L = new List<Client>(db.clients);
-                foreach (var item in L)
+                L = new List<Client>();
+
+                for (int i = 0; i < db.clients.Count; i++)
                 {
-                    item.PasportNum = "**** - *******";
+                    L.Add(new Client(db.clients[i]));
+                    L[i].PasportNum = "**** - *******";
                 }
+                
+                
+                //foreach (var item in L)
+                //{
+                //    item.PasportNum = "**** - *******";
+                //}
             }else
             {
                 throw new Exception("Нет привелегий GetClientsData");
@@ -188,6 +196,8 @@ namespace HW12_6_BankA
             if (db.clients.find(CurrentClient) >= 0) //выбрана ли пустая последняя ячейка в таблице или существующая
             {  //существующая ячейка - ищем клиента и изменяем данные
                 client = db.clients[db.clients.find(CurrentClient)];
+                var K = ClientDataCompletenessCheck(CurrentClient);
+                if (!K.check) { Debug.WriteLine("ОШИБКА В ДАННЫХ КЛИЕНТА ПРИ РЕДАКТИРОВАНИИ! " + K.errorMsg); return; }
                 if (employer.Permission.SetClientsData == Permission.EDataMode.No)
                 {
                     //throw new Exception("Нет привелегий в редактировании");
@@ -202,7 +212,7 @@ namespace HW12_6_BankA
                 }
             }
             else{
-                //добавляем нового клиента
+                //выбрана пустая ячейка - добавляем нового клиента
                 if (employer.Permission.SetClientsData != Permission.EDataMode.All)
                 {
                     //throw new Exception("Нет привелегий в добавлении");
@@ -211,9 +221,31 @@ namespace HW12_6_BankA
                 }
                 if (departament == null) departament = db.departaments[0]; //Если департамент не был указан то берём первый
                 client = new Client(CurrentClient.Fio, CurrentClient.PhoneNum, CurrentClient.PasportNum, employer, departament);
+                var K = ClientDataCompletenessCheck(client);
+                if (!K.check) { Debug.WriteLine("ОШИБКА В ДАННЫХ КЛИЕНТА ПРИ ДОБАВЛЕНИИ! " + K.errorMsg); return; }
                 db.clients.Add(client);
             }
         }
+        /// <summary>
+        /// Проверяет - все ли данные имеются у данного экземпляра клиента
+        /// check = true - все поля заполненны
+        /// check = false - не все поля заполнены
+        /// errorMsg - сообщение о том какие поля следует заполнить
+        /// </summary>
+        /// <param name="client">Проверяемый экземпляр клиента</param>
+        /// <returns></returns>
+        public (bool check, string errorMsg) ClientDataCompletenessCheck(Client client)
+        {
+            string errorMsg="";
+            bool check = true;
+            if(client.Departament == null) { check = false; errorMsg += "client.Departament == null"+" "; return (check, errorMsg); }
+            if(client.Fio == null) { check = false; errorMsg += "client.Fio == null" + " "; return (check, errorMsg); }
+            var K = client.Check();
+            if (!K.check) { check = false; errorMsg += K.errorMsg + " "; }
+            return (check, errorMsg);
+        }
+
+
         /// <summary>
         /// Удаление из базы (не в файл!) по ID
         /// </summary>

@@ -30,6 +30,7 @@ namespace HW12_6_BankA
             {
                 throw new Exception("Нет привелегий");
             }
+            
             this.fio = name;
             this.phoneNum = phoneNum;
             this.pasportNum = pasportNum;
@@ -37,6 +38,7 @@ namespace HW12_6_BankA
             dataChangeAtributes = DataChangeAtributes.NewChangeAtributes(employer);
             ID = ++IDs.ClientsIDCount;
         }
+
         /// <summary>
         /// Пустой клиент !!!
         /// </summary>
@@ -86,6 +88,22 @@ namespace HW12_6_BankA
             }
             return null;
         }
+        /// <summary>
+        /// Проверка полноты данных
+        /// </summary>
+        /// <returns></returns>
+        public (bool check, string errorMsg) Check()
+        {
+            string errorMsg = "";
+            bool check = true;
+            if (PhoneNum.Length < 6) { check = false; errorMsg += "PhoneNum.Length" + " "; }
+            if (PasportNum.Length < 9) { check = false; errorMsg += "PasportNum.Length" + " "; }
+            var K = this.Fio.Check();
+            if (!K.check) { check = false; errorMsg += K.errorMsg + " "; }
+            K = this.Departament.Check();
+            if (!K.check) { check = false; errorMsg += K.errorMsg + " "; }
+            return (check, errorMsg);
+        }
 
     }
 
@@ -125,7 +143,19 @@ namespace HW12_6_BankA
             FIO fio = (FIO)obj;
             return lastName.CompareTo(fio.lastName);
         }
-
+        /// <summary>
+        /// Проверка полноты данных
+        /// </summary>
+        /// <returns></returns>
+        public (bool check, string errorMsg) Check()
+        {
+            string errorMsg = "";
+            bool check = true;
+            if (FirstName.Length < 2) { check = false; errorMsg += "FirstName.Length < 2" + " "; }
+            if (LastName.Length < 2) { check = false; errorMsg += "LastName.Length < 2" + " "; }
+            if (MiddleName.Length < 2) { check = false; errorMsg += "MiddleName.Length < 2" + " "; }
+            return (check, errorMsg);
+        }
 
     }
 }

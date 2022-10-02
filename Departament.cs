@@ -46,6 +46,18 @@ namespace HW12_6_BankA
             ID = Id;
             NameOfDepartament = nameOfDepartament;
         }
+        /// <summary>
+        /// Проверка полноты данных
+        /// </summary>
+        /// <returns></returns>
+        public (bool check, string errorMsg) Check()
+        {
+            string errorMsg = "";
+            bool check = true;
+            if (nameOfDepartament.Length<2) { check = false; errorMsg += "nameOfDepartament.Length"+" "; }
+            return (check, errorMsg);
+        }
+
         public override string ToString()
         {
             return nameOfDepartament;

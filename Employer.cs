@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    internal class Employer 
+    public class Employer 
     {
         public string Name { get; private set; }
         public string Role { get; private set; }

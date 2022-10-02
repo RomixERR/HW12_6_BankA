@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    internal class Permission : INotifyPropertyChanged
+    public class Permission //: INotifyPropertyChanged
     {
         public bool FNameEnable { get; private set; }
         public bool LNameEnable { get; private set; }
@@ -22,7 +22,7 @@ namespace HW12_6_BankA
         public EDataMode GetClientsData { get; private set; }
         public EDataMode SetClientsData { get; private set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
         public  Permission( EDataMode GetDepartamentsData,
                             EDataMode SetDepartamentsData,

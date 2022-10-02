@@ -23,16 +23,12 @@ namespace HW12_6_BankA
     {
         PageClient pageClient;
         Repository rep;
-        public MainWindow()
+        public MainWindow(Employer employer)
         {
             InitializeComponent();
             pageClient = new PageClient();
             LeftFrame.Content = pageClient;
-            Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
-            //Permission permission = new Permission( Permission.EDataMode.All, Permission.EDataMode.No, Permission.EDataMode.AllExclusivePasportNum, Permission.EDataMode.OnlyPhoneNumber);
-            Employer employer = new Employer("Вася", "Менеджер", permission);
             rep = new Repository("baza.json", employer);
-
             RefreshDataGrid();
             
             pageClient.DataContext = rep;
@@ -42,7 +38,6 @@ namespace HW12_6_BankA
             pageClient.AddButton.Click += AddButton_Click;
 
             comboBox.ItemsSource = rep.GetDepartamentsData();
-
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
