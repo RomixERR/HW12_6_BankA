@@ -198,7 +198,7 @@ namespace HW12_6_BankA
         /// <param name="L">Изначальный список</param>
         /// <param name="name">имя клиентов</param>
         /// <returns></returns>
-        public List<Client> FilterNames(List<Client> L, String name)
+        private List<Client> FilterNames(List<Client> L, String name)
         {
             List<Client> resL = new List<Client>();
 

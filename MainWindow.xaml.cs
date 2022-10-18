@@ -69,7 +69,7 @@ namespace HW12_6_BankA
             //rep.OnPropertyChanged("CurrentClient");
             if (comboBox.SelectedItem != null)
             {
-                rep.SaveCurrentClient(dataGrid, (Departament)comboBox.SelectedItem);
+                rep.SaveCurrentClient(dataGrid, (Departament)comboBox.SelectedItem); //это необходимо, если клиент НОВЫЙ (тоесть когда данных о департаменте просто нет, берётся тот департамент который выбран)
             }
             else
             {
@@ -145,46 +145,46 @@ namespace HW12_6_BankA
             rep.OnPropertyChanged("CurrentClient");
         }
 
-        public void TestFName()
-        {
-            //////
-            string testName;
-            List<Client> testclients;
-            testName = "И";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
+        //public void TestFName()
+        //{
+        //    //////
+        //    string testName;
+        //    List<Client> testclients;
+        //    testName = "И";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
 
-            testName = "ива";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
+        //    testName = "ива";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
 
-            testName = "иван";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
+        //    testName = "иван";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
 
-            testName = "иванов";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
+        //    testName = "иванов";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
 
-            testName = "иванов и";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
+        //    testName = "иванов и";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
 
-            testName = "иванов ива";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
+        //    testName = "иванов ива";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
 
-            testName = "иванов иван ив";
-            Debug.WriteLine($"testName = {testName}");
-            testclients = rep.FilterNames(rep.GetClientsData(), testName);
-            Client.DebugPrintList(testclients);
-        }
+        //    testName = "иванов иван ив";
+        //    Debug.WriteLine($"testName = {testName}");
+        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
+        //    Client.DebugPrintList(testclients);
+        //}
 
 
     }
