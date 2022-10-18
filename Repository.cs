@@ -122,11 +122,12 @@ namespace HW12_6_BankA
         }
         /// <summary>
         /// Создаёт лист клиентов для ОТОБРАЖЕНИЯ (работаем только по ID)
-        /// Лист без фильтра или с фильтром по департаменту
+        /// Лист без фильтра или с фильтром по департаменту или по имени
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public List<Client> GetClientsData(Departament departament = null)
+        public List<Client> GetClientsData<T>(T filterObject = null)
+            where T : class
         {
             List<Client> L = new List<Client>();
             if (employer.Permission.GetClientsData == Permission.EDataMode.All)
@@ -152,10 +153,25 @@ namespace HW12_6_BankA
                 throw new Exception("Нет привелегий GetClientsData");
             }
 
-            if (departament != null) L = FilterDepartaments(L, departament); //Применяем фильтр по департаментам если нужно
+           // if (departament != null) L = FilterDepartaments(L, departament); //Применяем фильтр по департаментам если нужно
+            if (filterObject != null)
+            {
+                Type typeFilter = filterObject.GetType();
+                if (typeFilter == typeof( Departament)) {
+                    L = FilterDepartaments(L, filterObject as Departament); //Применяем фильтр по департаментам если нужно
+                }
+
+
+            }
+
 
             return L;
         }
+        public List<Client> GetClientsData()
+        {
+            return GetClientsData<object>(null);
+        }
+
         /// <summary>
         /// Фильтр по департаментам
         /// На выходе получаем новый список только с нужными департаментами
@@ -175,7 +191,52 @@ namespace HW12_6_BankA
             }
             return resL;
         }
+        /// <summary>
+        /// Фильтр по именам (полностью по фамилии имени и отчеству)
+        /// На выходе получаем новый список только с нужными именами (например все Ивановы)
+        /// </summary>
+        /// <param name="L">Изначальный список</param>
+        /// <param name="name">имя клиентов</param>
+        /// <returns></returns>
+        public List<Client> FilterNames(List<Client> L, String name)
+        {
+            List<Client> resL = new List<Client>();
 
+            name = name.ToUpper();
+            string[] LFMNames = name.Split(' ');
+            if (LFMNames.Length == 0) return resL;
+            if (LFMNames[0].Length < 2) return resL; //минимальная длина для поиска
+
+            foreach (Client item in L)
+            {
+                string Fn = item.Fio.FirstName.ToUpper();
+                string Mn = item.Fio.MiddleName.ToUpper();
+                string Ln = item.Fio.LastName.ToUpper();
+
+                switch (LFMNames.Length)
+                {
+                  case 1: //если введено одно слово
+                        if (Ln.Contains(LFMNames[0])) resL.Add(item);
+                        break;
+                  case 2: //если введено два слова
+                        if (Ln.Contains(LFMNames[0]))
+                        {
+                            if (Fn.Contains(LFMNames[1])) resL.Add(item);
+                        }
+                        break;
+                  case 3: //если введено 3 слова
+                        if (Ln.Contains(LFMNames[0]))
+                        {
+                            if (Fn.Contains(LFMNames[1])) 
+                            {
+                                if (Mn.Contains(LFMNames[2])) resL.Add(item);
+                            };
+                        }
+                        break;
+                }
+            }
+            return resL;
+        }
 
         /// <summary>
         /// обновление ТЕКУЩЕГО редактируемого клиента
