@@ -29,6 +29,7 @@ namespace HW12_6_BankA
         {
             foreach (var bill in bills)
             {
+                if (bill == null) continue;
                 if (bill.GetType() == typeBill) return false; //если вдруг такой счёт уже есть то нельзя открыть такой-же
             }
             if (typeBill == typeof(BillDeposit))
@@ -58,6 +59,7 @@ namespace HW12_6_BankA
         {
             foreach (var item in bills)
             {
+                if (item == null) continue;
                 if (item.GetType() == typeof(BillDeposit)) return (BillDeposit)item;
             }
             return null;
@@ -67,6 +69,7 @@ namespace HW12_6_BankA
         {
             foreach (var item in bills)
             {
+                if (item == null) continue;
                 if (item.GetType() == typeof(BillCredit)) return (BillCredit)item;
             }
             return null;
@@ -147,7 +150,7 @@ namespace HW12_6_BankA
 
         public class BillDeposit : Bill
         {
-            public BillDeposit(int clientID) : base(clientID, 0) { }
+            public BillDeposit(int clientID) : base(clientID, 1) { }
             /// <summary>
             /// Снять с этого счёта деньги (перевести на другой счёт)
             /// </summary>
@@ -182,7 +185,7 @@ namespace HW12_6_BankA
 
         public class BillCredit : Bill
         {
-            public BillCredit(int clientID) : base(clientID, 1) { }
+            public BillCredit(int clientID) : base(clientID, 2) { }
             /// <summary>
             /// Снять с этого счёта деньги (перевести на другой счёт)
             /// </summary>

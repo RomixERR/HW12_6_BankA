@@ -82,10 +82,11 @@ namespace HW12_6_BankA
         public (bool result, string error) LoadFromFile()
         {
             db = new DataBase();
+            JSONConverter[] converters = { new JSONConverter() };
             try
             {
                 StreamReader streamReader = new StreamReader(pathFileName);
-                db = (DataBase)JsonConvert.DeserializeObject(streamReader.ReadToEnd(), typeof(DataBase));
+                db = (DataBase)JsonConvert.DeserializeObject(streamReader.ReadToEnd(), typeof(DataBase), converters);
                 streamReader.Close();
 
             }

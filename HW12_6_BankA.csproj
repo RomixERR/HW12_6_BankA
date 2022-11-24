@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="ClientBill.cs" />
     <Compile Include="ClientBillWPF.cs" />
+    <Compile Include="JSONConverter.cs" />
     <Compile Include="WPF\StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
