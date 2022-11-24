@@ -8,6 +8,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 1,
+      "ClientBill": {
+        "IsOpenDepositVisible": 1,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": "NO BILL",
+        "IsOpenCreditVisible": 1,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": "NO BILL",
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Рего",
         "LastName": "Ласкоов",
@@ -35,6 +45,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 2,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "БАСЯ",
         "LastName": "Теродактнко",
@@ -62,6 +82,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 3,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Горег",
         "LastName": "Каптеродко",
@@ -89,6 +119,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 4,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Олар",
         "LastName": "Унокжоко",
@@ -116,6 +156,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 5,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Ксем",
         "LastName": "Кабаленков",
@@ -143,6 +193,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 6,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "NO BILL",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "NO BILL",
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Егорв",
         "LastName": "Ракванко",
@@ -170,6 +230,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 7,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Вади",
         "LastName": "Родактикренков",
@@ -197,6 +267,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 8,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Адимо",
         "LastName": "Унокжокабенков",
@@ -224,6 +304,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 9,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Вадимо",
         "LastName": "Алделаско",
@@ -251,6 +341,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 10,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Кола",
         "LastName": "Икривов",
@@ -278,6 +378,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 11,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Григ",
         "LastName": "Теродактикнко",
@@ -305,6 +415,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 12,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Ларо",
         "LastName": "Ривкосденков",
@@ -332,6 +452,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 13,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Толе",
         "LastName": "Тикривов",
@@ -359,6 +489,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 14,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Алексе",
         "LastName": "Еласкенков",
@@ -386,6 +526,16 @@
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 15,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Нтоле",
         "LastName": "Еродаков",
@@ -413,6 +563,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 16,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Иван",
         "LastName": "Иванов",
@@ -440,6 +600,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 17,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Аппалонов",
         "LastName": "Григорьев",
@@ -467,6 +637,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 18,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Онотоле",
         "LastName": "Вассерман",
@@ -494,6 +674,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 19,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Горего",
         "LastName": "Жока",
@@ -521,6 +711,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 20,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Олегр",
         "LastName": "Бока",
@@ -548,6 +748,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 21,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Иван",
         "LastName": "Иванов",
@@ -575,6 +785,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 22,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Иволг",
         "LastName": "Иванов",
@@ -602,6 +822,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 23,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Иван",
         "LastName": "Иванов",
@@ -629,6 +859,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 24,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Онотоле",
         "LastName": "Иванов",
@@ -656,6 +896,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 25,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Онотоле",
         "LastName": "Иванов",
@@ -683,6 +933,16 @@
         "WhoIsChange": "Role: Manager, Name: Вася"
       },
       "ID": 26,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "bills": [],
+        "clientID": 0
+      },
       "Fio": {
         "FirstName": "Иван",
         "LastName": "Сидоров",

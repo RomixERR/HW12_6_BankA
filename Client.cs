@@ -19,6 +19,8 @@ namespace HW12_6_BankA
         private Departament departament;
         public DataChangeAtributes dataChangeAtributes;
 
+        public ClientBillWPF ClientBill { get; set; }
+
 
         public FIO Fio { get { return fio; } set { fio = value; } }
         public string PhoneNum { get { return phoneNum; } set { phoneNum = value; } }
@@ -38,6 +40,7 @@ namespace HW12_6_BankA
             this.Departament = departament;
             dataChangeAtributes = DataChangeAtributes.NewChangeAtributes(employer);
             ID = ++IDs.ClientsIDCount;
+            ClientBill = new ClientBillWPF(ID);
         }
 
         /// <summary>
@@ -49,6 +52,7 @@ namespace HW12_6_BankA
             this.phoneNum = "";
             this.pasportNum = "";
             this.ID = -1;
+            ClientBill = new ClientBillWPF();
             this.Departament = new Departament(-1,"");
         }
 
@@ -58,6 +62,7 @@ namespace HW12_6_BankA
             this.phoneNum = phoneNum;
             this.pasportNum = pasportNum;
             ID = ++IDs.ClientsIDCount;
+            ClientBill = new ClientBillWPF(ID);
         }
         /// <summary>
         /// Дубликат клиента (клон)
@@ -70,6 +75,7 @@ namespace HW12_6_BankA
             this.pasportNum = ForCopy.PasportNum;
             this.ID = ForCopy.ID;
             this.Departament = new Departament( ForCopy.Departament.ID, ForCopy.Departament.NameOfDepartament);
+            this.ClientBill = ForCopy.ClientBill;
         }
 
         public override string ToString()

@@ -23,8 +23,8 @@ namespace HW12_6_BankA
         {
             InitializeComponent();
 
+            rep.CurrentClient.ClientBill.Refresh();
             this.DataContext = rep;
-
 
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    public class ClientBill
+    public abstract class ClientBill
     {
         public List<Bill> bills { get; set; }
         public int clientID { get; set; }
@@ -49,6 +49,24 @@ namespace HW12_6_BankA
                 return true;
             }
             else return false;
+        }
+
+        public BillDeposit GetBillDeposit()
+        {
+            foreach (var item in bills)
+            {
+                if (item.GetType() == typeof(BillDeposit)) return (BillDeposit)item;
+            }
+            return null;
+        }
+
+        public BillCredit GetBillCredit()
+        {
+            foreach (var item in bills)
+            {
+                if (item.GetType() == typeof(BillCredit)) return (BillCredit)item;
+            }
+            return null;
         }
 
 
@@ -184,7 +202,5 @@ namespace HW12_6_BankA
                 return true;
             }
         }
-
-
     }
 }
