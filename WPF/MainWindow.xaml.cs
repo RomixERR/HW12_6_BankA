@@ -23,6 +23,7 @@ namespace HW12_6_BankA
     public partial class MainWindow : Window
     {
         PageClient pageClient;
+        BillWindow billWindow;
         Repository rep;
         public MainWindow(Employer employer)
         {
@@ -40,9 +41,17 @@ namespace HW12_6_BankA
             pageClient.FIO_Btn.Click += BtnRandom_Click;
             pageClient.TLP_Btn.Click += BtnRandom_Click;
             pageClient.PSP_Btn.Click += BtnRandom_Click;
+            pageClient.Bills.Click += Bills_Click;
 
             comboBox.ItemsSource = rep.GetDepartamentsData();
             //TestFName();
+        }
+
+        private void Bills_Click(object sender, RoutedEventArgs e)
+        {
+            if (rep.CurrentClient == null) return;
+            billWindow = new BillWindow(rep);
+            billWindow.Show();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

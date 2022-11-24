@@ -9,8 +9,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="34*"/>
-            <RowDefinition Height="251*"/>
-            <RowDefinition Height="149*"/>
+            <RowDefinition Height="313*"/>
+            <RowDefinition Height="87*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*" MinWidth="143" MaxWidth="340"/>
@@ -33,7 +33,7 @@
                 <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="comboBox_SelectionChanged"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="comboBox_SelectionChanged" Height="22"/>
 
     </Grid>
 </Window>

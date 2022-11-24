@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FakeUsersLite
 {
-    internal abstract class FakeUserDatasetRUS
+    public abstract class FakeUserDatasetRUS
     {
         protected static string NamesFMale = "игорегорвадимойшалексемёниколаропукитемишантолегригоша";
         protected static string NamesFFemale = "евалисангелиннадеждарьядуняшамашаленаолялякатянкотятка";
@@ -18,7 +18,7 @@ namespace FakeUsersLite
         protected static string NamesM = "игорегорвадимойшалексемёниколартемишантолегригошапетрярикольгоалександрстанислав";
     }
 
-    internal abstract class FakeUserDatasetENG
+    public abstract class FakeUserDatasetENG
     { 
     protected static string NamesFMale = "igoregorvadimojshaleksemyonikolaropukitemishantolegrigosha";
     protected static string NamesFFemale = "evalisangelinnadezhdaryadunyashamashalenaolyalyakatyankotyatka";

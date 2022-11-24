@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    internal class Client : IEquatable<Client>
+    public class Client : IEquatable<Client>
     {
         public int ID { get; set; }
         private FIO fio;
@@ -116,7 +116,7 @@ namespace HW12_6_BankA
 
     }
 
-    internal class FIO : IComparable
+    public class FIO : IComparable
     {
         
         private string firstName;

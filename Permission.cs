@@ -16,6 +16,7 @@ namespace HW12_6_BankA
         public bool PasportNumberEnable { get; private set; }
         public bool AddNewClientEnable { get; private set; }
         public bool DeleteClientEnable { get; private set; }
+        public bool BillsClientEnable { get; private set; }
 
         public EDataMode GetDepartamentsData { get; private set; }
         public EDataMode SetDepartamentsData { get; private set; }
@@ -57,6 +58,7 @@ namespace HW12_6_BankA
                 PasportNumberEnable = true;
                 AddNewClientEnable = true;
                 DeleteClientEnable = true;
+                BillsClientEnable = true;
             }
             //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FNameEnable"));
             //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LNameEnable"));

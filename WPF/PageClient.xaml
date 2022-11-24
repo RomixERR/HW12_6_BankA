@@ -66,11 +66,11 @@
                     Width="18" Content="R"                    
                     />
         </StackPanel>
-        <StackPanel Orientation="Vertical"  Height="93">
+        <StackPanel Orientation="Vertical"  Height="132">
             <Button x:Name="SaveClientButton" Content="Сохранить внесённые изменения" Width="227" Height="29"/>
             <Button x:Name="DeleteButton" Content="Удалить" Width="227" Height="29" IsEnabled="{Binding Path=employer.Permission.DeleteClientEnable}"/>
             <Button x:Name="AddButton" Content="Добавить" Width="227" Height="29"  IsEnabled="{Binding Path=employer.Permission.AddNewClientEnable}"/>
-
+            <Button x:Name="Bills" Content="Управление счетами" Width="227" Height="29"  IsEnabled="{Binding Path=employer.Permission.BillsClientEnable}"/>
         </StackPanel>
     </StackPanel>
 

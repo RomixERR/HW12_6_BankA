@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    internal class Departament: IComparable
+    public class Departament: IComparable
     {
         public int ID { get; set; }
         public string nameOfDepartament { get; set; }

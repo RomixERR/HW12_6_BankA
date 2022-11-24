@@ -21,7 +21,7 @@ namespace HW12_6_BankA
         }
     }
 
-    internal class Repository: INotifyPropertyChanged
+    public class Repository: INotifyPropertyChanged
     {
         /// <summary>
         /// текущая КОПИЯ выбранного клиента

@@ -8,7 +8,7 @@ using FakeUsersLite;
 
 namespace HW12_6_BankA
 {
-    internal class DataBase
+    public class DataBase
     {
         public List<Client> clients;
         public List<Departament> departaments;

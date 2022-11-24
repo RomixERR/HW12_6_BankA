@@ -1,0 +1,86 @@
+﻿<Window x:Class="HW12_6_BankA.BillWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW12_6_BankA"
+        xmlns:System="http://schemas.microsoft.com/winfx/2009/xaml"
+        mc:Ignorable="d"
+        Title="BillWindow" Height="450" Width="800">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="197*"/>
+            <ColumnDefinition Width="203*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="272*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="45" TextWrapping="NoWrap" Text="Управление счётом" VerticalAlignment="Center" Width="362" TextAlignment="Center" FontSize="24" FontWeight="Bold"/>
+        <StackPanel Margin="5,5,0,5" HorizontalAlignment="Left"  Grid.Row="1" Width="310">
+            <TextBlock x:Name="TNameOfClient" TextWrapping="Wrap"
+                   Text="ФИО клиента"/>
+            <WrapPanel HorizontalAlignment="Stretch">
+                <TextBox x:Name="TBLNameOfClient" TextWrapping="Wrap"
+                     Text="{Binding Path=CurrentClient.Fio.LastName}"
+                     Width="99"
+                     TextAlignment="Left" ToolTip="Фамилия" IsReadOnly="True"/>
+                <TextBox x:Name="TBFNameOfClient" TextWrapping="Wrap"
+                     Text="{Binding Path=CurrentClient.Fio.FirstName}"
+                     Width="100"
+                     TextAlignment="Left" ToolTip="Имя" IsReadOnly="True"/>
+                <TextBox x:Name="TBMNameOfClient" TextWrapping="Wrap"
+                     Text="{Binding Path=CurrentClient.Fio.MiddleName}"
+                     Width="100"
+                     TextAlignment="Left" ToolTip="Отчество" IsReadOnly="True"/>
+            </WrapPanel>
+
+        </StackPanel>
+        <StackPanel Margin="5,5,0,5" HorizontalAlignment="Left"  Grid.Row="2" Width="310">
+            <TextBlock TextWrapping="Wrap"
+                   Text="Счета клиента"/>
+            <Grid Height="79" x:Name="GDebet">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26*"/>
+                    <RowDefinition Height="53*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="22*"/>
+                    <ColumnDefinition Width="9*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дебетовый счёт" VerticalAlignment="Top" Margin="0,7,0,0" Height="16" Width="90"/>
+                <Button Content="Открыть счёт" Grid.Row="1" Margin="0,2,0,1" Visibility="Visible"/>
+                <StackPanel Orientation="Vertical" Grid.Row="1" Visibility="Hidden">
+                    <TextBlock TextWrapping="Wrap" Height="16" Width="204" HorizontalAlignment="Left" Margin="10,0,0,0"><Run Language="ru-ru" Text="СУММА"/><Run Text=":"/></TextBlock>
+                    <TextBox IsReadOnly="True" Text="5000" Height="28" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4,2,4,2" FontSize="18" Foreground="#FF007905"/>
+                </StackPanel>
+                <Button Content="Закрыть счёт" Grid.Row="1" Grid.Column="1" Margin="0,2,0,1" Visibility="Hidden"/>
+            </Grid>
+
+            <Grid Height="79" x:Name="GCredit">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26*"/>
+                    <RowDefinition Height="53*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="22*"/>
+                    <ColumnDefinition Width="9*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Кредитный счёт" VerticalAlignment="Top" Margin="0,7,0,0" Height="16" Width="90"/>
+                <Button Content="Открыть счёт" Grid.Row="1" Margin="0,2,0,1" Visibility="Visible"/>
+                <StackPanel Orientation="Vertical" Grid.Row="1" Visibility="Hidden">
+                    <TextBlock TextWrapping="Wrap" Height="16" Width="204" HorizontalAlignment="Left" Margin="10,0,0,0"><Run Language="ru-ru" Text="СУММА"/><Run Text=":"/></TextBlock>
+                    <TextBox IsReadOnly="True" Text="5000" Height="28" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4,2,4,2" FontSize="18" Foreground="#FF007905"/>
+                </StackPanel>
+                <Button Content="Закрыть счёт" Grid.Row="1" Grid.Column="1" Margin="0,2,0,1" Visibility="Hidden"/>
+            </Grid>
+
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    internal interface IDataChangeAtributes
+    public interface IDataChangeAtributes
     {
         DateTime dateTime { get; set; }
         string WhatDataIsChange { get; set; }
@@ -16,7 +16,7 @@ namespace HW12_6_BankA
     /// <summary>
     /// Атрибуты изменения или создания данных (например клиента)
     /// </summary>
-    internal class DataChangeAtributes : IDataChangeAtributes
+    public class DataChangeAtributes : IDataChangeAtributes
     {
         public DateTime dateTime { get; set; }
         public string WhatDataIsChange { get; set; }
@@ -55,7 +55,7 @@ namespace HW12_6_BankA
     /// <summary>
     /// Статичный класс для IDшников. Новый пользователь всегда должен создаваться с ID = Last().ID + 1, затем этот ID становится последним
     /// </summary>
-    internal static class IDs
+    public static class IDs
     {
         public static int ClientsIDCount;
         public static int DepartamentsIDCount;
