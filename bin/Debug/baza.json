@@ -9,19 +9,13 @@
       },
       "ID": 1,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 1,
-        "DepositSum": "0",
+        "IsOpenDepositVisible": 1,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": "NO BILL",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
-        "bills": [
-          {
-            "Money": 0.0,
-            "ID": "BILL1#1",
-            "nativeID": 1
-          }
-        ],
+        "bills": [],
         "clientID": 1
       },
       "Fio": {
@@ -55,14 +49,19 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
         "DepositSum": "0",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
         "bills": [
           {
             "Money": 0.0,
             "ID": "BILL1#2",
             "nativeID": 1
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL2#2",
+            "nativeID": 2
           }
         ],
         "clientID": 2
@@ -95,17 +94,17 @@
       },
       "ID": 3,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 1,
-        "DepositSum": "0",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
+        "IsOpenDepositVisible": 1,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": "NO BILL",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
         "bills": [
           {
             "Money": 0.0,
-            "ID": "BILL1#3",
-            "nativeID": 1
+            "ID": "BILL2#3",
+            "nativeID": 2
           }
         ],
         "clientID": 3
@@ -138,13 +137,19 @@
       },
       "ID": 4,
       "ClientBill": {
-        "IsOpenDepositVisible": 1,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": "NO BILL",
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
-        "bills": [],
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL1#4",
+            "nativeID": 1
+          }
+        ],
         "clientID": 4
       },
       "Fio": {
@@ -175,12 +180,12 @@
       },
       "ID": 5,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
+        "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
+        "DepositSum": "NO BILL",
+        "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
-        "CreditSum": null,
+        "CreditSum": "NO BILL",
         "bills": [],
         "clientID": 5
       },
@@ -212,12 +217,12 @@
       },
       "ID": 6,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
+        "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
+        "DepositSum": "NO BILL",
+        "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
-        "CreditSum": null,
+        "CreditSum": "NO BILL",
         "bills": [],
         "clientID": 6
       },
@@ -249,13 +254,19 @@
       },
       "ID": 7,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
+        "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
-        "DepositSum": null,
+        "DepositSum": "NO BILL",
         "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL2#7",
+            "nativeID": 2
+          }
+        ],
         "clientID": 7
       },
       "Fio": {
@@ -323,12 +334,12 @@
       },
       "ID": 9,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
+        "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
+        "DepositSum": "NO BILL",
+        "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
-        "CreditSum": null,
+        "CreditSum": "NO BILL",
         "bills": [],
         "clientID": 9
       },
@@ -398,12 +409,23 @@
       "ID": 11,
       "ClientBill": {
         "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
         "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL1#11",
+            "nativeID": 1
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL2#11",
+            "nativeID": 2
+          }
+        ],
         "clientID": 11
       },
       "Fio": {

@@ -31,15 +31,37 @@ namespace HW12_6_BankA
             rep.CurrentClient.ClientBill.Refresh(rep);
             this.DataContext = rep;
             btnOpenDeb.Click += BtnOpenDeb_Click;
+            btnOpenCred.Click += BtnOpenCred_Click;
+            btnCloseDeb.Click += BtnCloseDeb_Click;
+            btnCloseCred.Click += BtnCloseCred_Click;
+        }
 
+        private void BtnCloseCred_Click(object sender, RoutedEventArgs e)
+        {
+            BillCredit bill = bills.GetBillCredit();
+            if (bill == null) return;
+            if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
+            bills.Refresh(rep);
+        }
+
+        private void BtnCloseDeb_Click(object sender, RoutedEventArgs e)
+        {
+            BillDeposit bill = bills.GetBillDeposit();
+            if (bill == null) return;
+            if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
+            bills.Refresh(rep);
+        }
+
+        private void BtnOpenCred_Click(object sender, RoutedEventArgs e)
+        {
+            if (bills.OpenBill(typeof(BillCredit))) Debug.Write("BillCredit OPEN"); else { Debug.Write("BillCredit not open!"); return; };
+            bills.Refresh(rep);
         }
 
         private void BtnOpenDeb_Click(object sender, RoutedEventArgs e)
         {
             if (bills.OpenBill(typeof(BillDeposit))) Debug.Write("BillDeposit OPEN"); else { Debug.Write("BillDeposit not open!"); return; };
-            rep.SaveCurrentClient();
             bills.Refresh(rep);
-            
         }
     }
 }

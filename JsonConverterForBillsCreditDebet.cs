@@ -9,7 +9,7 @@ using static HW12_6_BankA.ClientBill;
 
 namespace HW12_6_BankA
 {
-    internal class JSONConverter : JsonConverter
+    internal class JsonConverterForBillsCreditDebet : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {

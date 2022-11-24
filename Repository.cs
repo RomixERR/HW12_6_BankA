@@ -82,7 +82,7 @@ namespace HW12_6_BankA
         public (bool result, string error) LoadFromFile()
         {
             db = new DataBase();
-            JSONConverter[] converters = { new JSONConverter() };
+            JsonConverterForBillsCreditDebet[] converters = { new JsonConverterForBillsCreditDebet() };
             try
             {
                 StreamReader streamReader = new StreamReader(pathFileName);
