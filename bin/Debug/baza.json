@@ -9,18 +9,31 @@
       },
       "ID": 1,
       "ClientBill": {
-        "IsOpenDepositVisible": 1,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": "NO BILL",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
-        "bills": [],
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
+        "DepositID": "BILL1#1",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
+        "CreditID": "BILL2#1",
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL1#1",
+            "nativeID": 1
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL2#1",
+            "nativeID": 2
+          }
+        ],
         "clientID": 1
       },
       "Fio": {
         "FirstName": "55555",
-        "LastName": "Ривкосдуов",
+        "LastName": "Иванов",
         "MiddleName": "Идоркович"
       },
       "PhoneNum": "+7-(965)-206-074",
@@ -49,9 +62,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
         "DepositSum": "0",
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
         "CreditSum": "0",
+        "CreditID": null,
         "bills": [
           {
             "Money": 0.0,
@@ -67,7 +82,7 @@
         "clientID": 2
       },
       "Fio": {
-        "FirstName": "Йшалек",
+        "FirstName": "55555",
         "LastName": "Осдурако",
         "MiddleName": "Ивансвич"
       },
@@ -97,9 +112,11 @@
         "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
         "DepositSum": "NO BILL",
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
         "CreditSum": "0",
+        "CreditID": null,
         "bills": [
           {
             "Money": 0.0,
@@ -140,9 +157,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
         "DepositSum": "0",
+        "DepositID": "BILL1#4",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
+        "CreditID": "NO BILL",
         "bills": [
           {
             "Money": 0.0,
@@ -183,9 +202,11 @@
         "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
         "DepositSum": "NO BILL",
+        "DepositID": "NO BILL",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
+        "CreditID": "NO BILL",
         "bills": [],
         "clientID": 5
       },
@@ -220,9 +241,11 @@
         "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
         "DepositSum": "NO BILL",
+        "DepositID": null,
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
+        "CreditID": null,
         "bills": [],
         "clientID": 6
       },
@@ -254,17 +277,24 @@
       },
       "ID": 7,
       "ClientBill": {
-        "IsOpenDepositVisible": 1,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": "NO BILL",
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
+        "DepositID": "BILL1#7",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
         "CreditSum": "0",
+        "CreditID": "BILL2#7",
         "bills": [
           {
             "Money": 0.0,
             "ID": "BILL2#7",
             "nativeID": 2
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL1#7",
+            "nativeID": 1
           }
         ],
         "clientID": 7
@@ -300,9 +330,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 0,
         "DepositSum": null,
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
+        "CreditID": null,
         "bills": [],
         "clientID": 8
       },
@@ -337,15 +369,17 @@
         "IsOpenDepositVisible": 1,
         "IsCloseDepositVisible": 0,
         "DepositSum": "NO BILL",
+        "DepositID": null,
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
+        "CreditID": null,
         "bills": [],
         "clientID": 9
       },
       "Fio": {
         "FirstName": "Егри",
-        "LastName": "Скосоенков",
+        "LastName": "Иванов",
         "MiddleName": "Етривич"
       },
       "PhoneNum": "+7-(830)-370-840",
@@ -374,9 +408,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 0,
         "DepositSum": null,
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
+        "CreditID": null,
         "bills": [],
         "clientID": 10
       },
@@ -411,9 +447,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
         "DepositSum": "0",
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
         "CreditSum": "0",
+        "CreditID": null,
         "bills": [
           {
             "Money": 0.0,
@@ -429,8 +467,8 @@
         "clientID": 11
       },
       "Fio": {
-        "FirstName": "Мойша",
-        "LastName": "Тикривкосднко",
+        "FirstName": "Егри",
+        "LastName": "Иванова",
         "MiddleName": "Актиквич"
       },
       "PhoneNum": "+7-(085)-519-446",
@@ -459,9 +497,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 0,
         "DepositSum": null,
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
+        "CreditID": null,
         "bills": [],
         "clientID": 12
       },
@@ -496,9 +536,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 0,
         "DepositSum": null,
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
+        "CreditID": null,
         "bills": [],
         "clientID": 13
       },
@@ -533,9 +575,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 0,
         "DepositSum": null,
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
+        "CreditID": null,
         "bills": [],
         "clientID": 14
       },
@@ -570,9 +614,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 0,
         "DepositSum": null,
+        "DepositID": null,
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
+        "CreditID": null,
         "bills": [],
         "clientID": 15
       },

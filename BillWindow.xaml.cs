@@ -34,7 +34,24 @@ namespace HW12_6_BankA
             btnOpenCred.Click += BtnOpenCred_Click;
             btnCloseDeb.Click += BtnCloseDeb_Click;
             btnCloseCred.Click += BtnCloseCred_Click;
+            tbFilter.TextChanged += TbFilter_TextChanged; ;
+            RefreshDataGrid();
         }
+
+        private void TbFilter_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = ((TextBox)sender).Text;
+            if (text.Length > 3)
+            {
+                RefreshDataGrid(rep.FilterNames(rep.GetClientsData(), text));
+            }
+            else
+            {
+                RefreshDataGrid();
+            }
+        }
+
+
 
         private void BtnCloseCred_Click(object sender, RoutedEventArgs e)
         {
@@ -42,6 +59,7 @@ namespace HW12_6_BankA
             if (bill == null) return;
             if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
             bills.Refresh(rep);
+            RefreshDataGrid();
         }
 
         private void BtnCloseDeb_Click(object sender, RoutedEventArgs e)
@@ -50,18 +68,40 @@ namespace HW12_6_BankA
             if (bill == null) return;
             if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
             bills.Refresh(rep);
+            RefreshDataGrid();
         }
 
         private void BtnOpenCred_Click(object sender, RoutedEventArgs e)
         {
             if (bills.OpenBill(typeof(BillCredit))) Debug.Write("BillCredit OPEN"); else { Debug.Write("BillCredit not open!"); return; };
             bills.Refresh(rep);
+            RefreshDataGrid();
         }
 
         private void BtnOpenDeb_Click(object sender, RoutedEventArgs e)
         {
             if (bills.OpenBill(typeof(BillDeposit))) Debug.Write("BillDeposit OPEN"); else { Debug.Write("BillDeposit not open!"); return; };
             bills.Refresh(rep);
+            RefreshDataGrid();
+        }
+
+        private void RefreshDataGrid(List<Client> clients = null)
+        {
+            if (clients == null)
+            {
+                dataGrid.ItemsSource = rep.GetClientsData();
+            }
+            else
+            {
+                dataGrid.ItemsSource = clients;
+            }
+            dataGrid.SelectedIndex = 0;
+            dataGrid.Items.Refresh();
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

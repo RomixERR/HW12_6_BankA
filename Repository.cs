@@ -21,7 +21,7 @@ namespace HW12_6_BankA
         }
     }
 
-    public class Repository: INotifyPropertyChanged
+    public class Repository : INotifyPropertyChanged
     {
         /// <summary>
         /// текущая КОПИЯ выбранного клиента
@@ -62,11 +62,11 @@ namespace HW12_6_BankA
             if (!R.result || db == null)
             {
                 Console.WriteLine($"Загрузка БД не выполнена. Ошибка {R.error}, будет создана пустая БД");
-                db = new DataBase(15,5);
+                db = new DataBase(15, 5);
             }
             else
             {
-                Console.WriteLine(  $"Загрузка БД выполнена! БД Содержит {db.clients.Count} клиентов," +
+                Console.WriteLine($"Загрузка БД выполнена! БД Содержит {db.clients.Count} клиентов," +
                                     $"{db.departaments.Count} департаментов.");
             }
             this.employer = employer;
@@ -108,7 +108,7 @@ namespace HW12_6_BankA
                 streamWriter.Write(JsonConvert.SerializeObject(db, Formatting.Indented));
                 streamWriter.Close();
             }
-            catch (Exception e) { return (false, "При сохранении возникла проблема "+e.Message); }
+            catch (Exception e) { return (false, "При сохранении возникла проблема " + e.Message); }
             return (true, "Успешно сохранён");
         }
         public List<Departament> GetDepartamentsData()
@@ -134,7 +134,7 @@ namespace HW12_6_BankA
             if (employer.Permission.GetClientsData == Permission.EDataMode.All)
             {
                 L = new List<Client>(db.clients);
-            }else if (employer.Permission.GetClientsData == Permission.EDataMode.AllExclusivePasportNum)
+            } else if (employer.Permission.GetClientsData == Permission.EDataMode.AllExclusivePasportNum)
             {
                 L = new List<Client>();
 
@@ -143,22 +143,22 @@ namespace HW12_6_BankA
                     L.Add(new Client(db.clients[i]));
                     L[i].PasportNum = "**** - *******";
                 }
-                
-                
+
+
                 //foreach (var item in L)
                 //{
                 //    item.PasportNum = "**** - *******";
                 //}
-            }else
+            } else
             {
                 throw new Exception("Нет привелегий GetClientsData");
             }
 
-           // if (departament != null) L = FilterDepartaments(L, departament); //Применяем фильтр по департаментам если нужно
+            // if (departament != null) L = FilterDepartaments(L, departament); //Применяем фильтр по департаментам если нужно
             if (filterObject != null)
             {
                 Type typeFilter = filterObject.GetType();
-                if (typeFilter == typeof( Departament)) {
+                if (typeFilter == typeof(Departament)) {
                     L = FilterDepartaments(L, filterObject as Departament); //Применяем фильтр по департаментам если нужно
                 }
 
@@ -199,7 +199,7 @@ namespace HW12_6_BankA
         /// <param name="L">Изначальный список</param>
         /// <param name="name">имя клиентов</param>
         /// <returns></returns>
-        private List<Client> FilterNames(List<Client> L, String name)
+        public List<Client> FilterNames(List<Client> L, String name)
         {
             List<Client> resL = new List<Client>();
 
@@ -216,19 +216,19 @@ namespace HW12_6_BankA
 
                 switch (LFMNames.Length)
                 {
-                  case 1: //если введено одно слово
+                    case 1: //если введено одно слово
                         if (Ln.Contains(LFMNames[0])) resL.Add(item);
                         break;
-                  case 2: //если введено два слова
+                    case 2: //если введено два слова
                         if (Ln.Contains(LFMNames[0]))
                         {
                             if (Fn.Contains(LFMNames[1])) resL.Add(item);
                         }
                         break;
-                  case 3: //если введено 3 слова
+                    case 3: //если введено 3 слова
                         if (Ln.Contains(LFMNames[0]))
                         {
-                            if (Fn.Contains(LFMNames[1])) 
+                            if (Fn.Contains(LFMNames[1]))
                             {
                                 if (Mn.Contains(LFMNames[2])) resL.Add(item);
                             };
@@ -238,6 +238,30 @@ namespace HW12_6_BankA
             }
             return resL;
         }
+
+        //public List<Client> FindClientsByFio(List<Client> list, FIO name)
+        //{
+        //    List<Client> fl = new List<Client>();
+        //    foreach (var item in list)
+        //    {
+        //        if (item.Fio.LastName.Contains(name.LastName)) fl.Add(item);
+        //    }
+        //    foreach (var item in list)
+        //    {
+        //        if (item.Fio.FirstName.Contains(name.FirstName))
+        //        {
+        //            if (!fl.Contains(item)) fl.Add(item);
+        //        }
+        //    }
+        //    foreach (var item in list)
+        //    {
+        //        if (item.Fio.MiddleName.Contains(name.MiddleName))
+        //        {
+        //            if (!fl.Contains(item)) fl.Add(item);
+        //        }
+        //    }
+        //    return fl;
+        //}
 
         /// <summary>
         /// обновление ТЕКУЩЕГО редактируемого клиента
@@ -273,7 +297,7 @@ namespace HW12_6_BankA
                     client.PasportNum = CurrentClient.PasportNum;
                 }
             }
-            else{
+            else {
                 //выбрана пустая ячейка - добавляем нового клиента
                 if (employer.Permission.SetClientsData != Permission.EDataMode.All)
                 {
@@ -298,10 +322,10 @@ namespace HW12_6_BankA
         /// <returns></returns>
         public (bool check, string errorMsg) ClientDataCompletenessCheck(Client client)
         {
-            string errorMsg="";
+            string errorMsg = "";
             bool check = true;
-            if(client.Departament == null) { check = false; errorMsg += "client.Departament == null"+" "; return (check, errorMsg); }
-            if(client.Fio == null) { check = false; errorMsg += "client.Fio == null" + " "; return (check, errorMsg); }
+            if (client.Departament == null) { check = false; errorMsg += "client.Departament == null" + " "; return (check, errorMsg); }
+            if (client.Fio == null) { check = false; errorMsg += "client.Fio == null" + " "; return (check, errorMsg); }
             var K = client.Check();
             if (!K.check) { check = false; errorMsg += K.errorMsg + " "; }
             return (check, errorMsg);
@@ -324,7 +348,8 @@ namespace HW12_6_BankA
 
 
 
-        
+
+
 
 
     }

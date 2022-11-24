@@ -6,21 +6,21 @@
         xmlns:local="clr-namespace:HW12_6_BankA"
         xmlns:System="http://schemas.microsoft.com/winfx/2009/xaml"
         mc:Ignorable="d"
-        Title="BillWindow" Height="450" Width="800">
+        Title="BillWindow" Height="450" Width="900" MinHeight="440" MinWidth="600">
 
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="197*"/>
-            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="317"  MaxWidth="320" MinWidth="317"/>
+            <ColumnDefinition Width="483*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="117*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="111*"/>
             <RowDefinition Height="272*"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Height="45" TextWrapping="NoWrap" Text="Управление счётом" VerticalAlignment="Center" Width="362" TextAlignment="Center" FontSize="24" FontWeight="Bold"/>
-        <StackPanel Margin="5,5,0,5" HorizontalAlignment="Left"  Grid.Row="1" Width="310">
+        <StackPanel Margin="0,5,0,5" HorizontalAlignment="Center"  Grid.Row="1" Width="310">
             <TextBlock x:Name="TNameOfClient" TextWrapping="Wrap"
                    Text="ФИО клиента"/>
             <WrapPanel HorizontalAlignment="Stretch">
@@ -39,48 +39,76 @@
             </WrapPanel>
 
         </StackPanel>
-        <StackPanel Margin="5,5,0,5" HorizontalAlignment="Left"  Grid.Row="2" Width="310">
+        <StackPanel Margin="0,5,0,5" HorizontalAlignment="Center"  Grid.Row="2" Width="310">
             <TextBlock TextWrapping="Wrap"
                    Text="Счета клиента"/>
-            <Grid Height="79" x:Name="GDebet">
+            <Grid Height="100" x:Name="GDebet">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="26*"/>
+                    <RowDefinition Height="23*"/>
                     <RowDefinition Height="53*"/>
+                    <RowDefinition Height="24*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="22*"/>
                     <ColumnDefinition Width="9*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дебетовый счёт" VerticalAlignment="Top" Margin="0,7,0,0" Height="16" Width="90"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дебетовый счёт" VerticalAlignment="Center" Height="16" Width="90"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=CurrentClient.ClientBill.DepositID}" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}" Grid.Column="1" VerticalAlignment="Center" Height="16" Width="70" FontWeight="Bold"/>
                 <Button x:Name="btnOpenDeb" Content="Открыть счёт" Grid.Row="1" Margin="0,2,0,1" Visibility="{Binding Path=CurrentClient.ClientBill.IsCloseDepositVisible}"/>
                 <StackPanel Orientation="Vertical" Grid.Row="1" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}">
-                    <TextBlock TextWrapping="Wrap" Height="16" Width="204" HorizontalAlignment="Left" Margin="10,0,0,0"><Run Language="ru-ru" Text="СУММА"/><Run Text=":"/></TextBlock>
+                    <TextBlock TextWrapping="Wrap" Height="16" Width="204" HorizontalAlignment="Left" Margin="10,0,0,0"><Run Language="ru-ru" Text="СРЕДСТВА"/><Run Text=":"/></TextBlock>
                     <TextBox IsReadOnly="True" Text="{Binding Path=CurrentClient.ClientBill.DepositSum}" Height="28" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4,2,4,2" FontSize="18" Foreground="#FF007905"/>
                 </StackPanel>
                 <Button x:Name="btnCloseDeb" Content="Закрыть счёт" Grid.Row="1" Grid.Column="1" Margin="0,2,0,1" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Button x:Name="btnAddDeb" Content="Пополнить" Width="103"/>
+                    <Button x:Name="btnTakeDeb" Content="Снять" Width="103"/>
+                    <Button x:Name="btnSendDeb" Content="Перевести ->>" Width="103"/>
+                </StackPanel>
             </Grid>
 
-            <Grid Height="79" x:Name="GCredit">
+            <Grid Height="100" x:Name="GCredit">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="26*"/>
+                    <RowDefinition Height="23*"/>
                     <RowDefinition Height="53*"/>
+                    <RowDefinition Height="24*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="22*"/>
                     <ColumnDefinition Width="9*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Кредитный счёт" VerticalAlignment="Top" Margin="0,7,0,0" Height="16" Width="90"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=CurrentClient.ClientBill.CreditID}" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}" Grid.Column="1" VerticalAlignment="Top" Margin="0,7,0,0" Height="16" Width="70" FontWeight="Bold"/>
                 <Button x:Name="btnOpenCred" Content="Открыть счёт" Grid.Row="1" Margin="0,2,0,1" Visibility="{Binding Path=CurrentClient.ClientBill.IsCloseCreditVisible}"/>
                 <StackPanel Orientation="Vertical" Grid.Row="1" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}">
-                    <TextBlock TextWrapping="Wrap" Height="16" Width="204" HorizontalAlignment="Left" Margin="10,0,0,0"><Run Language="ru-ru" Text="СУММА"/><Run Text=":"/></TextBlock>
+                    <TextBlock TextWrapping="Wrap" Height="16" Width="204" HorizontalAlignment="Left" Margin="10,0,0,0"><Run Text="СРЕДСТВА"/><Run Text=":"/></TextBlock>
                     <TextBox IsReadOnly="True" Text="{Binding Path=CurrentClient.ClientBill.CreditSum}" Height="28" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4,2,4,2" FontSize="18" Foreground="#FF007905"/>
                 </StackPanel>
                 <Button x:Name="btnCloseCred" Content="Закрыть счёт" Grid.Row="1" Grid.Column="1" Margin="0,2,0,1" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}"/>
             </Grid>
-
-
-
-
         </StackPanel>
+
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"
+                  DataContext="{Binding}"
+                  VerticalScrollBarVisibility="Visible"
+                  AutoGenerateColumns="False"
+                  SelectionUnit="FullRow"
+                  SelectionChanged="dataGrid_SelectionChanged"
+                  Margin="0,5,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="Auto" Header="Имя клиента для перевода" Binding="{Binding Mode=OneWay, Path=Fio}"/>
+                <DataGridTextColumn Width="Auto" Header="Телефонный номер" Binding="{Binding Mode=OneWay, Path=PhoneNum}"/>
+                <DataGridTextColumn Width="Auto" Header="Номер паспорта" Binding="{Binding Mode=OneWay, Path=PasportNum}"/>
+                <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel x:Name="spFind" Grid.Column="1" Orientation="Horizontal"  >
+
+            <TextBlock TextWrapping="Wrap" Text="Введите для поиска Фамилия Имя Отчество. Через пробел" Width="148" Height="46"/>
+            <TextBox x:Name="tbFilter" TextWrapping="Wrap" Text="" Width="260" Height="21"/>
+        </StackPanel>
+
+
+
     </Grid>
 </Window>
