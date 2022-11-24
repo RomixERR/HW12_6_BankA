@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HW12_6_BankA
 {
     public abstract class ClientBill
     {
+       
         public List<Bill> bills { get; set; }
+        
         public int clientID { get; set; }
 
         public ClientBill()

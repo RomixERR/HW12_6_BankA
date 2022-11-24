@@ -2,44 +2,50 @@
   "clients": [
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
       },
       "ID": 1,
       "ClientBill": {
-        "IsOpenDepositVisible": 1,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": "NO BILL",
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
-        "bills": [],
-        "clientID": 0
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL0#1",
+            "nativeID": 0
+          }
+        ],
+        "clientID": 1
       },
       "Fio": {
-        "FirstName": "Рего",
-        "LastName": "Ласкоов",
-        "MiddleName": "Еласквич"
+        "FirstName": "Коларо",
+        "LastName": "Птероданко",
+        "MiddleName": "Косдурвич"
       },
-      "PhoneNum": "+7-(617)-115-089",
-      "PasportNum": "9839 2614309",
+      "PhoneNum": "+7-(928)-362-553",
+      "PasportNum": "5351 8601880",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 1,
-        "nameOfDepartament": "Департамент 0",
-        "NameOfDepartament": "Департамент 0"
+        "ID": 3,
+        "nameOfDepartament": "Департамент 2",
+        "NameOfDepartament": "Департамент 2"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -53,18 +59,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 2
       },
       "Fio": {
-        "FirstName": "БАСЯ",
-        "LastName": "Теродактнко",
-        "MiddleName": "Вансвич"
+        "FirstName": "Шалекс",
+        "LastName": "Кошкаенков",
+        "MiddleName": "Каптвич"
       },
-      "PhoneNum": "+7-(081)-575-663",
-      "PasportNum": "6134 9970698",
+      "PhoneNum": "+7-(077)-194-254",
+      "PasportNum": "2227 0229869",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -76,7 +82,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -90,30 +96,30 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 3
       },
       "Fio": {
-        "FirstName": "Горег",
-        "LastName": "Каптеродко",
-        "MiddleName": "Кривкович"
+        "FirstName": "Лексем",
+        "LastName": "Ивкосенков",
+        "MiddleName": "Балдевич"
       },
-      "PhoneNum": "+7-(801)-540-540",
-      "PasportNum": "3497 7674271",
+      "PhoneNum": "+7-(254)-391-557",
+      "PasportNum": "1576 1586627",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 1,
-        "nameOfDepartament": "Департамент 0",
-        "NameOfDepartament": "Департамент 0"
+        "ID": 2,
+        "nameOfDepartament": "Департамент 1",
+        "NameOfDepartament": "Департамент 1"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -127,30 +133,30 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 4
       },
       "Fio": {
-        "FirstName": "Олар",
-        "LastName": "Унокжоко",
-        "MiddleName": "Окабвич"
+        "FirstName": "Теми",
+        "LastName": "Ансидоов",
+        "MiddleName": "Вкосвич"
       },
-      "PhoneNum": "+7-(680)-357-986",
-      "PasportNum": "3692 9971527",
+      "PhoneNum": "+7-(633)-556-288",
+      "PasportNum": "8265 6582828",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 2,
-        "nameOfDepartament": "Департамент 1",
-        "NameOfDepartament": "Департамент 1"
+        "ID": 1,
+        "nameOfDepartament": "Департамент 0",
+        "NameOfDepartament": "Департамент 0"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -164,18 +170,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 5
       },
       "Fio": {
-        "FirstName": "Ксем",
-        "LastName": "Кабаленков",
-        "MiddleName": "Кунович"
+        "FirstName": "Ойшале",
+        "LastName": "Оркошкаптеко",
+        "MiddleName": "Сдурвич"
       },
-      "PhoneNum": "+7-(676)-136-281",
-      "PasportNum": "2770 0180541",
+      "PhoneNum": "+7-(337)-668-948",
+      "PasportNum": "0108 7073623",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -187,7 +193,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -195,36 +201,36 @@
       "ID": 6,
       "ClientBill": {
         "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 1,
-        "DepositSum": "NO BILL",
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
         "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 1,
-        "CreditSum": "NO BILL",
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 6
       },
       "Fio": {
-        "FirstName": "Егорв",
-        "LastName": "Ракванко",
-        "MiddleName": "Ласкович"
+        "FirstName": "Емён",
+        "LastName": "Кунокжокаенков",
+        "MiddleName": "Алделавич"
       },
-      "PhoneNum": "+7-(823)-207-196",
-      "PasportNum": "4557 0687461",
+      "PhoneNum": "+7-(403)-408-451",
+      "PasportNum": "5077 1927290",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 2,
-        "nameOfDepartament": "Департамент 1",
-        "NameOfDepartament": "Департамент 1"
+        "ID": 3,
+        "nameOfDepartament": "Департамент 2",
+        "NameOfDepartament": "Департамент 2"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -238,18 +244,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 7
       },
       "Fio": {
-        "FirstName": "Вади",
-        "LastName": "Родактикренков",
-        "MiddleName": "Уракввич"
+        "FirstName": "Рвад",
+        "LastName": "Вкосдуракенков",
+        "MiddleName": "Шкапвич"
       },
-      "PhoneNum": "+7-(609)-970-099",
-      "PasportNum": "4738 2260845",
+      "PhoneNum": "+7-(596)-996-076",
+      "PasportNum": "6992 4585461",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -261,7 +267,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -275,30 +281,30 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 8
       },
       "Fio": {
-        "FirstName": "Адимо",
-        "LastName": "Унокжокабенков",
-        "MiddleName": "Аскосович"
+        "FirstName": "Икола",
+        "LastName": "Нокжоов",
+        "MiddleName": "Етривавич"
       },
-      "PhoneNum": "+7-(494)-515-265",
-      "PasportNum": "6879 6927320",
+      "PhoneNum": "+7-(285)-855-928",
+      "PasportNum": "1800 1602987",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 2,
-        "nameOfDepartament": "Департамент 1",
-        "NameOfDepartament": "Департамент 1"
+        "ID": 3,
+        "nameOfDepartament": "Департамент 2",
+        "NameOfDepartament": "Департамент 2"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -312,18 +318,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 9
       },
       "Fio": {
-        "FirstName": "Вадимо",
-        "LastName": "Алделаско",
-        "MiddleName": "Иванвич"
+        "FirstName": "Егриг",
+        "LastName": "Ктикривкосов",
+        "MiddleName": "Тикрвич"
       },
-      "PhoneNum": "+7-(111)-803-499",
-      "PasportNum": "2229 5030757",
+      "PhoneNum": "+7-(991)-067-580",
+      "PasportNum": "1465 3935603",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -335,7 +341,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -349,18 +355,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 10
       },
       "Fio": {
-        "FirstName": "Кола",
-        "LastName": "Икривов",
-        "MiddleName": "Асякунвич"
+        "FirstName": "Олегри",
+        "LastName": "Кунокжокко",
+        "MiddleName": "Асяквич"
       },
-      "PhoneNum": "+7-(654)-157-434",
-      "PasportNum": "9652 0240004",
+      "PhoneNum": "+7-(813)-419-299",
+      "PasportNum": "7336 7915122",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -372,7 +378,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -386,30 +392,30 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 11
       },
       "Fio": {
-        "FirstName": "Григ",
-        "LastName": "Теродактикнко",
-        "MiddleName": "Шкапвич"
+        "FirstName": "Олароп",
+        "LastName": "Кабалделаско",
+        "MiddleName": "Иванвич"
       },
-      "PhoneNum": "+7-(073)-171-248",
-      "PasportNum": "0710 7900951",
+      "PhoneNum": "+7-(440)-401-997",
+      "PasportNum": "9550 0472671",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 2,
-        "nameOfDepartament": "Департамент 1",
-        "NameOfDepartament": "Департамент 1"
+        "ID": 3,
+        "nameOfDepartament": "Департамент 2",
+        "NameOfDepartament": "Департамент 2"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -423,30 +429,30 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 12
       },
       "Fio": {
-        "FirstName": "Ларо",
-        "LastName": "Ривкосденков",
-        "MiddleName": "Ошкавич"
+        "FirstName": "Алексе",
+        "LastName": "Алделаенков",
+        "MiddleName": "Птерович"
       },
-      "PhoneNum": "+7-(707)-258-376",
-      "PasportNum": "5817 8603933",
+      "PhoneNum": "+7-(243)-193-457",
+      "PasportNum": "9247 0466719",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 3,
-        "nameOfDepartament": "Департамент 2",
-        "NameOfDepartament": "Департамент 2"
+        "ID": 2,
+        "nameOfDepartament": "Департамент 1",
+        "NameOfDepartament": "Департамент 1"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -460,30 +466,30 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 13
       },
       "Fio": {
-        "FirstName": "Толе",
-        "LastName": "Тикривов",
-        "MiddleName": "Активич"
+        "FirstName": "Рего",
+        "LastName": "Тикривкоснко",
+        "MiddleName": "Етривавич"
       },
-      "PhoneNum": "+7-(792)-142-565",
-      "PasportNum": "4624 2341333",
+      "PhoneNum": "+7-(214)-687-626",
+      "PasportNum": "4675 8024238",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
         },
-        "ID": 3,
-        "nameOfDepartament": "Департамент 2",
-        "NameOfDepartament": "Департамент 2"
+        "ID": 2,
+        "nameOfDepartament": "Департамент 1",
+        "NameOfDepartament": "Департамент 1"
       }
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -497,18 +503,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 14
       },
       "Fio": {
-        "FirstName": "Алексе",
-        "LastName": "Еласкенков",
-        "MiddleName": "Квасяквич"
+        "FirstName": "Коларо",
+        "LastName": "Ошкаптнко",
+        "MiddleName": "Ивансвич"
       },
-      "PhoneNum": "+7-(725)-448-373",
-      "PasportNum": "3211 9682198",
+      "PhoneNum": "+7-(787)-924-355",
+      "PasportNum": "5503 1021333",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -520,7 +526,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0991424+03:00",
+        "dateTime": "2022-11-24T16:24:26.2709311+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -534,18 +540,18 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "bills": [],
-        "clientID": 0
+        "clientID": 15
       },
       "Fio": {
-        "FirstName": "Нтоле",
-        "LastName": "Еродаков",
-        "MiddleName": "Ракввич"
+        "FirstName": "Емён",
+        "LastName": "Ансидов",
+        "MiddleName": "Нсидвич"
       },
-      "PhoneNum": "+7-(636)-098-919",
-      "PasportNum": "1769 5071219",
+      "PhoneNum": "+7-(814)-564-576",
+      "PasportNum": "6515 4686358",
       "Departament": {
         "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "dateTime": "2022-11-24T16:24:26.2699309+03:00",
           "WhatDataIsChange": "All",
           "TypeDataChange": "New Data",
           "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -554,419 +560,12 @@
         "nameOfDepartament": "Департамент 1",
         "NameOfDepartament": "Департамент 1"
       }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:09:18.7720349+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 16,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Иван",
-        "LastName": "Иванов",
-        "MiddleName": "Иванович"
-      },
-      "PhoneNum": "8-800-555-25-35",
-      "PasportNum": "7763 4133467",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:51:23.4960798+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 17,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Аппалонов",
-        "LastName": "Григорьев",
-        "MiddleName": "Иванушка"
-      },
-      "PhoneNum": "+7-(281)-647-648",
-      "PasportNum": "1013 3963933",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:52:18.2524425+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 18,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Онотоле",
-        "LastName": "Вассерман",
-        "MiddleName": "Упячка"
-      },
-      "PhoneNum": "+7-(222)-305-842",
-      "PasportNum": "1233 3286683",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-02T16:00:41.1909988+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 19,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Горего",
-        "LastName": "Жока",
-        "MiddleName": "Етривич"
-      },
-      "PhoneNum": "+7-(428)-536-081",
-      "PasportNum": "3889 2708673",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-02T16:00:54.2029367+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 20,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Олегр",
-        "LastName": "Бока",
-        "MiddleName": "Косдувич"
-      },
-      "PhoneNum": "+7-(464)-853-968",
-      "PasportNum": "7976 0217709",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-18T14:52:36.6642563+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 21,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Иван",
-        "LastName": "Иванов",
-        "MiddleName": "Сергеевич"
-      },
-      "PhoneNum": "+7-(790)-579-853",
-      "PasportNum": "7674 6213291",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-18T14:53:01.8411047+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 22,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Иволг",
-        "LastName": "Иванов",
-        "MiddleName": "Иванович"
-      },
-      "PhoneNum": "+7-(638)-510-511",
-      "PasportNum": "8032 8059037",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-18T14:53:25.3774146+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 23,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Иван",
-        "LastName": "Иванов",
-        "MiddleName": "Ивашевич"
-      },
-      "PhoneNum": "+7-(651)-741-989",
-      "PasportNum": "1901 6394206",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-18T14:53:45.6201048+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 24,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Онотоле",
-        "LastName": "Иванов",
-        "MiddleName": "Иванович"
-      },
-      "PhoneNum": "+7-(794)-034-969",
-      "PasportNum": "0774 8117289",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-18T14:53:59.9733257+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 25,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Онотоле",
-        "LastName": "Иванов",
-        "MiddleName": "Верольдович"
-      },
-      "PhoneNum": "+7-(263)-553-642",
-      "PasportNum": "6458 2458952",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
-    },
-    {
-      "dataChangeAtributes": {
-        "dateTime": "2022-10-18T14:54:24.6839088+03:00",
-        "WhatDataIsChange": "All",
-        "TypeDataChange": "New Data",
-        "WhoIsChange": "Role: Manager, Name: Вася"
-      },
-      "ID": 26,
-      "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "bills": [],
-        "clientID": 0
-      },
-      "Fio": {
-        "FirstName": "Иван",
-        "LastName": "Сидоров",
-        "MiddleName": "Иванович"
-      },
-      "PhoneNum": "+7-(165)-555-149",
-      "PasportNum": "7942 5205494",
-      "Departament": {
-        "dataChangeAtributes": {
-          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
-          "WhatDataIsChange": "All",
-          "TypeDataChange": "New Data",
-          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
-        },
-        "ID": 5,
-        "nameOfDepartament": "Департамент 4",
-        "NameOfDepartament": "Департамент 4"
-      }
     }
   ],
   "departaments": [
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+        "dateTime": "2022-11-24T16:24:26.2699309+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -977,7 +576,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+        "dateTime": "2022-11-24T16:24:26.2699309+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -988,7 +587,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+        "dateTime": "2022-11-24T16:24:26.2699309+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -999,7 +598,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+        "dateTime": "2022-11-24T16:24:26.2699309+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
@@ -1010,7 +609,7 @@
     },
     {
       "dataChangeAtributes": {
-        "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+        "dateTime": "2022-11-24T16:24:26.2699309+03:00",
         "WhatDataIsChange": "All",
         "TypeDataChange": "New Data",
         "WhoIsChange": "Role: My Gode, Name: fakeEmployer"

@@ -30,7 +30,7 @@ namespace HW12_6_BankA
         /// <summary>
         /// Обновление элементов формы
         /// </summary>
-        public void Refresh()
+        public void Refresh(Repository rep)
         {
             BillCredit billCredit = GetBillCredit();
             if (billCredit == null)
@@ -59,6 +59,7 @@ namespace HW12_6_BankA
                 IsCloseDepositVisible = Visibility.Hidden;
                 DepositSum = billDeposit.Money.ToString();
             }
+            rep.OnPropertyChanged("CurrentClient");
         }
     }
 }

@@ -78,11 +78,11 @@ namespace HW12_6_BankA
             //rep.OnPropertyChanged("CurrentClient");
             if (comboBox.SelectedItem != null)
             {
-                rep.SaveCurrentClient(dataGrid, (Departament)comboBox.SelectedItem); //это необходимо, если клиент НОВЫЙ (тоесть когда данных о департаменте просто нет, берётся тот департамент который выбран)
+                rep.SaveCurrentClient((Departament)comboBox.SelectedItem); //это необходимо, если клиент НОВЫЙ (тоесть когда данных о департаменте просто нет, берётся тот департамент который выбран)
             }
             else
             {
-                rep.SaveCurrentClient(dataGrid);
+                rep.SaveCurrentClient();
             }
             RefreshDataGrid();
         }

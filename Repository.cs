@@ -250,7 +250,7 @@ namespace HW12_6_BankA
         /// <summary>
         /// Запись в базу (не в файл!) текущего клиента (изменение)
         /// </summary>
-        public void SaveCurrentClient(DataGrid dataGrid, Departament departament = null)
+        public void SaveCurrentClient(Departament departament = null)
         {
             Client client;
 
