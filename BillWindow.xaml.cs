@@ -34,9 +34,102 @@ namespace HW12_6_BankA
             btnOpenCred.Click += BtnOpenCred_Click;
             btnCloseDeb.Click += BtnCloseDeb_Click;
             btnCloseCred.Click += BtnCloseCred_Click;
-            tbFilter.TextChanged += TbFilter_TextChanged; ;
+
+            btnAddDeb.Click += BtnAddDeb_Click;
+            btnTakeDeb.Click += BtnTakeDeb_Click;
+            btnSendDeb.Click += BtnSendDeb_Click;
+
+            btnAddCred.Click += BtnAddCred_Click;
+            btnTakeCred.Click += BtnTakeCred_Click;
+            btnSendCred.Click += BtnSendCred_Click;
+
+            tbFilter.TextChanged += TbFilter_TextChanged;
             RefreshDataGrid();
         }
+
+        private void BtnSendCred_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BtnTakeCred_Click(object sender, RoutedEventArgs e)
+        {
+            string d = "снять со счёта";
+            ModalWindowAdd modalWindowAdd = new ModalWindowAdd(
+                $"Вы собираетесь {d} {rep.CurrentClient.ID}, клиента {rep.CurrentClient.Fio}.\nВведите сумму:", $"{d}");
+            if ((bool)modalWindowAdd.ShowDialog())
+            {
+                int? sum = modalWindowAdd.Sum;
+                if ((sum == null) || (sum == 0)) return;
+                ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
+                clientBill.GetBillCredit().Take((decimal)sum);
+                bills.Refresh(rep);
+                RefreshDataGrid();
+                Debug.WriteLine($"OK {d} Sum={sum}");
+                return;
+            }
+        }
+
+        private void BtnAddCred_Click(object sender, RoutedEventArgs e)
+        {
+            string d = "пополнить счёт";
+            ModalWindowAdd modalWindowAdd = new ModalWindowAdd(
+                $"Вы собираетесь {d} {rep.CurrentClient.ID}, клиента {rep.CurrentClient.Fio}.\nВведите сумму:", $"{d}");
+            if ((bool)modalWindowAdd.ShowDialog())
+            {
+                int? sum = modalWindowAdd.Sum;
+                if ((sum == null) || (sum == 0)) return;
+                ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
+                clientBill.GetBillCredit().Put((decimal)sum);
+                bills.Refresh(rep);
+                RefreshDataGrid();
+                Debug.WriteLine($"OK {d} Sum={sum}");
+                return;
+            }
+        }
+
+        private void BtnSendDeb_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BtnTakeDeb_Click(object sender, RoutedEventArgs e)
+        {
+            string d = "снять со счёта";
+            ModalWindowAdd modalWindowAdd = new ModalWindowAdd(
+                $"Вы собираетесь {d} {rep.CurrentClient.ID}, клиента {rep.CurrentClient.Fio}.\nВведите сумму:", $"{d}");
+            if ((bool)modalWindowAdd.ShowDialog())
+            {
+                int? sum = modalWindowAdd.Sum;
+                if ((sum == null) || (sum == 0)) return;
+                ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
+                clientBill.GetBillDeposit().Take((decimal)sum);
+                bills.Refresh(rep);
+                RefreshDataGrid();
+                Debug.WriteLine($"OK {d} Sum={sum}");
+                return;
+            }
+        }
+
+        private void BtnAddDeb_Click(object sender, RoutedEventArgs e)
+        {
+            string d = "пополнить счёт";
+            ModalWindowAdd modalWindowAdd = new ModalWindowAdd(
+                $"Вы собираетесь {d} {rep.CurrentClient.ID}, клиента {rep.CurrentClient.Fio}.\nВведите сумму:", $"{d}");
+           if((bool)modalWindowAdd.ShowDialog())
+            {
+                int? sum = modalWindowAdd.Sum;
+                if ((sum == null) || (sum == 0)) return;
+                ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
+                clientBill.GetBillDeposit().Put((decimal)sum);
+                bills.Refresh(rep);
+                RefreshDataGrid();
+                Debug.WriteLine($"OK {d} Sum={sum}");
+                return;
+            }
+        }
+
+
 
         private void TbFilter_TextChanged(object sender, TextChangedEventArgs e)
         {

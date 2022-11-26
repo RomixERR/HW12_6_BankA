@@ -64,10 +64,17 @@
     <Compile Include="ClientBill.cs" />
     <Compile Include="ClientBillWPF.cs" />
     <Compile Include="JsonConverterForBillsCreditDebet.cs" />
+    <Compile Include="ModalWindowAdd.xaml.cs">
+      <DependentUpon>ModalWindowAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="BillWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModalWindowAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

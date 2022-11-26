@@ -9,26 +9,15 @@
       },
       "ID": 1,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 1,
-        "DepositSum": "0",
-        "DepositID": "BILL1#1",
-        "IsOpenCreditVisible": 0,
-        "IsCloseCreditVisible": 1,
-        "CreditSum": "0",
-        "CreditID": "BILL2#1",
-        "bills": [
-          {
-            "Money": 0.0,
-            "ID": "BILL1#1",
-            "nativeID": 1
-          },
-          {
-            "Money": 0.0,
-            "ID": "BILL2#1",
-            "nativeID": 2
-          }
-        ],
+        "IsOpenDepositVisible": 1,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": "NO BILL",
+        "DepositID": "NO BILL",
+        "IsOpenCreditVisible": 1,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": "NO BILL",
+        "CreditID": "NO BILL",
+        "bills": [],
         "clientID": 1
       },
       "Fio": {
@@ -62,11 +51,11 @@
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
         "DepositSum": "0",
-        "DepositID": null,
+        "DepositID": "BILL1#2",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
         "CreditSum": "0",
-        "CreditID": null,
+        "CreditID": "BILL2#2",
         "bills": [
           {
             "Money": 0.0,
@@ -199,15 +188,26 @@
       },
       "ID": 5,
       "ClientBill": {
-        "IsOpenDepositVisible": 1,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": "NO BILL",
-        "DepositID": "NO BILL",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
-        "CreditID": "NO BILL",
-        "bills": [],
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
+        "DepositID": "BILL1#5",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
+        "CreditID": "BILL2#5",
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL2#5",
+            "nativeID": 2
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL1#5",
+            "nativeID": 1
+          }
+        ],
         "clientID": 5
       },
       "Fio": {

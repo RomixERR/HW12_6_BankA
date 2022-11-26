@@ -61,9 +61,9 @@
                 </StackPanel>
                 <Button x:Name="btnCloseDeb" Content="Закрыть счёт" Grid.Row="1" Grid.Column="1" Margin="0,2,0,1" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}"/>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
-                    <Button x:Name="btnAddDeb" Content="Пополнить" Width="103"/>
-                    <Button x:Name="btnTakeDeb" Content="Снять" Width="103"/>
-                    <Button x:Name="btnSendDeb" Content="Перевести ->>" Width="103"/>
+                    <Button x:Name="btnAddDeb" Content="Пополнить"  Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}" Width="103"/>
+                    <Button x:Name="btnTakeDeb" Content="Снять"  Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}" Width="103"/>
+                    <Button x:Name="btnSendDeb" Content="Перевести ->>"  Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenDepositVisible}" Width="103"/>
                 </StackPanel>
             </Grid>
 
@@ -85,6 +85,11 @@
                     <TextBox IsReadOnly="True" Text="{Binding Path=CurrentClient.ClientBill.CreditSum}" Height="28" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="4,2,4,2" FontSize="18" Foreground="#FF007905"/>
                 </StackPanel>
                 <Button x:Name="btnCloseCred" Content="Закрыть счёт" Grid.Row="1" Grid.Column="1" Margin="0,2,0,1" Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Button x:Name="btnAddCred" Content="Пополнить"  Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}" Width="103"/>
+                    <Button x:Name="btnTakeCred" Content="Снять"  Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}" Width="103"/>
+                    <Button x:Name="btnSendCred" Content="Перевести ->>"  Visibility="{Binding Path=CurrentClient.ClientBill.IsOpenCreditVisible}" Width="103"/>
+                </StackPanel>
             </Grid>
         </StackPanel>
 
