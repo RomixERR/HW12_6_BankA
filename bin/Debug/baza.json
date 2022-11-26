@@ -11,20 +11,20 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "200",
+        "DepositSum": "0",
         "DepositID": "BILL1#1",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
-        "CreditSum": "100",
+        "CreditSum": "-900",
         "CreditID": "BILL2#1",
         "bills": [
           {
-            "Money": 200.0,
+            "Money": 0.0,
             "ID": "BILL1#1",
             "nativeID": 1
           },
           {
-            "Money": 100.0,
+            "Money": -900.0,
             "ID": "BILL2#1",
             "nativeID": 2
           }
@@ -69,12 +69,12 @@
         "CreditID": "BILL2#2",
         "bills": [
           {
-            "Money": 2800.0,
+            "Money": 4100.0,
             "ID": "BILL1#2",
             "nativeID": 1
           },
           {
-            "Money": 400.0,
+            "Money": 500.0,
             "ID": "BILL2#2",
             "nativeID": 2
           }

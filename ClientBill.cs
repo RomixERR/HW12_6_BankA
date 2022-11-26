@@ -210,6 +210,7 @@ namespace HW12_6_BankA
                     Debug.WriteLine("Счёт для передачи не найден");
                     return false;
                 }
+                Money -= amount;
                 billForPut.Money += amount;
                 return true;
             }
