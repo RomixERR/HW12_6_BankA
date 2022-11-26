@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:HW12_6_BankA"
         xmlns:System="http://schemas.microsoft.com/winfx/2009/xaml"
         mc:Ignorable="d"
-        Title="BillWindow" Height="450" Width="900" MinHeight="440" MinWidth="600">
+        Title="BillWindow" Height="450" Width="312" MinHeight="440" MinWidth="316">
 
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="317"  MaxWidth="320" MinWidth="317"/>
-            <ColumnDefinition Width="483*"/>
+            <!--<ColumnDefinition Width="483*"/>-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="51*"/>
@@ -93,7 +93,14 @@
             </Grid>
         </StackPanel>
 
-        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"
+
+        <!--<StackPanel x:Name="spFind" Grid.Column="1" Orientation="Horizontal"  >
+            <TextBlock TextWrapping="Wrap" Text="Введите для поиска Фамилия Имя Отчество. Через пробел" Width="148" Height="46"/>
+            <TextBox x:Name="tbFilter" TextWrapping="Wrap" Text="" Width="260" Height="21"/>
+        </StackPanel>-->
+
+
+        <!--<DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"
                   DataContext="{Binding}"
                   VerticalScrollBarVisibility="Visible"
                   AutoGenerateColumns="False"
@@ -106,12 +113,8 @@
                 <DataGridTextColumn Width="Auto" Header="Номер паспорта" Binding="{Binding Mode=OneWay, Path=PasportNum}"/>
                 <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
             </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel x:Name="spFind" Grid.Column="1" Orientation="Horizontal"  >
+        </DataGrid>-->
 
-            <TextBlock TextWrapping="Wrap" Text="Введите для поиска Фамилия Имя Отчество. Через пробел" Width="148" Height="46"/>
-            <TextBox x:Name="tbFilter" TextWrapping="Wrap" Text="" Width="260" Height="21"/>
-        </StackPanel>
 
 
 

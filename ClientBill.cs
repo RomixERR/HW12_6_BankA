@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -113,6 +114,11 @@ namespace HW12_6_BankA
             /// <returns></returns>
             public bool Put(Bill billFromTake, decimal amount)
             {
+                if (billFromTake == null)
+                {
+                    Debug.WriteLine("Счёт для снятия не найден");
+                    return false;
+                }
                 if (amount <= billFromTake.Money)
                 {
                     billFromTake.Money -= amount;
@@ -159,6 +165,11 @@ namespace HW12_6_BankA
             /// <returns></returns>
             public override bool Take(Bill billForPut, decimal amount)
             {
+                if (billForPut == null)
+                {
+                    Debug.WriteLine("Счёт для передачи не найден");
+                    return false;
+                }
                 if (Money >= amount)
                 {
                     Money -= amount;
@@ -194,6 +205,11 @@ namespace HW12_6_BankA
             /// <returns></returns>
             public override bool Take(Bill billForPut, decimal amount)
             {
+                if (billForPut == null)
+                {
+                    Debug.WriteLine("Счёт для передачи не найден");
+                    return false;
+                }
                 billForPut.Money += amount;
                 return true;
             }

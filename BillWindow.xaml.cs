@@ -43,8 +43,8 @@ namespace HW12_6_BankA
             btnTakeCred.Click += BtnTakeCred_Click;
             btnSendCred.Click += BtnSendCred_Click;
 
-            tbFilter.TextChanged += TbFilter_TextChanged;
-            RefreshDataGrid();
+            //tbFilter.TextChanged += TbFilter_TextChanged;
+            //RefreshDataGrid();
         }
 
         private void BtnSendCred_Click(object sender, RoutedEventArgs e)
@@ -64,7 +64,7 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 clientBill.GetBillCredit().Take((decimal)sum);
                 bills.Refresh(rep);
-                RefreshDataGrid();
+                //RefreshDataGrid();
                 Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
@@ -82,7 +82,7 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 clientBill.GetBillCredit().Put((decimal)sum);
                 bills.Refresh(rep);
-                RefreshDataGrid();
+               // RefreshDataGrid();
                 Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
@@ -90,7 +90,27 @@ namespace HW12_6_BankA
 
         private void BtnSendDeb_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            BillDeposit clientBill = rep.CurrentClient.ClientBill.GetBillDeposit();
+            string d = "отправить перевод";
+            string minfo = $"Вы собираетесь {d} со счёта {clientBill.ID}, клиента {rep.CurrentClient.Fio}.\n" +
+                         $"На счёт ->>> (ВЫБРАТЬ СПРАВА В СПИСКЕ) ->>>\n" +
+                         $"Введите сумму:";
+
+            ModalWindowSend modalWindowSend = new ModalWindowSend(rep, clientBill.ID, minfo,$"{d}");
+
+            if ((bool)modalWindowSend.ShowDialog())
+            {
+                int? sum = modalWindowSend.Sum;
+                if ((sum == null) || (sum == 0)) return;
+                if (modalWindowSend.ClientForSend == null) return;
+
+                clientBill.Take(modalWindowSend.ClientForSend.ClientBill.GetBillDeposit(),(decimal)sum);
+
+                bills.Refresh(rep);
+                //RefreshDataGrid();
+                Debug.WriteLine($"OK {d} Sum={sum}");
+                return;
+            }
         }
 
         private void BtnTakeDeb_Click(object sender, RoutedEventArgs e)
@@ -103,9 +123,14 @@ namespace HW12_6_BankA
                 int? sum = modalWindowAdd.Sum;
                 if ((sum == null) || (sum == 0)) return;
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
+                if (clientBill.GetBillDeposit() == null)
+                {
+                    Debug.WriteLine($"У клиента для перевода нет счёта");
+                    return;
+                }
                 clientBill.GetBillDeposit().Take((decimal)sum);
                 bills.Refresh(rep);
-                RefreshDataGrid();
+                //RefreshDataGrid();
                 Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
@@ -123,7 +148,7 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 clientBill.GetBillDeposit().Put((decimal)sum);
                 bills.Refresh(rep);
-                RefreshDataGrid();
+                //RefreshDataGrid();
                 Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
@@ -131,18 +156,18 @@ namespace HW12_6_BankA
 
 
 
-        private void TbFilter_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string text = ((TextBox)sender).Text;
-            if (text.Length > 3)
-            {
-                RefreshDataGrid(rep.FilterNames(rep.GetClientsData(), text));
-            }
-            else
-            {
-                RefreshDataGrid();
-            }
-        }
+        //private void TbFilter_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    string text = ((TextBox)sender).Text;
+        //    if (text.Length > 3)
+        //    {
+        //        RefreshDataGrid(rep.FilterNames(rep.GetClientsData(), text));
+        //    }
+        //    else
+        //    {
+        //        RefreshDataGrid();
+        //    }
+        //}
 
 
 
@@ -152,7 +177,7 @@ namespace HW12_6_BankA
             if (bill == null) return;
             if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
             bills.Refresh(rep);
-            RefreshDataGrid();
+            //RefreshDataGrid();
         }
 
         private void BtnCloseDeb_Click(object sender, RoutedEventArgs e)
@@ -161,40 +186,40 @@ namespace HW12_6_BankA
             if (bill == null) return;
             if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
             bills.Refresh(rep);
-            RefreshDataGrid();
+            //RefreshDataGrid();
         }
 
         private void BtnOpenCred_Click(object sender, RoutedEventArgs e)
         {
             if (bills.OpenBill(typeof(BillCredit))) Debug.Write("BillCredit OPEN"); else { Debug.Write("BillCredit not open!"); return; };
             bills.Refresh(rep);
-            RefreshDataGrid();
+            //RefreshDataGrid();
         }
 
         private void BtnOpenDeb_Click(object sender, RoutedEventArgs e)
         {
             if (bills.OpenBill(typeof(BillDeposit))) Debug.Write("BillDeposit OPEN"); else { Debug.Write("BillDeposit not open!"); return; };
             bills.Refresh(rep);
-            RefreshDataGrid();
+            //RefreshDataGrid();
         }
 
-        private void RefreshDataGrid(List<Client> clients = null)
-        {
-            if (clients == null)
-            {
-                dataGrid.ItemsSource = rep.GetClientsData();
-            }
-            else
-            {
-                dataGrid.ItemsSource = clients;
-            }
-            dataGrid.SelectedIndex = 0;
-            dataGrid.Items.Refresh();
-        }
+        //private void RefreshDataGrid(List<Client> clients = null)
+        //{
+        //    if (clients == null)
+        //    {
+        //        dataGrid.ItemsSource = rep.GetClientsData();
+        //    }
+        //    else
+        //    {
+        //        dataGrid.ItemsSource = clients;
+        //    }
+        //    dataGrid.SelectedIndex = 0;
+        //    dataGrid.Items.Refresh();
+        //}
 
-        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        //private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
 
-        }
+        //}
     }
 }

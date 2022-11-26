@@ -19,19 +19,6 @@ namespace HW12_6_BankA
     /// </summary>
     public partial class ModalWindowAdd : Window
     {
-        public ModalWindowAdd(string info="Введите значение", string caption="Диалоговое окно")
-        {
-            InitializeComponent();
-            this.Title = caption;
-            tbInfo.Text = info;
-            tbSum.Focus();
-        }
-
-        private void btnСonfirm_Click(object sender, RoutedEventArgs e)
-        {
-            this.DialogResult = true;
-        }
-
         public int? Sum
         {
             get
@@ -48,5 +35,19 @@ namespace HW12_6_BankA
                 }
             }
         }
+        public ModalWindowAdd(string info="Введите значение", string caption="Диалоговое окно")
+        {
+            InitializeComponent();
+            this.Title = caption;
+            tbInfo.Text = info;
+            tbSum.Focus();
+        }
+
+        private void btnСonfirm_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+       
     }
 }
