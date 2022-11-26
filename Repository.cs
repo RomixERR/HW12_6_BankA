@@ -342,6 +342,11 @@ namespace HW12_6_BankA
             if (employer.Permission.SetClientsData == Permission.EDataMode.No) throw new Exception("Нет привелегий в удалении!!!");
             if (employer.Permission.SetClientsData == Permission.EDataMode.All)
             {
+                if (client.ClientBill.bills.Count>0)
+                {
+                    Debug.WriteLine("Невозможно удалить клиента с открытыми счетами!");
+                    return;
+                }
                 db.clients.Remove(client);
             }
         }

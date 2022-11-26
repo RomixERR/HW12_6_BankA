@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static HW12_6_BankA.ClientBill;
 
 namespace HW12_6_BankA
 {
@@ -22,6 +23,7 @@ namespace HW12_6_BankA
     {
         public Repository rep;
         public Client ClientForSend { get; private set; }
+        public Bill BillForSend { get; private set; }
         public int? Sum
         {
             get
@@ -55,8 +57,19 @@ namespace HW12_6_BankA
         private void RefreshInfo()
         {
             string d = "отправить перевод";
-            tbInfo.Text= $"Вы собираетесь {d} со счёта {BillTakeID}, клиента {rep.CurrentClient.Fio}.\n" +
-                         $"На счёт {ClientForSend.ClientBill.DepositID}\n" +
+            string bs;
+            
+            if(cbBillForSend.SelectedItem == null)
+            {
+                bs = "(НЕ ВЫБРАНО)";
+            }
+            else
+            {
+                bs = cbBillForSend.SelectedItem.ToString();
+            }
+            
+            tbInfo.Text= $"Вы собираетесь {d} со счёта {BillTakeID}, клиента {rep.CurrentClient.Fio}. " +
+                         $"На счёт {bs}. " +
                          $"Введите сумму:";
         }
 
@@ -77,6 +90,7 @@ namespace HW12_6_BankA
             }
             dataGrid.SelectedIndex = 0;
             dataGrid.Items.Refresh();
+            RefreshInfo();
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -91,6 +105,7 @@ namespace HW12_6_BankA
                 if (dataGrid.SelectedItem.GetType() == typeof(Client))
                 {   // Выбрана одна ячейка (нормальный режим)
                     ClientForSend = (Client)dataGrid.SelectedItem;
+                    RefreshInfo();
                     Debug.WriteLine(ClientForSend.ToString());
                     return;
                 }
@@ -112,5 +127,11 @@ namespace HW12_6_BankA
         }
 
 
+
+        private void cbBillForSend_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            RefreshInfo();
+            BillForSend = (Bill)cbBillForSend.SelectedItem;
+        }
     }
 }

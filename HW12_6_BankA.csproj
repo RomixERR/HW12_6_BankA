@@ -67,6 +67,9 @@
     <Compile Include="ModalWindowAdd.xaml.cs">
       <DependentUpon>ModalWindowAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModalWindowDialog.xaml.cs">
+      <DependentUpon>ModalWindowDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModalWindowSend.xaml.cs">
       <DependentUpon>ModalWindowSend.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ModalWindowAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModalWindowDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

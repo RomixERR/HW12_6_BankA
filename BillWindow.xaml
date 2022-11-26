@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HW12_6_BankA"
         xmlns:System="http://schemas.microsoft.com/winfx/2009/xaml"
         mc:Ignorable="d"
-        Title="BillWindow" Height="450" Width="312" MinHeight="440" MinWidth="316">
+        Title="BillWindow" Height="480" Width="327"  ResizeMode="NoResize"> 
 
 
     <Grid>

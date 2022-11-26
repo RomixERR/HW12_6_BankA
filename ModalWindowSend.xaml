@@ -12,15 +12,15 @@
             <ColumnDefinition Width="15*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="45.785"/>
-            <RowDefinition Height="63.22"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="54"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="tbInfo" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Инфо" VerticalAlignment="Center" Width="352" Height="35"/>
+        <TextBlock x:Name="tbInfo" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Инфо" VerticalAlignment="Center" Width="338" Height="50"/>
         <TextBox x:Name="tbSum" Grid.Row="1" TextWrapping="Wrap" Text="" Foreground="#FF053708" FontSize="22" FontWeight="Bold" TextAlignment="Center" Margin="80,9,80,8"/>
-        <Button x:Name="btnСonfirm"  IsDefault="True"  Content="Подтвердить" Click="btnСonfirm_Click" Grid.Row="2" Height="38" Width="116" HorizontalAlignment="Left" Margin="10,16,0,4"/>
-        <Button x:Name="btnCanсel" IsCancel="True" Content="Отмена" Grid.Row="2" Height="38" Width="116" HorizontalAlignment="Right" Margin="0,16,10,4"/>
+        <Button x:Name="btnСonfirm"  IsDefault="True"  Content="Подтвердить" Click="btnСonfirm_Click" Grid.Row="2" Width="116" HorizontalAlignment="Left" Margin="10,18,0,7"/>
+        <Button x:Name="btnCanсel" IsCancel="True" Content="Отмена" Grid.Row="2" Width="116" HorizontalAlignment="Right" Margin="0,18,10,7"/>
 
 
         <StackPanel x:Name="spFind" Grid.Column="1" Orientation="Horizontal"  >
@@ -43,6 +43,12 @@
                 <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="3" Margin="0,2,0,0">
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Перевод на выбранный счёт:" Width="352" Height="22"/>
+            <ComboBox x:Name="cbBillForSend" Width="341" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=dataGrid, Path=SelectedItem.ClientBill.bills}" SelectionChanged="cbBillForSend_SelectionChanged">
+            </ComboBox>
+
+        </StackPanel>
 
 
 

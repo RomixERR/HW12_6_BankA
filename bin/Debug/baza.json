@@ -11,17 +11,22 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "900",
+        "DepositSum": "200",
         "DepositID": "BILL1#1",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
-        "CreditID": "NO BILL",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "100",
+        "CreditID": "BILL2#1",
         "bills": [
           {
-            "Money": 900.0,
+            "Money": 200.0,
             "ID": "BILL1#1",
             "nativeID": 1
+          },
+          {
+            "Money": 100.0,
+            "ID": "BILL2#1",
+            "nativeID": 2
           }
         ],
         "clientID": 1
@@ -56,20 +61,20 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "600",
+        "DepositSum": "2800",
         "DepositID": "BILL1#2",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
-        "CreditSum": "0",
+        "CreditSum": "400",
         "CreditID": "BILL2#2",
         "bills": [
           {
-            "Money": 600.0,
+            "Money": 2800.0,
             "ID": "BILL1#2",
             "nativeID": 1
           },
           {
-            "Money": 0.0,
+            "Money": 400.0,
             "ID": "BILL2#2",
             "nativeID": 2
           }
@@ -110,11 +115,11 @@
         "DepositID": "NO BILL",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
-        "CreditSum": "0",
+        "CreditSum": "1",
         "CreditID": "BILL2#3",
         "bills": [
           {
-            "Money": 0.0,
+            "Money": 1.0,
             "ID": "BILL2#3",
             "nativeID": 2
           }

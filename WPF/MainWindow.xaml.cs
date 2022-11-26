@@ -31,6 +31,7 @@ namespace HW12_6_BankA
             pageClient = new PageClient();
             LeftFrame.Content = pageClient;
             rep = new Repository("baza.json", employer);
+            pageClient.Bills.IsEnabled = false;
             RefreshDataGrid();
             
             pageClient.DataContext = rep;
@@ -50,7 +51,8 @@ namespace HW12_6_BankA
         private void Bills_Click(object sender, RoutedEventArgs e)
         {
             if (rep.CurrentClient == null) return;
-            billWindow = new BillWindow(rep);
+            billWindow = new BillWindow(rep,this);
+            this.Hide();
             billWindow.Show();
         }
 
@@ -62,6 +64,11 @@ namespace HW12_6_BankA
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             if (dataGrid.SelectedItems.Count == 0) return;
+
+                string s = (dataGrid.SelectedItems.Count > 1) ? "нескольких клиентов" : $"клиента {dataGrid.SelectedItems[0]}";
+                ModalWindowDialog modalWindow = new ModalWindowDialog($"Вы собираетесь удалить {s}\nНапишите ДА", "УДАЛЕНИЕ КЛИЕНТОВ");
+            if (!(bool)modalWindow.ShowDialog()) return;
+            if (modalWindow.InputText.ToUpper() != "ДА") return;
             for (int i = 0; i < dataGrid.SelectedItems.Count; i++)
             {
                 if (dataGrid.SelectedItems[i] != null && dataGrid.SelectedItems[i].GetType() == typeof(Client))
@@ -91,6 +98,7 @@ namespace HW12_6_BankA
         {
             DataGrid dataGrid = (DataGrid)sender;
             Client client;
+            pageClient.Bills.IsEnabled = false;
             if (dataGrid.SelectedItems.Count > 1)
             {   // Выбрано несколько ячеек
                 client = new Client();
@@ -100,6 +108,7 @@ namespace HW12_6_BankA
                 if (dataGrid.SelectedItem.GetType() == typeof(Client))
                 {   // Выбрана одна ячейка (нормальный режим)
                     client = (Client)dataGrid.SelectedItem;
+                    pageClient.Bills.IsEnabled = true;
                 }
                 else
                 {   // Выбрана одна последняя пустая ячейка
@@ -122,6 +131,7 @@ namespace HW12_6_BankA
             if (comboBox.SelectedIndex == -1) dataGrid.ItemsSource = rep.GetClientsData();
             else dataGrid.ItemsSource = rep.GetClientsData((Departament)(comboBox.SelectedItem)); //применить фильтр
             dataGrid.SelectedIndex = 0;
+            pageClient.Bills.IsEnabled = false;
             dataGrid.Items.Refresh();
         }
 

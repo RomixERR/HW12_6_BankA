@@ -23,7 +23,8 @@ namespace HW12_6_BankA
     {
         Repository rep;
         ClientBillWPF bills;
-        public BillWindow(Repository _rep)
+        Window mainWindow;
+        public BillWindow(Repository _rep, Window mainWindow)
         {
             InitializeComponent();
             this.rep = _rep;
@@ -43,13 +44,41 @@ namespace HW12_6_BankA
             btnTakeCred.Click += BtnTakeCred_Click;
             btnSendCred.Click += BtnSendCred_Click;
 
+            this.mainWindow = mainWindow;
             //tbFilter.TextChanged += TbFilter_TextChanged;
             //RefreshDataGrid();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            mainWindow.Show();
+            base.OnClosed(e);
+        }
+
         private void BtnSendCred_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            BillCredit clientBill = rep.CurrentClient.ClientBill.GetBillCredit();
+            string d = "отправить перевод";
+            string minfo = $"Вы собираетесь {d} со счёта {clientBill.ID}, клиента {rep.CurrentClient.Fio}.\n" +
+                         $"На счёт ->>> (ВЫБРАТЬ СПРАВА В СПИСКЕ) ->>>\n" +
+                         $"Введите сумму:";
+
+            ModalWindowSend modalWindowSend = new ModalWindowSend(rep, clientBill.ID, minfo, $"{d}");
+
+            if ((bool)modalWindowSend.ShowDialog())
+            {
+                int? sum = modalWindowSend.Sum;
+                if ((sum == null) || (sum == 0)) return;
+                if (modalWindowSend.ClientForSend == null) return;
+                if (modalWindowSend.BillForSend == null) return;
+
+                clientBill.Take(modalWindowSend.BillForSend, (decimal)sum);
+
+                bills.Refresh(rep);
+                //RefreshDataGrid();
+                Debug.WriteLine($"OK {d} Sum={sum}");
+                return;
+            }
         }
 
         private void BtnTakeCred_Click(object sender, RoutedEventArgs e)
@@ -103,8 +132,9 @@ namespace HW12_6_BankA
                 int? sum = modalWindowSend.Sum;
                 if ((sum == null) || (sum == 0)) return;
                 if (modalWindowSend.ClientForSend == null) return;
+                if (modalWindowSend.BillForSend == null) return;
 
-                clientBill.Take(modalWindowSend.ClientForSend.ClientBill.GetBillDeposit(),(decimal)sum);
+                clientBill.Take(modalWindowSend.BillForSend, (decimal)sum);
 
                 bills.Refresh(rep);
                 //RefreshDataGrid();
