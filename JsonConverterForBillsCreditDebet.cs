@@ -9,6 +9,10 @@ using static HW12_6_BankA.ClientBill;
 
 namespace HW12_6_BankA
 {
+    /// <summary>
+    /// Вспомогательный конвертор для JSON NEWTONSOFT для загрузки БД из файлов. Определяет какой конкретно тип счёта 
+    /// необходимо создать при десериализации Bill -> BillDeposit или Bill -> BillCredit
+    /// </summary>
     internal class JsonConverterForBillsCreditDebet : JsonConverter
     {
         public override bool CanConvert(Type objectType)

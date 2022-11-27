@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace HW12_6_BankA
 {
-    public class Permission //: INotifyPropertyChanged
+    /// <summary>
+    /// У разных пользователей разная полнота доступа к базе данных
+    /// </summary>
+    public class Permission 
     {
         public bool FNameEnable { get; private set; }
         public bool LNameEnable { get; private set; }
@@ -22,8 +25,6 @@ namespace HW12_6_BankA
         public EDataMode SetDepartamentsData { get; private set; }
         public EDataMode GetClientsData { get; private set; }
         public EDataMode SetClientsData { get; private set; }
-
-        //public event PropertyChangedEventHandler PropertyChanged;
 
         public  Permission( EDataMode GetDepartamentsData,
                             EDataMode SetDepartamentsData,
@@ -60,8 +61,6 @@ namespace HW12_6_BankA
                 DeleteClientEnable = true;
                 BillsClientEnable = true;
             }
-            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FNameEnable"));
-            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("LNameEnable"));
         }
 
     }

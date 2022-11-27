@@ -116,7 +116,7 @@ namespace HW12_6_BankA
         private void TbFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
             string text = ((TextBox)sender).Text;
-            if (text.Length > 3)
+            if (text.Length > 2)
             {
                 RefreshDataGrid(rep.FilterNames(rep.GetClientsData(), text));
             }

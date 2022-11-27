@@ -45,7 +45,6 @@ namespace HW12_6_BankA
             pageClient.Bills.Click += Bills_Click;
 
             comboBox.ItemsSource = rep.GetDepartamentsData();
-            //TestFName();
         }
 
         private void Bills_Click(object sender, RoutedEventArgs e)
@@ -163,48 +162,5 @@ namespace HW12_6_BankA
             }
             rep.OnPropertyChanged("CurrentClient");
         }
-
-        //public void TestFName()
-        //{
-        //    //////
-        //    string testName;
-        //    List<Client> testclients;
-        //    testName = "И";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-
-        //    testName = "ива";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-
-        //    testName = "иван";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-
-        //    testName = "иванов";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-
-        //    testName = "иванов и";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-
-        //    testName = "иванов ива";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-
-        //    testName = "иванов иван ив";
-        //    Debug.WriteLine($"testName = {testName}");
-        //    testclients = rep.FilterNames(rep.GetClientsData(), testName);
-        //    Client.DebugPrintList(testclients);
-        //}
-
-
     }
 }

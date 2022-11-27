@@ -38,7 +38,7 @@ namespace HW12_6_BankA
             }
             dataChangeAtributes = DataChangeAtributes.NewChangeAtributes(employer);
             this.nameOfDepartament = NameOfDepartament;
-            ID = ++IDs.DepartamentsIDCount;
+            ID = ++LastIdMonitor.DepartamentsIDCount;
         }
         
         public Departament(int Id, string nameOfDepartament)

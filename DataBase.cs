@@ -65,7 +65,7 @@ namespace HW12_6_BankA
 
         private Departament GetFakeDepartament(Employer employer)
         {
-            int ID = IDs.DepartamentsIDCount;
+            int ID = LastIdMonitor.DepartamentsIDCount;
             return new Departament($"Департамент {ID}", employer);
         }
     }

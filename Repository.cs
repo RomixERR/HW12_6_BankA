@@ -13,27 +13,12 @@ using System.Windows.Controls;
 
 namespace HW12_6_BankA
 {
-    public static class Extensions
-    {
-        public static int find<Client>(this List<Client> list, Client target)
-        {
-            return list.IndexOf(target);
-        }
-    }
-
     public class Repository : INotifyPropertyChanged
     {
         /// <summary>
         /// текущая КОПИЯ выбранного клиента
         /// </summary>
         public Client CurrentClient { get; set; }
-        //public List<Departament> departaments
-        //{
-        //    get
-        //    {
-        //        return GetDepartamentsData();
-        //    }
-        //}
         private DataBase db;
         private string pathFileName;
 
@@ -70,7 +55,7 @@ namespace HW12_6_BankA
                                     $"{db.departaments.Count} департаментов.");
             }
             this.employer = employer;
-            IDs.SetCounts(db);
+            LastIdMonitor.SetCounts(db);
 
             //ClientSelect(db.clients.First());
         }
@@ -161,18 +146,13 @@ namespace HW12_6_BankA
                 if (typeFilter == typeof(Departament)) {
                     L = FilterDepartaments(L, filterObject as Departament); //Применяем фильтр по департаментам если нужно
                 }
-
-
             }
-
-
             return L;
         }
         public List<Client> GetClientsData()
         {
             return GetClientsData<object>(null);
         }
-
         /// <summary>
         /// Фильтр по департаментам
         /// На выходе получаем новый список только с нужными департаментами
@@ -195,6 +175,8 @@ namespace HW12_6_BankA
         /// <summary>
         /// Фильтр по именам (полностью по фамилии имени и отчеству)
         /// На выходе получаем новый список только с нужными именами (например все Ивановы)
+        /// Вводить ФИО следует через пробел, например "Ивано Ив Ив" - найдет "Иванова Ивана Ивановича"
+        /// а "Иван Ив" - может найти ещё и "Иванова Ивана Сидоровича"
         /// </summary>
         /// <param name="L">Изначальный список</param>
         /// <param name="name">имя клиентов</param>
@@ -278,7 +260,6 @@ namespace HW12_6_BankA
         public void SaveCurrentClient(Departament departament = null)
         {
             Client client;
-
             if (db.clients.find(CurrentClient) >= 0) //выбрана ли пустая последняя ячейка в таблице или существующая
             {  //существующая ячейка - ищем клиента и изменяем данные
                 client = db.clients[db.clients.find(CurrentClient)];
@@ -330,8 +311,6 @@ namespace HW12_6_BankA
             if (!K.check) { check = false; errorMsg += K.errorMsg + " "; }
             return (check, errorMsg);
         }
-
-
         /// <summary>
         /// Удаление из базы (не в файл!) по ID
         /// </summary>
@@ -350,12 +329,5 @@ namespace HW12_6_BankA
                 db.clients.Remove(client);
             }
         }
-
-
-
-
-
-
-
     }
 }

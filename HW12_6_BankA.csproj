@@ -58,37 +58,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BillWindow.xaml.cs">
+    <Compile Include="DataChangeAtributes.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="FIO.cs" />
+    <Compile Include="LastIdMonitor.cs" />
+    <Compile Include="WPF\BillWindow.xaml.cs">
       <DependentUpon>BillWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClientBill.cs" />
     <Compile Include="ClientBillWPF.cs" />
     <Compile Include="JsonConverterForBillsCreditDebet.cs" />
-    <Compile Include="ModalWindowAdd.xaml.cs">
+    <Compile Include="WPF\ModalWindowAdd.xaml.cs">
       <DependentUpon>ModalWindowAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModalWindowDialog.xaml.cs">
+    <Compile Include="WPF\ModalWindowDialog.xaml.cs">
       <DependentUpon>ModalWindowDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModalWindowSend.xaml.cs">
+    <Compile Include="WPF\ModalWindowSend.xaml.cs">
       <DependentUpon>ModalWindowSend.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="BillWindow.xaml">
+    <Page Include="WPF\BillWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModalWindowAdd.xaml">
+    <Page Include="WPF\ModalWindowAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModalWindowDialog.xaml">
+    <Page Include="WPF\ModalWindowDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ModalWindowSend.xaml">
+    <Page Include="WPF\ModalWindowSend.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
