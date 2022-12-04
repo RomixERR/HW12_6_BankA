@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +51,7 @@ namespace HW12_6_BankA
             this.rep = rep;
             tbFilter.TextChanged += TbFilter_TextChanged;
             this.BillTakeID = BillTakeID;
+            LoggerHub.Log(this, $"Создано модальное окно {this.Name}, {caption}, {info}", LoggerHub.LogEventType.dontDisplayOnForm);
             RefreshDataGrid();
         }
 
@@ -106,7 +107,6 @@ namespace HW12_6_BankA
                 {   // Выбрана одна ячейка (нормальный режим)
                     ClientForSend = (Client)dataGrid.SelectedItem;
                     RefreshInfo();
-                    Debug.WriteLine(ClientForSend.ToString());
                     return;
                 }
             }

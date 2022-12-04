@@ -38,6 +38,7 @@ namespace HW12_6_BankA
             InitializeComponent();
             this.Title = caption;
             tbInfo.Text = info;
+            LoggerHub.Log(this, $"Создано модальное окно {this.Name}, {caption}, {info}", LoggerHub.LogEventType.dontDisplayOnForm);
             tbSum.Focus();
         }
 

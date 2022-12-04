@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +34,6 @@ namespace HW12_6_BankA
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Employer employer = (Employer)(((ComboBox)sender).SelectedItem);
-            Debug.WriteLine(employer);
             mainWindow = new MainWindow(employer);
             mainWindow.Show();
             mainWindow.Activate();

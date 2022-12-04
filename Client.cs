@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,13 +111,13 @@ namespace HW12_6_BankA
             return (check, errorMsg);
         }
 
-        public static void DebugPrintList(List<Client> testClients)
-        {
-            foreach (var item in testClients)
-            {
-                Debug.WriteLine(item);
-            }
-        }
+        //public static void DebugPrintList(List<Client> testClients)
+        //{
+        //    foreach (var item in testClients)
+        //    {
+        //        Debug.WriteLine(item);
+        //    }
+        //}
 
     }
 }

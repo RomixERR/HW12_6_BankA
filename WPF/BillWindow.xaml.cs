@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,12 +71,8 @@ namespace HW12_6_BankA
                 if ((sum == null) || (sum == 0)) return;
                 if (modalWindowSend.ClientForSend == null) return;
                 if (modalWindowSend.BillForSend == null) return;
-
                 clientBill.Take(modalWindowSend.BillForSend, (decimal)sum);
-
                 bills.Refresh(rep);
-                //RefreshDataGrid();
-                Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
         }
@@ -93,8 +89,6 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 clientBill.GetBillCredit().Take((decimal)sum);
                 bills.Refresh(rep);
-                //RefreshDataGrid();
-                Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
         }
@@ -111,8 +105,6 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 clientBill.GetBillCredit().Put((decimal)sum);
                 bills.Refresh(rep);
-               // RefreshDataGrid();
-                Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
         }
@@ -133,12 +125,8 @@ namespace HW12_6_BankA
                 if ((sum == null) || (sum == 0)) return;
                 if (modalWindowSend.ClientForSend == null) return;
                 if (modalWindowSend.BillForSend == null) return;
-
                 clientBill.Take(modalWindowSend.BillForSend, (decimal)sum);
-
                 bills.Refresh(rep);
-                //RefreshDataGrid();
-                Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
         }
@@ -155,13 +143,11 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 if (clientBill.GetBillDeposit() == null)
                 {
-                    Debug.WriteLine($"У клиента для перевода нет счёта");
+                    LoggerHub.Log(this, $"У клиента {rep.CurrentClient.ID} для перевода нет счёта", LoggerHub.LogEventType.dontDisplayOnForm);
                     return;
                 }
                 clientBill.GetBillDeposit().Take((decimal)sum);
                 bills.Refresh(rep);
-                //RefreshDataGrid();
-                Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
         }
@@ -178,8 +164,6 @@ namespace HW12_6_BankA
                 ClientBillWPF clientBill = rep.CurrentClient.ClientBill;
                 clientBill.GetBillDeposit().Put((decimal)sum);
                 bills.Refresh(rep);
-                //RefreshDataGrid();
-                Debug.WriteLine($"OK {d} Sum={sum}");
                 return;
             }
         }

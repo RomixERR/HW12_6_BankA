@@ -25,6 +25,9 @@ namespace HW12_6_BankA
             Rep = rep;
             Employer = employer;
             LogEvent += LogToDebugConsole;
+
+            LoggerHub.Log(this, "============Старт ЛОГГЕРА============", LoggerHub.LogEventType.dontDisplayOnForm);
+            LoggerHub.Log(this, $"С базой данных работает {Employer.Name}, {Employer.Role}.", LoggerHub.LogEventType.dontDisplayOnForm);
         }
 
         public static void Log(object obj, string msg, LogEventType logEventType)

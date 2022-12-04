@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,13 +130,17 @@ namespace HW12_6_BankA
             {
                 if (billFromTake == null)
                 {
-                    Debug.WriteLine("Счёт для снятия не найден");
+                    LoggerHub.Log(this, $"Счёт для снятия {billFromTake.ID} не найден", LoggerHub.LogEventType.dontDisplayOnForm);
                     return false;
                 }
                 if (amount <= billFromTake.Money)
                 {
                     billFromTake.Money -= amount;
                     Money += amount;
+                    LoggerHub.Log(
+                        this,
+                        $"На счёт переведена сумма {amount}. Счёт:{ID} для клиента ID:{ClientID}, со счёта {billFromTake.ID}, ID клиента:{billFromTake.ClientID}, PUT(Bill billFromTake, decimal amount)",
+                        LoggerHub.LogEventType.DisplayOnForm);
                     return true;
                 }
                 else return false;
@@ -149,6 +153,10 @@ namespace HW12_6_BankA
             public bool Put(decimal amount)
             {
                 Money += amount;
+                LoggerHub.Log(
+                    this,
+                    $"На счёт положенна сумма {amount}. Счёт:{ID} для клиента ID:{ClientID} PUT(decimal amount)",
+                    LoggerHub.LogEventType.DisplayOnForm);
                 return true;
             }
             /// <summary>
@@ -195,13 +203,17 @@ namespace HW12_6_BankA
             {
                 if (billForPut == null)
                 {
-                    Debug.WriteLine("Счёт для передачи не найден");
+                    LoggerHub.Log(this, $"Счёт для передачи {billForPut.ID} не найден", LoggerHub.LogEventType.dontDisplayOnForm);
                     return false;
                 }
                 if (Money >= amount)
                 {
                     Money -= amount;
                     billForPut.Money += amount;
+                    LoggerHub.Log(
+                        this,
+                        $"Со счёта переведена сумма {amount}. Счёт:{ID} клиента ID:{ClientID}, на счёт {billForPut.ID}, клиенту ID:{billForPut.ClientID}, Take(Bill billForPut, decimal amount), BillDeposit",
+                        LoggerHub.LogEventType.DisplayOnForm);
                     return true;
                 }
                 else return false;
@@ -216,6 +228,10 @@ namespace HW12_6_BankA
                 if (Money >= amount)
                 {
                     Money -= amount;
+                    LoggerHub.Log(
+                        this,
+                        $"Со счёта снята сумма {amount}. Счёт:{ID} клиента ID:{ClientID}, Take(decimal amount), BillDeposit",
+                        LoggerHub.LogEventType.DisplayOnForm);
                     return true;
                 }
                 else return false;
@@ -235,11 +251,15 @@ namespace HW12_6_BankA
             {
                 if (billForPut == null)
                 {
-                    Debug.WriteLine("Счёт для передачи не найден");
+                    LoggerHub.Log(this, $"Счёт для передачи {billForPut.ID} не найден", LoggerHub.LogEventType.dontDisplayOnForm);
                     return false;
                 }
                 Money -= amount;
                 billForPut.Money += amount;
+                LoggerHub.Log(
+                        this,
+                        $"Со счёта переведена сумма {amount}. Счёт:{ID} клиента ID:{ClientID}, на счёт {billForPut.ID}, клиенту ID:{billForPut.ClientID}, Take(Bill billForPut, decimal amount), BillCredit",
+                        LoggerHub.LogEventType.DisplayOnForm);
                 return true;
             }
             /// <summary>
@@ -250,6 +270,10 @@ namespace HW12_6_BankA
             public override bool Take(decimal amount)
             {
                 Money -= amount;
+                LoggerHub.Log(
+                    this,
+                    $"Со счёта снята сумма {amount}. Счёт:{ID} клиента ID:{ClientID}, Take(decimal amount), BillCredit",
+                    LoggerHub.LogEventType.DisplayOnForm);
                 return true;
             }
         }

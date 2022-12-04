@@ -1,7 +1,7 @@
 ﻿using FakeUsersLite;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -139,7 +139,9 @@ namespace HW12_6_BankA
         private void Window_Closed(object sender, EventArgs e)
         {
             var K= rep.SaveToFile();
-            if(!K.result) { Debug.WriteLine(K.error); }
+            if(!K.result) {
+                LoggerHub.Log(this, "!!! ОШИБКА СОХРАНЕНИЯ В ФАЙЛ ПРИ ЗАКРЫТИИ ОКНА !!! " + K.error, LoggerHub.LogEventType.dontDisplayOnForm);
+            }
         }
 
 

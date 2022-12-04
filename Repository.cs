@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -264,12 +264,14 @@ namespace HW12_6_BankA
             {  //существующая ячейка - ищем клиента и изменяем данные
                 client = db.clients[db.clients.find(CurrentClient)];
                 var K = ClientDataCompletenessCheck(CurrentClient);
-                if (!K.check) { Debug.WriteLine("ОШИБКА В ДАННЫХ КЛИЕНТА ПРИ РЕДАКТИРОВАНИИ! " + K.errorMsg); return; }
+                if (!K.check) {
+                    LoggerHub.Log(this, "ОШИБКА В ДАННЫХ КЛИЕНТА ПРИ РЕДАКТИРОВАНИИ!" + K.errorMsg, LoggerHub.LogEventType.dontDisplayOnForm);
+                    return;
+                }
                 if (employer.Permission.SetClientsData == Permission.EDataMode.No)
                 {
-                    //throw new Exception("Нет привелегий в редактировании");
-                    Debug.WriteLine("Нет привелегий в редактировании");
-                    return;
+                    LoggerHub.Log(this, "Нет привелегий в редактировании", LoggerHub.LogEventType.dontDisplayOnForm);
+                    throw new Exception("Нет привелегий в редактировании");
                 }
                 client.PhoneNum = CurrentClient.PhoneNum;
                 if (employer.Permission.SetClientsData == Permission.EDataMode.All)
@@ -282,14 +284,16 @@ namespace HW12_6_BankA
                 //выбрана пустая ячейка - добавляем нового клиента
                 if (employer.Permission.SetClientsData != Permission.EDataMode.All)
                 {
-                    //throw new Exception("Нет привелегий в добавлении");
-                    Debug.WriteLine("Нет привелегий в добавлении");
-                    return;
+                    LoggerHub.Log(this, "Нет привелегий в добавлении", LoggerHub.LogEventType.dontDisplayOnForm);
+                    throw new Exception("Нет привелегий в добавлении");
                 }
                 if (departament == null) departament = db.departaments[0]; //Если департамент не был указан то берём первый
                 client = new Client(CurrentClient.Fio, CurrentClient.PhoneNum, CurrentClient.PasportNum, employer, departament);
                 var K = ClientDataCompletenessCheck(client);
-                if (!K.check) { Debug.WriteLine("ОШИБКА В ДАННЫХ КЛИЕНТА ПРИ ДОБАВЛЕНИИ! " + K.errorMsg); return; }
+                if (!K.check) {
+                    LoggerHub.Log(this, "ОШИБКА В ДАННЫХ КЛИЕНТА ПРИ ДОБАВЛЕНИИ! " + K.errorMsg, LoggerHub.LogEventType.dontDisplayOnForm);
+                    return;
+                }
                 db.clients.Add(client);
             }
         }
@@ -323,7 +327,7 @@ namespace HW12_6_BankA
             {
                 if (client.ClientBill.bills.Count>0)
                 {
-                    Debug.WriteLine("Невозможно удалить клиента с открытыми счетами!");
+                    LoggerHub.Log(this, "Невозможно удалить клиента с открытыми счетами!", LoggerHub.LogEventType.DisplayOnForm);
                     return;
                 }
                 db.clients.Remove(client);
