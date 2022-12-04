@@ -118,7 +118,7 @@ namespace HW12_6_BankA
             }
             public override string ToString()
             {
-                return $"# ID = {ID,10}; \tMoney = {Money,10}";
+                return $"# ID = {ID,10}; {GetTypeBillString()} \tMoney = {Money,10}";
             }
             /// <summary>
             /// Положить (перевести) на этот счет деньги
@@ -187,6 +187,7 @@ namespace HW12_6_BankA
                 else if (this.nativeID == 2) { return "кредитный счёт"; }
                 else return $"!!! счёт неизвестного типа, nativeID={this.nativeID}";
             }
+
 
         }
 

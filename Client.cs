@@ -79,7 +79,7 @@ namespace HW12_6_BankA
 
         public override string ToString()
         {
-            return $"{Fio} {PhoneNum} {PasportNum} {Departament}";
+            return $"{Fio} {PhoneNum} {PasportNum} {Departament} СЧЕТА: {clientBill.GetBillDeposit()} {clientBill.GetBillCredit()}";
         }
 
         public bool Equals(Client other)

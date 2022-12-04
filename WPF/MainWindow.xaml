@@ -31,9 +31,10 @@
                 <DataGridTextColumn Width="Auto" Header="Телефонный номер" Binding="{Binding Mode=OneWay, Path=PhoneNum}"/>
                 <DataGridTextColumn Width="Auto" Header="Номер паспорта" Binding="{Binding Mode=OneWay, Path=PasportNum}"/>
                 <DataGridTextColumn Width="Auto" Header="Место работы" Binding="{Binding Mode=OneWay, Path=Departament}"/>
+                <DataGridTextColumn Width="Auto" Header="ID" Binding="{Binding Mode=OneWay, Path=ID}"/>
             </DataGrid.Columns>
         </DataGrid>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="comboBox_SelectionChanged" Height="22"/>
-
+            <TextBox x:Name="tBLog" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="5,3,5,3"/>
     </Grid>
 </Window>

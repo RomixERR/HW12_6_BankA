@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HW12_6_BankA"
         mc:Ignorable="d"
-        Title="Add" Height="170" Width="398" ResizeMode="NoResize" >
+        Title="Add" Height="202" Width="398" ResizeMode="NoResize" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="69*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="53*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="tbInfo" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Инфо" VerticalAlignment="Center" Width="378" Height="35"/>
+        <TextBlock x:Name="tbInfo" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Инфо" VerticalAlignment="Center" Width="378" Height="61"/>
         <TextBox x:Name="tbSum" Grid.Row="1" TextWrapping="Wrap" Text="" Foreground="#FF053708" FontSize="22" FontWeight="Bold" TextAlignment="Center" Margin="80,9,80,8"/>
-        <Button x:Name="btnСonfirm"  IsDefault="True"  Content="Подтвердить" Click="btnСonfirm_Click" Grid.Row="2" Height="38" Width="116" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-        <Button x:Name="btnCanсel" IsCancel="True" Content="Отмена" Grid.Row="2" Height="38" Width="116" HorizontalAlignment="Right" Margin="10,0,10,0"/>
-        
+        <Button x:Name="btnСonfirm"  IsDefault="True"  Content="Подтвердить" Click="btnСonfirm_Click" Grid.Row="2" Width="116" HorizontalAlignment="Left" Margin="10,16,0,15"/>
+        <Button x:Name="btnCanсel" IsCancel="True" Content="Отмена" Grid.Row="2" Width="116" HorizontalAlignment="Left" Margin="272,16,0,15"/>
+
     </Grid>
 </Window>

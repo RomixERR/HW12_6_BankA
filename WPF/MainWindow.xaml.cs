@@ -33,7 +33,10 @@ namespace HW12_6_BankA
             LeftFrame.Content = pageClient;
             rep = new Repository("baza.json", employer);
             pageClient.Bills.IsEnabled = false;
-            loggerHub = new LoggerHub(rep, employer);
+            loggerHub = new LoggerHub(rep, employer,this);
+
+            rep.OldIDsClientsFix(); //- FIX IDS
+
             RefreshDataGrid();
             
             pageClient.DataContext = rep;
@@ -45,7 +48,6 @@ namespace HW12_6_BankA
             pageClient.TLP_Btn.Click += BtnRandom_Click;
             pageClient.PSP_Btn.Click += BtnRandom_Click;
             pageClient.Bills.Click += Bills_Click;
-
             comboBox.ItemsSource = rep.GetDepartamentsData();
         }
 
@@ -86,11 +88,11 @@ namespace HW12_6_BankA
             //rep.OnPropertyChanged("CurrentClient");
             if (comboBox.SelectedItem != null)
             {
-                rep.SaveCurrentClient((Departament)comboBox.SelectedItem); //это необходимо, если клиент НОВЫЙ (тоесть когда данных о департаменте просто нет, берётся тот департамент который выбран)
+                rep.SaveCurrentClient(false, (Departament)comboBox.SelectedItem); //это необходимо, если клиент НОВЫЙ (тоесть когда данных о департаменте просто нет, берётся тот департамент который выбран)
             }
             else
             {
-                rep.SaveCurrentClient();
+                rep.SaveCurrentClient(false);
             }
             RefreshDataGrid();
         }

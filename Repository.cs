@@ -257,7 +257,7 @@ namespace HW12_6_BankA
         /// <summary>
         /// Запись в базу (не в файл!) текущего клиента (изменение)
         /// </summary>
-        public void SaveCurrentClient(Departament departament = null)
+        public void SaveCurrentClient(bool shortLog, Departament departament = null)
         {
             Client client, oldClient;
             if (db.clients.find(CurrentClient) >= 0) //выбрана ли пустая последняя ячейка в таблице или существующая
@@ -273,16 +273,19 @@ namespace HW12_6_BankA
                     LoggerHub.Log(this, "Нет привелегий в редактировании", LoggerHub.LogEventType.dontDisplayOnForm);
                     throw new Exception("Нет привелегий в редактировании");
                 }
-                oldClient = client;
+                oldClient = new Client( client);
                 client.PhoneNum = CurrentClient.PhoneNum;
                 if (employer.Permission.SetClientsData == Permission.EDataMode.All)
                 {
                     client.Fio = CurrentClient.Fio;
                     client.PasportNum = CurrentClient.PasportNum;
                 }
-                LoggerHub.Log(this, $"Данные клиента изменены. ID={client.ID}...", LoggerHub.LogEventType.DisplayOnForm);
-                LoggerHub.Log(this, $"... Было: {oldClient}", LoggerHub.LogEventType.DisplayOnForm);
-                LoggerHub.Log(this, $"... Стало: {client}", LoggerHub.LogEventType.DisplayOnForm);
+                if (!shortLog)
+                {
+                    LoggerHub.Log(this, $"Данные клиента изменены. ID={client.ID}...", LoggerHub.LogEventType.DisplayOnForm);
+                    LoggerHub.Log(this, $"... Было: {oldClient}", LoggerHub.LogEventType.DisplayOnForm);
+                    LoggerHub.Log(this, $"... Стало: {client}", LoggerHub.LogEventType.DisplayOnForm);
+                }
             }
             else {
                 //выбрана пустая ячейка - добавляем нового клиента
@@ -339,6 +342,11 @@ namespace HW12_6_BankA
                 db.clients.Remove(client);
                 LoggerHub.Log(this, $"Клиент ID={client.ID} удалён", LoggerHub.LogEventType.DisplayOnForm);
             }
+        }
+
+        public void OldIDsClientsFix()
+        {
+            db.OldIDsClientsFix();
         }
     }
 }

@@ -37,9 +37,6 @@ namespace HW12_6_BankA
 
         }
 
-
-
-
         private void AddFakeClients(int amount)
         {
             Permission permission = new Permission(Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All, Permission.EDataMode.All);
@@ -67,6 +64,26 @@ namespace HW12_6_BankA
         {
             int ID = LastIdMonitor.DepartamentsIDCount;
             return new Departament($"Департамент {ID}", employer);
+        }
+
+        public void OldIDsClientsFix()
+        {
+            Client client;
+            int count=0;
+            for (int i = 0; i < clients.Count; i++)
+            {
+                client = clients[i];
+                if (client.ClientBill.GetBillCredit()?.ClientID == 0)  {
+                    client.ClientBill.GetBillCredit().ClientID = client.ID;
+                    count++;
+                }
+                if (client.ClientBill.GetBillDeposit()?.ClientID == 0) {
+                    client.ClientBill.GetBillDeposit().ClientID = client.ID;
+                    count++;
+                }
+            }
+            LoggerHub.Log(this, "OldIDsClientsFix() Выполненно. Кол-во замен ID - " + count,LoggerHub.LogEventType.dontDisplayOnForm);
+
         }
     }
 }

@@ -34,7 +34,7 @@ namespace HW12_6_BankA
         /// </summary>
         public void Refresh(Repository rep)
         {
-            rep.SaveCurrentClient();
+            rep.SaveCurrentClient(true);
             BillCredit billCredit = GetBillCredit();
             if (billCredit == null)
             {
