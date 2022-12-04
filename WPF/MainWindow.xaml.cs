@@ -142,6 +142,10 @@ namespace HW12_6_BankA
             if(!K.result) {
                 LoggerHub.Log(this, "!!! ОШИБКА СОХРАНЕНИЯ В ФАЙЛ ПРИ ЗАКРЫТИИ ОКНА !!! " + K.error, LoggerHub.LogEventType.dontDisplayOnForm);
             }
+            else
+            {
+                LoggerHub.Log(this, "==============ФАЙЛ БАЗЫ ДАННЫХ ПОЛНОСТЬЮ СОХРАНЁН==============", LoggerHub.LogEventType.dontDisplayOnForm);
+            }
         }
 
 
