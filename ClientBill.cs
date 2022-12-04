@@ -13,7 +13,7 @@ namespace HW12_6_BankA
        
         public List<Bill> bills { get; set; }
         
-        public int clientID { get; set; }
+        //public int clientID { get; set; }
 
         public ClientBill()
         {
@@ -23,10 +23,10 @@ namespace HW12_6_BankA
         public ClientBill(int clientID)
         {
             bills = new List<Bill>();
-            this.clientID = clientID;
+            //this.clientID = clientID;
         }
 
-        public bool OpenBill(Type typeBill)
+        public bool OpenBill(Type typeBill, int clientID)
         {
             foreach (var bill in bills)
             {
@@ -36,21 +36,33 @@ namespace HW12_6_BankA
             if (typeBill == typeof(BillDeposit))
             {
                 bills.Add(new BillDeposit(clientID));
+                LoggerHub.Log(
+                    this,
+                    $"Открытие {bills.Last<Bill>().GetTypeBillString()}, {bills.Last<Bill>().ID} для клиента ID:{bills.Last<Bill>().ClientID}",
+                    LoggerHub.LogEventType.DisplayOnForm);
                 return true;
             }
             else if (typeBill == typeof(BillCredit))
             {
                 bills.Add(new BillCredit(clientID));
+                LoggerHub.Log(
+                    this,
+                    $"Открытие {bills.Last<Bill>().GetTypeBillString()}, {bills.Last<Bill>().ID} для клиента ID:{bills.Last<Bill>().ClientID}",
+                    LoggerHub.LogEventType.DisplayOnForm);
                 return true;
             }
             else return false;
         }
 
-        public bool CloseBill(Bill bill)
+        public bool CloseBill(Bill bill, int clientID)
         {
             if (bill.Money == 0)
             {
                 bills.Remove(bill);
+                LoggerHub.Log(
+                    this,
+                    $"Закрытие {bill.GetTypeBillString()}, {bill.ID} для клиента ID:{bill.ClientID}",
+                    LoggerHub.LogEventType.DisplayOnForm);
                 return true;
             }
             else return false;
@@ -96,11 +108,13 @@ namespace HW12_6_BankA
             public decimal Money { get; set; }
             public string ID { get; set; }
             public int nativeID { get; set; }
+            public int ClientID { get; set; }
 
             protected Bill(int clientID, int nativeID)
             {
                 this.ID = $"BILL{nativeID}#{clientID}";
                 this.nativeID = nativeID;
+                this.ClientID = clientID;
             }
             public override string ToString()
             {
@@ -151,6 +165,20 @@ namespace HW12_6_BankA
             /// <param name="amount"></param>
             /// <returns></returns>
             public abstract bool Take(decimal amount);
+
+            public Type GetTypeBill()
+            {
+                if (this.nativeID == 1) { return typeof(BillDeposit); }
+                else if (this.nativeID == 2) { return typeof(BillCredit); }
+                else return null;
+            }
+            public string GetTypeBillString()
+            {
+                //return GetTypeBill().Name;
+                if (this.nativeID == 1) { return "депозитный счёт"; }
+                else if (this.nativeID == 2) { return "кредитный счёт"; }
+                else return $"!!! счёт неизвестного типа, nativeID={this.nativeID}";
+            }
 
         }
 

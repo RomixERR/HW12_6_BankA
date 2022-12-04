@@ -11,20 +11,26 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "100000",
-        "DepositID": "BILL1#0",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
-        "CreditID": "NO BILL",
+        "DepositSum": "1000",
+        "DepositID": "BILL1#1",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
+        "CreditID": "BILL2#1",
         "bills": [
           {
-            "Money": 100000.0,
-            "ID": "BILL1#0",
-            "nativeID": 1
+            "Money": 1000.0,
+            "ID": "BILL1#1",
+            "nativeID": 1,
+            "ClientID": 1
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL2#1",
+            "nativeID": 2,
+            "ClientID": 1
           }
-        ],
-        "clientID": 0
+        ]
       },
       "Fio": {
         "FirstName": "Рего",
@@ -66,15 +72,16 @@
           {
             "Money": 900.0,
             "ID": "BILL2#0",
-            "nativeID": 2
+            "nativeID": 2,
+            "ClientID": 0
           },
           {
             "Money": 100.0,
             "ID": "BILL1#0",
-            "nativeID": 1
+            "nativeID": 1,
+            "ClientID": 0
           }
-        ],
-        "clientID": 0
+        ]
       },
       "Fio": {
         "FirstName": "БАСЯ",
@@ -108,18 +115,24 @@
         "IsCloseDepositVisible": 1,
         "DepositSum": "9998",
         "DepositID": "BILL1#0",
-        "IsOpenCreditVisible": 1,
-        "IsCloseCreditVisible": 0,
-        "CreditSum": "NO BILL",
-        "CreditID": "NO BILL",
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 1,
+        "CreditSum": "0",
+        "CreditID": "BILL2#0",
         "bills": [
           {
             "Money": 9998.0,
             "ID": "BILL1#0",
-            "nativeID": 1
+            "nativeID": 1,
+            "ClientID": 0
+          },
+          {
+            "Money": 0.0,
+            "ID": "BILL2#0",
+            "nativeID": 2,
+            "ClientID": 0
           }
-        ],
-        "clientID": 0
+        ]
       },
       "Fio": {
         "FirstName": "Горег",
@@ -157,8 +170,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
         "CreditID": "NO BILL",
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Олар",
@@ -196,8 +208,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Ксем",
@@ -235,8 +246,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Егорв",
@@ -274,8 +284,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Вади",
@@ -313,8 +322,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Адимо",
@@ -352,8 +360,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
         "CreditID": "NO BILL",
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Вадимо",
@@ -383,22 +390,15 @@
       },
       "ID": 10,
       "ClientBill": {
-        "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 1,
-        "DepositSum": "481",
-        "DepositID": "BILL1#0",
+        "IsOpenDepositVisible": 1,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": "NO BILL",
+        "DepositID": "NO BILL",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
         "CreditID": "NO BILL",
-        "bills": [
-          {
-            "Money": 481.0,
-            "ID": "BILL1#0",
-            "nativeID": 1
-          }
-        ],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Кола",
@@ -436,8 +436,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Григ",
@@ -475,8 +474,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Ларо",
@@ -514,8 +512,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Толе",
@@ -553,8 +550,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Алексе",
@@ -592,8 +588,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Нтоле",
@@ -631,8 +626,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Иван",
@@ -670,8 +664,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Аппалонов",
@@ -713,10 +706,10 @@
           {
             "Money": 3000000.0,
             "ID": "BILL1#0",
-            "nativeID": 1
+            "nativeID": 1,
+            "ClientID": 0
           }
-        ],
-        "clientID": 0
+        ]
       },
       "Fio": {
         "FirstName": "Онотоле",
@@ -754,8 +747,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Горего",
@@ -793,8 +785,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Олегр",
@@ -832,8 +823,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Иван",
@@ -871,8 +861,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Иволг",
@@ -910,8 +899,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Иван",
@@ -949,8 +937,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Онотоле",
@@ -988,8 +975,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Онотоле",
@@ -1027,8 +1013,7 @@
         "IsCloseCreditVisible": 0,
         "CreditSum": null,
         "CreditID": null,
-        "bills": [],
-        "clientID": 0
+        "bills": []
       },
       "Fio": {
         "FirstName": "Иван",
@@ -1070,10 +1055,10 @@
           {
             "Money": -332900.0,
             "ID": "BILL2#27",
-            "nativeID": 2
+            "nativeID": 2,
+            "ClientID": 0
           }
-        ],
-        "clientID": 27
+        ]
       },
       "Fio": {
         "FirstName": "Лексем",
@@ -1115,10 +1100,10 @@
           {
             "Money": 833013.0,
             "ID": "BILL1#28",
-            "nativeID": 1
+            "nativeID": 1,
+            "ClientID": 0
           }
-        ],
-        "clientID": 28
+        ]
       },
       "Fio": {
         "FirstName": "Толег",
@@ -1160,15 +1145,16 @@
           {
             "Money": -500000.0,
             "ID": "BILL2#29",
-            "nativeID": 2
+            "nativeID": 2,
+            "ClientID": 0
           },
           {
             "Money": 500.0,
             "ID": "BILL1#29",
-            "nativeID": 1
+            "nativeID": 1,
+            "ClientID": 0
           }
-        ],
-        "clientID": 29
+        ]
       },
       "Fio": {
         "FirstName": "Анто",
@@ -1210,10 +1196,10 @@
           {
             "Money": 1000000.0,
             "ID": "BILL1#30",
-            "nativeID": 1
+            "nativeID": 1,
+            "ClientID": 0
           }
-        ],
-        "clientID": 30
+        ]
       },
       "Fio": {
         "FirstName": "Преподович",

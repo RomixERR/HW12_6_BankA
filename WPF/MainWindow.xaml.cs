@@ -22,6 +22,7 @@ namespace HW12_6_BankA
     /// </summary>
     public partial class MainWindow : Window
     {
+        LoggerHub loggerHub;
         PageClient pageClient;
         BillWindow billWindow;
         Repository rep;
@@ -32,6 +33,7 @@ namespace HW12_6_BankA
             LeftFrame.Content = pageClient;
             rep = new Repository("baza.json", employer);
             pageClient.Bills.IsEnabled = false;
+            loggerHub = new LoggerHub(rep, employer);
             RefreshDataGrid();
             
             pageClient.DataContext = rep;

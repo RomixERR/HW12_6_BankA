@@ -205,7 +205,7 @@ namespace HW12_6_BankA
         {
             BillCredit bill = bills.GetBillCredit();
             if (bill == null) return;
-            if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
+            bills.CloseBill(bill,rep.CurrentClient.ID);
             bills.Refresh(rep);
             //RefreshDataGrid();
         }
@@ -214,21 +214,21 @@ namespace HW12_6_BankA
         {
             BillDeposit bill = bills.GetBillDeposit();
             if (bill == null) return;
-            if (bills.CloseBill(bill)) Debug.Write("Bill Close!"); else Debug.Write("Bill NOT Close!");
+            bills.CloseBill(bill, rep.CurrentClient.ID);
             bills.Refresh(rep);
             //RefreshDataGrid();
         }
 
         private void BtnOpenCred_Click(object sender, RoutedEventArgs e)
         {
-            if (bills.OpenBill(typeof(BillCredit))) Debug.Write("BillCredit OPEN"); else { Debug.Write("BillCredit not open!"); return; };
+            bills.OpenBill(typeof(BillCredit), rep.CurrentClient.ID);
             bills.Refresh(rep);
             //RefreshDataGrid();
         }
 
         private void BtnOpenDeb_Click(object sender, RoutedEventArgs e)
         {
-            if (bills.OpenBill(typeof(BillDeposit))) Debug.Write("BillDeposit OPEN"); else { Debug.Write("BillDeposit not open!"); return; };
+            bills.OpenBill(typeof(BillDeposit), rep.CurrentClient.ID);
             bills.Refresh(rep);
             //RefreshDataGrid();
         }
