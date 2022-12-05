@@ -33,7 +33,7 @@ namespace HW12_6_BankA
             LeftFrame.Content = pageClient;
             rep = new Repository("baza.json", employer);
             pageClient.Bills.IsEnabled = false;
-            loggerHub = new LoggerHub(rep, employer,this);
+            loggerHub = new LoggerHub(rep, employer,this,"Log.txt");
 
             rep.OldIDsClientsFix(); //- FIX IDS
 

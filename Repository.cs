@@ -292,7 +292,8 @@ namespace HW12_6_BankA
                 if (employer.Permission.SetClientsData != Permission.EDataMode.All)
                 {
                     LoggerHub.Log(this, "Нет привелегий в добавлении", LoggerHub.LogEventType.dontDisplayOnForm);
-                    throw new Exception("Нет привелегий в добавлении");
+                    return;
+                    //throw new Exception("Нет привелегий в добавлении");
                 }
                 if (departament == null) departament = db.departaments[0]; //Если департамент не был указан то берём первый
                 client = new Client(CurrentClient.Fio, CurrentClient.PhoneNum, CurrentClient.PasportNum, employer, departament);

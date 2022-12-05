@@ -15,5 +15,16 @@ namespace HW12_6_BankA
             ClientsIDCount = db.clients.Last().ID;
             DepartamentsIDCount = db.departaments.Last().ID;
         }
+        
+        public static int GenerateClientID()
+        {
+            ClientsIDCount++;
+            return ClientsIDCount;
+        }
+        public static int GenerateDepartamentsID()
+        {
+            DepartamentsIDCount++;
+            return DepartamentsIDCount;
+        }
     }
 }

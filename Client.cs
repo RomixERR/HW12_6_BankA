@@ -38,7 +38,7 @@ namespace HW12_6_BankA
             this.pasportNum = pasportNum;
             this.Departament = departament;
             dataChangeAtributes = DataChangeAtributes.NewChangeAtributes(employer);
-            ID = ++LastIdMonitor.ClientsIDCount;
+            ID = LastIdMonitor.GenerateClientID();
             clientBill = new ClientBillWPF(ID);
         }
 
@@ -60,7 +60,7 @@ namespace HW12_6_BankA
             this.fio = name;
             this.phoneNum = phoneNum;
             this.pasportNum = pasportNum;
-            ID = ++LastIdMonitor.ClientsIDCount;
+            ID = LastIdMonitor.GenerateClientID();
             clientBill = new ClientBillWPF(ID);
         }
         /// <summary>

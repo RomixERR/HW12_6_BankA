@@ -37,7 +37,7 @@
         "LastName": "Ласкоов",
         "MiddleName": "Еласквич"
       },
-      "PhoneNum": "+7-(617)-115-089",
+      "PhoneNum": "+7-(617)-110-089",
       "PasportNum": "9839 2614309",
       "Departament": {
         "dataChangeAtributes": {
@@ -284,14 +284,21 @@
       "ID": 7,
       "ClientBill": {
         "IsOpenDepositVisible": 0,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": null,
-        "DepositID": null,
-        "IsOpenCreditVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "47",
+        "DepositID": "BILL1#7",
+        "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
-        "CreditSum": null,
-        "CreditID": null,
-        "bills": []
+        "CreditSum": "NO BILL",
+        "CreditID": "NO BILL",
+        "bills": [
+          {
+            "Money": 47.0,
+            "ID": "BILL1#7",
+            "nativeID": 1,
+            "ClientID": 7
+          }
+        ]
       },
       "Fio": {
         "FirstName": "Вади",
@@ -327,7 +334,7 @@
         "DepositID": "BILL1#8",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
-        "CreditSum": "0",
+        "CreditSum": "45",
         "CreditID": "BILL2#8",
         "bills": [
           {
@@ -337,7 +344,7 @@
             "ClientID": 8
           },
           {
-            "Money": 0.0,
+            "Money": 45.0,
             "ID": "BILL2#8",
             "nativeID": 2,
             "ClientID": 8
@@ -1219,7 +1226,7 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "2200000",
+        "DepositSum": "3500000",
         "DepositID": "BILL1#30",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
@@ -1227,7 +1234,7 @@
         "CreditID": "NO BILL",
         "bills": [
           {
-            "Money": 2200000.0,
+            "Money": 3500000.0,
             "ID": "BILL1#30",
             "nativeID": 1,
             "ClientID": 30
@@ -1235,12 +1242,88 @@
         ]
       },
       "Fio": {
-        "FirstName": "Пасхалков",
-        "LastName": "Препод",
+        "FirstName": "Кураторович",
+        "LastName": "Артём",
         "MiddleName": "Пасхалков"
       },
       "PhoneNum": "+7-(218)-865-027",
       "PasportNum": "0133 3777156",
+      "Departament": {
+        "dataChangeAtributes": {
+          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "WhatDataIsChange": "All",
+          "TypeDataChange": "New Data",
+          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
+        },
+        "ID": 1,
+        "nameOfDepartament": "Департамент 0",
+        "NameOfDepartament": "Департамент 0"
+      }
+    },
+    {
+      "dataChangeAtributes": {
+        "dateTime": "2022-12-05T21:54:02.9344823+03:00",
+        "WhatDataIsChange": "All",
+        "TypeDataChange": "New Data",
+        "WhoIsChange": "Role: Manager, Name: Вася"
+      },
+      "ID": 32,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "DepositID": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "CreditID": null,
+        "bills": []
+      },
+      "Fio": {
+        "FirstName": "Семёни",
+        "LastName": "Аквасякнко",
+        "MiddleName": "Кжокавич"
+      },
+      "PhoneNum": "+7-(422)-013-932",
+      "PasportNum": "4758 2355393",
+      "Departament": {
+        "dataChangeAtributes": {
+          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "WhatDataIsChange": "All",
+          "TypeDataChange": "New Data",
+          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
+        },
+        "ID": 1,
+        "nameOfDepartament": "Департамент 0",
+        "NameOfDepartament": "Департамент 0"
+      }
+    },
+    {
+      "dataChangeAtributes": {
+        "dateTime": "2022-12-05T21:54:31.9992881+03:00",
+        "WhatDataIsChange": "All",
+        "TypeDataChange": "New Data",
+        "WhoIsChange": "Role: Manager, Name: Вася"
+      },
+      "ID": 33,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "DepositID": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "CreditID": null,
+        "bills": []
+      },
+      "Fio": {
+        "FirstName": "Димо",
+        "LastName": "Еласкосозенков",
+        "MiddleName": "Осдурвич"
+      },
+      "PhoneNum": "+7-(288)-373-687",
+      "PasportNum": "1311 8220852",
       "Departament": {
         "dataChangeAtributes": {
           "dateTime": "2022-10-02T15:08:26.0981427+03:00",
