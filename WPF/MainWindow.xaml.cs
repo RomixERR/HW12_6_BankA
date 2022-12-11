@@ -99,7 +99,6 @@ namespace HW12_6_BankA
 
         private void SaveClientButton_Click(object sender, RoutedEventArgs e)
         {
-            //rep.OnPropertyChanged("CurrentClient");
             if (comboBox.SelectedItem != null)
             {
                 rep.SaveCurrentClient(false, (Departament)comboBox.SelectedItem); //это необходимо, если клиент НОВЫЙ (тоесть когда данных о департаменте просто нет, берётся тот департамент который выбран)
