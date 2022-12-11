@@ -227,6 +227,12 @@ namespace HW12_6_BankA
             return resL;
         }
 
+        public decimal GetSumMoneyOnAllBills<T>()
+            where T: ClientBill.Bill
+        {
+            return db.clients.GetSumMoneyOnAllBills<T>();
+        }
+
         //public List<Client> FindClientsByFio(List<Client> list, FIO name)
         //{
         //    List<Client> fl = new List<Client>();

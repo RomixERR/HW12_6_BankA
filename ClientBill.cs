@@ -68,6 +68,23 @@ namespace HW12_6_BankA
             else return false;
         }
 
+        public T GetBillByType<T>()
+            where T:Bill
+        {
+            if (typeof(T) == typeof(BillDeposit))
+            {
+                return (T)(Bill)GetBillDeposit();
+            } else if (typeof(T) == typeof(BillCredit))
+            {
+                return (T)(Bill)GetBillCredit();
+            } else
+            {
+                throw new Exception("Тип для метода GetBillByType не корректен. Поддерживается BillDeposit или BillCredit");
+            }
+        }
+
+
+
         public BillDeposit GetBillDeposit()
         {
             foreach (var item in bills)
@@ -116,6 +133,29 @@ namespace HW12_6_BankA
                 this.nativeID = nativeID;
                 this.ClientID = clientID;
             }
+            /// <summary>
+            /// Оператор сумма счётов, выдаёт сумму денежных средств
+            /// </summary>
+            public static decimal operator +(Bill A, Bill B)
+            {
+                if ((A == null) && (B == null)) return 0;
+                if (A == null) return B.Money;
+                if (B == null) return A.Money;
+                return A.Money + B.Money;
+            }
+
+            public static decimal operator +(Bill A, decimal B)
+            {
+                if (A == null) return B;
+                return A.Money + B;
+            }
+
+            public static decimal operator +(decimal A, Bill B)
+            {
+                if (B == null) return A;
+                return A + B.Money;
+            }
+
             public override string ToString()
             {
                 return $"# ID = {ID,10}; {GetTypeBillString()} \tMoney = {Money,10}";

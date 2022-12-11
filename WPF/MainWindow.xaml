@@ -36,5 +36,17 @@
         </DataGrid>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="2,2,0,0" VerticalAlignment="Top" Width="260" SelectionChanged="comboBox_SelectionChanged" Height="22"/>
             <TextBox x:Name="tBLog" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="5,3,5,3"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnGetSumDep"  Grid.Column="0" Content="Показать сумму Депозитов" Margin="5,5,5,5"/>
+            <Button x:Name="btnGetSumCred" Grid.Column="1" Content="Показать сумму Кредитов" Margin="5,5,5,5"/>
+        </Grid>
     </Grid>
 </Window>

@@ -11,21 +11,21 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "480",
+        "DepositSum": "613",
         "DepositID": "BILL1#1",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
-        "CreditSum": "0",
+        "CreditSum": "100",
         "CreditID": "BILL2#1",
         "bills": [
           {
-            "Money": 513.0,
+            "Money": 613.0,
             "ID": "BILL1#1",
             "nativeID": 1,
             "ClientID": 1
           },
           {
-            "Money": 0.0,
+            "Money": 100.0,
             "ID": "BILL2#1",
             "nativeID": 2,
             "ClientID": 1
@@ -162,15 +162,22 @@
       },
       "ID": 4,
       "ClientBill": {
-        "IsOpenDepositVisible": 1,
-        "IsCloseDepositVisible": 0,
-        "DepositSum": "NO BILL",
-        "DepositID": "NO BILL",
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 1,
+        "DepositSum": "0",
+        "DepositID": "BILL1#4",
         "IsOpenCreditVisible": 1,
         "IsCloseCreditVisible": 0,
         "CreditSum": "NO BILL",
         "CreditID": "NO BILL",
-        "bills": []
+        "bills": [
+          {
+            "Money": 0.0,
+            "ID": "BILL1#4",
+            "nativeID": 1,
+            "ClientID": 4
+          }
+        ]
       },
       "Fio": {
         "FirstName": "Олар",

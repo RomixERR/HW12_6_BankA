@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace HW12_6_BankA
 {
     /// <summary>
     /// Метод расширения позволяет "добавить" методы в существующие типы без создания нового производного типа
-    /// В данном случае добавлен метод find в List<Client>
+    /// В данном случае добавлен метод find (с маленькой буквы) в List<Client>
     /// </summary>
     public static class Extensions
     {
@@ -19,5 +20,18 @@ namespace HW12_6_BankA
         {
             return list.IndexOf(target);
         }
+
+
+        public static decimal GetSumMoneyOnAllBills<T>(this List<Client> clients)
+            where T:ClientBill.Bill
+        {
+            decimal sum=0;
+            foreach (Client item in clients)
+            {
+                sum += item.ClientBill.GetBillByType<T>();
+            }
+            return sum;
+        }
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using FakeUsersLite;
 using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,12 +33,12 @@ namespace HW12_6_BankA
             LeftFrame.Content = pageClient;
             rep = new Repository("baza.json", employer);
             pageClient.Bills.IsEnabled = false;
-            loggerHub = new LoggerHub(rep, employer,this,"Log.txt");
+            loggerHub = new LoggerHub(rep, employer, this, "Log.txt");
 
             rep.OldIDsClientsFix(); //- FIX IDS
 
             RefreshDataGrid();
-            
+
             pageClient.DataContext = rep;
             this.DataContext = rep;
             pageClient.SaveClientButton.Click += SaveClientButton_Click;
@@ -49,6 +49,20 @@ namespace HW12_6_BankA
             pageClient.PSP_Btn.Click += BtnRandom_Click;
             pageClient.Bills.Click += Bills_Click;
             comboBox.ItemsSource = rep.GetDepartamentsData();
+            btnGetSumDep.Click += BtnGetSumDep_Click;
+            btnGetSumCred.Click += BtnGetSumCred_Click;
+        }
+
+        private void BtnGetSumDep_Click(object sender, RoutedEventArgs e)
+        {
+            LoggerHub.Log(this, $"Сумма всех средств клиентов банка для ДЕПОЗИТНЫХ счетов...", LoggerHub.LogEventType.DisplayOnForm);
+            LoggerHub.Log(this, $"{rep.GetSumMoneyOnAllBills<ClientBill.BillDeposit>()}", LoggerHub.LogEventType.DisplayOnForm);
+        }
+
+        private void BtnGetSumCred_Click(object sender, RoutedEventArgs e)
+        {
+            LoggerHub.Log(this, $"Сумма всех средств клиентов банка для КРЕДИТНЫХ счетов...", LoggerHub.LogEventType.DisplayOnForm);
+            LoggerHub.Log(this, $"{rep.GetSumMoneyOnAllBills<ClientBill.BillCredit>()}", LoggerHub.LogEventType.DisplayOnForm);
         }
 
         private void Bills_Click(object sender, RoutedEventArgs e)
