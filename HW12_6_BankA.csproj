@@ -58,17 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataChangeAtributes.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="FIO.cs" />
-    <Compile Include="LastIdMonitor.cs" />
-    <Compile Include="LoggerHub.cs" />
     <Compile Include="WPF\BillWindow.xaml.cs">
       <DependentUpon>BillWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClientBill.cs" />
-    <Compile Include="ClientBillWPF.cs" />
-    <Compile Include="JsonConverterForBillsCreditDebet.cs" />
     <Compile Include="WPF\ModalWindowAdd.xaml.cs">
       <DependentUpon>ModalWindowAdd.xaml</DependentUpon>
     </Compile>
@@ -105,17 +97,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Client.cs" />
-    <Compile Include="DataBase.cs" />
-    <Compile Include="Departament.cs" />
-    <Compile Include="Employer.cs" />
-    <Compile Include="FakeUser.cs" />
-    <Compile Include="FakeUserDataset.cs" />
-    <Compile Include="Interfases.cs" />
     <Compile Include="WPF\PageClient.xaml.cs">
       <DependentUpon>PageClient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repository.cs" />
     <Compile Include="WPF\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -130,7 +114,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Permission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -149,7 +132,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\baza.json" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -157,6 +139,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankAClassLibrary\BankAClassLibrary.csproj">
+      <Project>{c630b1cd-d213-4584-a707-7504f11063d7}</Project>
+      <Name>BankAClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogHubClassLibrary\LogHubClassLibrary.csproj">
+      <Project>{075f6a8f-ace9-467a-ab08-fcd0374dc83e}</Project>
+      <Name>LogHubClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

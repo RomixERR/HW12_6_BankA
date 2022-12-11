@@ -11,7 +11,7 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "613",
+        "DepositSum": "913",
         "DepositID": "BILL1#1",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
@@ -19,7 +19,7 @@
         "CreditID": "BILL2#1",
         "bills": [
           {
-            "Money": 613.0,
+            "Money": 913.0,
             "ID": "BILL1#1",
             "nativeID": 1,
             "ClientID": 1
@@ -62,7 +62,7 @@
       "ClientBill": {
         "IsOpenDepositVisible": 0,
         "IsCloseDepositVisible": 1,
-        "DepositSum": "100",
+        "DepositSum": "102",
         "DepositID": "BILL1#0",
         "IsOpenCreditVisible": 0,
         "IsCloseCreditVisible": 1,
@@ -76,7 +76,7 @@
             "ClientID": 2
           },
           {
-            "Money": 100.0,
+            "Money": 102.0,
             "ID": "BILL1#0",
             "nativeID": 1,
             "ClientID": 2
@@ -1331,6 +1331,44 @@
       },
       "PhoneNum": "+7-(288)-373-687",
       "PasportNum": "1311 8220852",
+      "Departament": {
+        "dataChangeAtributes": {
+          "dateTime": "2022-10-02T15:08:26.0981427+03:00",
+          "WhatDataIsChange": "All",
+          "TypeDataChange": "New Data",
+          "WhoIsChange": "Role: My Gode, Name: fakeEmployer"
+        },
+        "ID": 1,
+        "nameOfDepartament": "Департамент 0",
+        "NameOfDepartament": "Департамент 0"
+      }
+    },
+    {
+      "dataChangeAtributes": {
+        "dateTime": "2022-12-11T19:47:28.3015924+03:00",
+        "WhatDataIsChange": "All",
+        "TypeDataChange": "New Data",
+        "WhoIsChange": "Role: Manager, Name: Вася"
+      },
+      "ID": 34,
+      "ClientBill": {
+        "IsOpenDepositVisible": 0,
+        "IsCloseDepositVisible": 0,
+        "DepositSum": null,
+        "DepositID": null,
+        "IsOpenCreditVisible": 0,
+        "IsCloseCreditVisible": 0,
+        "CreditSum": null,
+        "CreditID": null,
+        "bills": []
+      },
+      "Fio": {
+        "FirstName": "Егорва",
+        "LastName": "Абалделаскенков",
+        "MiddleName": "Еродвич"
+      },
+      "PhoneNum": "+7-(781)-294-704",
+      "PasportNum": "1213 6465847",
       "Departament": {
         "dataChangeAtributes": {
           "dateTime": "2022-10-02T15:08:26.0981427+03:00",

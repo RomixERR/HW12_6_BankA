@@ -31,9 +31,9 @@ namespace HW12_6_BankA
             InitializeComponent();
             pageClient = new PageClient();
             LeftFrame.Content = pageClient;
+            loggerHub = new LoggerHub(employer.Name, tBLog, "Log.txt");
             rep = new Repository("baza.json", employer);
             pageClient.Bills.IsEnabled = false;
-            loggerHub = new LoggerHub(rep, employer, this, "Log.txt");
 
             rep.OldIDsClientsFix(); //- FIX IDS
 
