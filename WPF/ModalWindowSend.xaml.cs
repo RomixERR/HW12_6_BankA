@@ -34,8 +34,9 @@ namespace HW12_6_BankA
                     s = Convert.ToInt32(tbSum.Text);
                     return s;
                 }
-                catch
+                catch (Exception e)
                 {
+                    LoggerHub.Log(this, $"Вызвано исключение {e.Message}", LoggerHub.LogEventType.DisplayOnForm);
                     return null;
                 }
             }

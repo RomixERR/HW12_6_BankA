@@ -75,7 +75,10 @@ namespace HW12_6_BankA
                 streamReader.Close();
 
             }
-            catch (Exception e) { return (false, e.Message); }
+            catch (Exception e) {
+                LoggerHub.Log(this, $"Вызвано исключение {e.Message}", LoggerHub.LogEventType.DisplayOnForm);
+                return (false, e.Message);
+            }
             return (true, "OK");
         }
 
@@ -93,7 +96,10 @@ namespace HW12_6_BankA
                 streamWriter.Write(JsonConvert.SerializeObject(db, Formatting.Indented));
                 streamWriter.Close();
             }
-            catch (Exception e) { return (false, "При сохранении возникла проблема " + e.Message); }
+            catch (Exception e) {
+                LoggerHub.Log(this, $"Вызвано исключение {e.Message}", LoggerHub.LogEventType.DisplayOnForm);
+                return (false, "При сохранении возникла проблема " + e.Message);
+            }
             return (true, "Успешно сохранён");
         }
         public List<Departament> GetDepartamentsData()

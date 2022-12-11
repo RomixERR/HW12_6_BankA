@@ -27,8 +27,9 @@ namespace HW12_6_BankA
                 {
                     return tbSum.Text;
                 }
-                catch
+                catch (Exception e)
                 {
+                    LoggerHub.Log(this, $"Вызвано исключение {e.Message}", LoggerHub.LogEventType.DisplayOnForm);
                     return null;
                 }
             }
